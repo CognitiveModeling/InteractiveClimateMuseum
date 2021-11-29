@@ -11,9 +11,7 @@ Binaries can be obtained from
 ## Desktop Version
 
 This version relies on mouse and keyboard for navigation. The project uses a mixed input setup, the embedded browser relies on Unity's classic input manager, while locomotion is realized with the [input system 1.0](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html). Keep in mind to obtain the embedded browser plugin if you want to develop with this code. Technically, the project should work on most platforms, however, when using MacOS, you might have to re-configure gatekeeper to accept unsigned code (the binaries of the embedded browser).
-The section [Documentation of the Desktop Version][1] provides an overview and explanations of the scripts used in the Desktop Version.
-
-[1] ...
+The section [Documentation of the Desktop Version](#Documentation of the Desktop Version) provides an overview and explanations of the scripts used in the Desktop Version.
 
 ## VR Version
 
@@ -33,7 +31,7 @@ This is not a complete list...
 0. General information about functions in Unity® scripts
 
 1. Scripts managing the panels (in Assets - Scripts - PanelScripts)
-    1. HideOnClick
+	1. HideOnClick
     2. PanelRenderer
     3. OnEnableScript
     4. CorrelationOnEnable
