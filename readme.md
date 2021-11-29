@@ -64,7 +64,7 @@ This is not a complete list...
 ################################################################################
 ################################################################################
 
-### 0. General information about functions in Unity® scripts
+### 0. General information about functions in Unity® scripts <a name="general"></a>
 
 The Unity® Documentation provides overviews of important classes and their
 execution order:
@@ -86,7 +86,7 @@ Particularly important are:
 ################################################################################
 ################################################################################
 
-### 1. Scripts managing the panels (in Assets - Scripts - PanelScripts)
+### 1. Scripts managing the panels (in Assets - Scripts - PanelScripts) <a name="PanelScripts"></a>
 
 #### 1.1 Script HideOnClick
 
@@ -347,11 +347,11 @@ because it was only used for debugging purposes during the implementation.
       - for general/chapter tabs: only General Information toggle is on
       - for sub/child tabs: only first active tab toggle (left-most) is on
     - destroys itself (script DestroyScriptsAndResetPanel) at last
-    - 
+
 ################################################################################
 ################################################################################
 
-### 2. Scripts managing the player (in Assets - Scripts - PlayerScripts)
+### 2. Scripts managing the player (in Assets - Scripts - PlayerScripts) <a name="PlayerScripts"></a>
 
 #### 2.1 Script UserMovement
 
@@ -479,7 +479,7 @@ in front of a panel in the editor.
 ################################################################################
 ################################################################################
 
-### 3. Scripts managing the interactive table (in Assets - Scripts - TableScripts)
+### 3. Scripts managing the interactive table (in Assets - Scripts - TableScripts) <a name="TableScripts"></a>
 
 #### 3.1 Script ShowPathAndFrame
 
@@ -644,7 +644,7 @@ interactive table.
 ################################################################################
 ################################################################################
 
-### 4. Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor)
+### 4. Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor) <a name="EditorScripts"></a>
 
 #### 4.1 Script ObjectForJson
 
@@ -688,7 +688,7 @@ not yet commented...
 ################################################################################
 ################################################################################
 
-### 5. Other scripts (in Assets - Scripts)
+### 5. Other scripts (in Assets - Scripts) <a name="OtherScripts"></a>
 
 #### 5.1 QuitMuseum
 
