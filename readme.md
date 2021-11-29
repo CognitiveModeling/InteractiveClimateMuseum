@@ -33,38 +33,55 @@ This is not a complete list...
 0. General information about functions in Unity® scripts
 
 1. Scripts managing the panels (in Assets - Scripts - PanelScripts)
-  1.1 HideOnClick
-  1.2 PanelRenderer
-  1.3 OnEnableScript
-  1.4 CorrelationOnEnable
-  1.5 CorrectContentPosition
-  1.6 SimulationRenderer
-  1.7 LoadingCircle
-  1.8 DestroyScriptsAndResetPanel (only for debugging)
+1.1 HideOnClick
+1.2 PanelRenderer
+1.3 OnEnableScript
+1.4 CorrelationOnEnable
+1.5 CorrectContentPosition
+1.6 SimulationRenderer
+1.7 LoadingCircle
+1.8 DestroyScriptsAndResetPanel (only for debugging)
 
 2. Scripts managing the player (in Assets - Scripts - PlayerScripts)
-  2.1 UserMovement
-  2.2 Teleport
-  2.3 TeleportCheck
-  2.4 MovePlayerToOptimalPosition
+2.1 UserMovement
+2.2 Teleport
+2.3 TeleportCheck
+2.4 MovePlayerToOptimalPosition
 
 3. Scripts managing the interactive table (in Assets - Scripts - TableScripts)
-  3.1 ShowPathAndFrame
-  3.2 BezierVisualizer
-  3.3 BezierCurve
-  3.4 ActivateCorrelationFrame
-  3.5 CorrelationDictionary
+3.1 ShowPathAndFrame
+3.2 BezierVisualizer
+3.3 BezierCurve
+3.4 ActivateCorrelationFrame
+3.5 CorrelationDictionary
 
 4. Scripts managing the extraction of texts from the simulator website and
 the import of images, materials and textures (in Assets - Editor)
-  4.1 ObjectForJson
-  4.2 EditorWebRequest
-  4.3 MaterialProcessorWorking
+4.1 ObjectForJson
+4.2 EditorWebRequest
+4.3 MaterialProcessorWorking
 
 5. Other scripts (in Assets - Scripts)
-  5.1 QuitMuseum
+5.1 QuitMuseum
 
 ### 0. General information about functions in Unity® scripts
+
+The Unity® Documentation provides overviews of important classes and their
+execution order:
+[class MonoBehaviour](https://docs.unity3d.com/Manual/class-MonoBehaviour.html)
+[Execution Order](https://docs.unity3d.com/Manual/ExecutionOrder.html)
+(last access: November/26/2021)
+
+Particularly important are:
+- Awake()
+  - is always called before any Start functions
+
+- Start()
+  - is called before the first frame update
+
+- Update()
+  - is called once per frame
+
 ### 1. Scripts managing the panels (in Assets - Scripts - PanelScripts)
 ### 2. Scripts managing the player (in Assets - Scripts - PlayerScripts)
 ### 3. Scripts managing the interactive table (in Assets - Scripts - TableScripts)
