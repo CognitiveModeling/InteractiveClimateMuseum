@@ -33,9 +33,9 @@ This is not a complete list...
 0. General information about functions in Unity® scripts
 
 1. Scripts managing the panels (in Assets - Scripts - PanelScripts)
-1.1 HideOnClick
-1.2 PanelRenderer
-1.3 OnEnableScript
+1. 1 HideOnClick
+1. 2 PanelRenderer
+1. 3 OnEnableScript
 1.4 CorrelationOnEnable
 1.5 CorrectContentPosition
 1.6 SimulationRenderer
