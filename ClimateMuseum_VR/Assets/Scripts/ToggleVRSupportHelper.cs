@@ -20,6 +20,16 @@ public class ToggleVRSupportHelper : MonoBehaviour
         BoxCollider collider = toggle.gameObject.AddComponent<BoxCollider>();
         RectTransform rect = toggle.gameObject.GetComponent<RectTransform>();
         collider.size = new Vector3(rect.rect.size.x, rect.rect.size.y, .05f);
+        // these two components are shifted in the hierarchy and the colliders need an offset so they do not overlap; would be better to fix this in the
+        // editor
+        if (toggle.gameObject.name.Equals("Information"))
+        {
+          collider.center += new Vector3(0f, -17f, 0f);
+        }
+        else if (toggle.gameObject.name.Equals("Simulator Tutorial"))
+        {
+          collider.center += new Vector3(0f, -34f, 0f);
+        }
       }
 
       if (!toggle.GetComponent<ToggleVRSupport>())
@@ -27,6 +37,24 @@ public class ToggleVRSupportHelper : MonoBehaviour
         ToggleVRSupport vrSupport = toggle.gameObject.AddComponent<ToggleVRSupport>();
         vrSupport.ControlledToggle = toggle;
         vrSupport.ToggleEventSystem = this.MainEventSystem;
+      }
+    }
+    Scrollbar[] scrollbars = this.GetComponentsInChildren<Scrollbar>(true);
+
+    foreach (Scrollbar scrollbar in scrollbars)
+    {
+      if (!scrollbar.GetComponent<BoxCollider>())
+      {
+        BoxCollider collider = scrollbar.gameObject.AddComponent<BoxCollider>();
+        RectTransform rect = scrollbar.gameObject.GetComponent<RectTransform>();
+        collider.size = new Vector3(rect.rect.size.x, rect.rect.size.y, .05f);
+      }
+
+      if (!scrollbar.GetComponent<ScrollbarVRSupport>())
+      {
+        ScrollbarVRSupport vrSupport = scrollbar.gameObject.AddComponent<ScrollbarVRSupport>();
+        vrSupport.ControlledScrollbar = scrollbar;
+        vrSupport.ScrollbarEventSystem = this.MainEventSystem;
       }
     }
     // main issue is that the browser is only rendered to one eye... this is probably due to the shader
