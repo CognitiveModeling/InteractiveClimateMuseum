@@ -28,47 +28,50 @@ This is not a complete list...
 
 ### Contents:
 
-0. General information about functions in Unity® scripts
+0. [General information about functions in Unity® scripts](#general)
 
-1. Scripts managing the panels (in Assets - Scripts - PanelScripts)
+1. [Scripts managing the panels (in Assets - Scripts - PanelScripts)](#PanelScripts)
 	1. HideOnClick
-    2. PanelRenderer
-    3. OnEnableScript
-    4. CorrelationOnEnable
-    5. CorrectContentPosition
-    6. SimulationRenderer
-    7. LoadingCircle
-    8. DestroyScriptsAndResetPanel (only for debugging)
+	2. PanelRenderer
+	3. OnEnableScript
+	4. CorrelationOnEnable
+ 	5. CorrectContentPosition
+    	6. SimulationRenderer
+    	7. LoadingCircle
+    	8. DestroyScriptsAndResetPanel (only for debugging)
 
-2. Scripts managing the player (in Assets - Scripts - PlayerScripts)
-	2.1 UserMovement
-	2.2 Teleport
-	2.3 TeleportCheck
-	2.4 MovePlayerToOptimalPosition
+2. [Scripts managing the player (in Assets - Scripts - PlayerScripts)](#PlayerScripts)
+	1. UserMovement
+	2. Teleport
+	3. TeleportCheck
+	4. MovePlayerToOptimalPosition
 
-3. Scripts managing the interactive table (in Assets - Scripts - TableScripts)
-	3.1 ShowPathAndFrame
-	3.2 BezierVisualizer
-	3.3 BezierCurve
-	3.4 ActivateCorrelationFrame
-	3.5 CorrelationDictionary
+3. [Scripts managing the interactive table (in Assets - Scripts - TableScripts)](#TableScripts)
+	1. ShowPathAndFrame
+	2. BezierVisualizer
+	3. BezierCurve
+	4. ActivateCorrelationFrame
+	5. CorrelationDictionary
 
-4. Scripts managing the extraction of texts from the simulator website and
-the import of images, materials and textures (in Assets - Editor)
-	4.1 ObjectForJson
-	4.2 EditorWebRequest
-	4.3 MaterialProcessorWorking
+4. [Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor)](#EditorScripts)
+	1. ObjectForJson
+	2. EditorWebRequest
+	3. MaterialProcessorWorking
 
-5. Other scripts (in Assets - Scripts)
-	5.1 QuitMuseum
+5. [Other scripts (in Assets - Scripts)](#OtherScripts)
+	1. QuitMuseum
+
+################################################################################
+################################################################################
 
 ### 0. General information about functions in Unity® scripts
 
 The Unity® Documentation provides overviews of important classes and their
 execution order:
-[class MonoBehaviour]{https://docs.unity3d.com/Manual/class-MonoBehaviour.html}
-[Execution Order]{https://docs.unity3d.com/Manual/ExecutionOrder.html}
-(last access: November/26/2021)
+
+[class MonoBehaviour]{https://docs.unity3d.com/Manual/class-MonoBehaviour.html} (last access: November/26/2021)
+
+[Execution Order]{https://docs.unity3d.com/Manual/ExecutionOrder.html} (last access: November/26/2021)
 
 Particularly important are:
 - Awake()
@@ -79,6 +82,9 @@ Particularly important are:
 
 - Update()
   - is called once per frame
+
+################################################################################
+################################################################################
 
 ### 1. Scripts managing the panels (in Assets - Scripts - PanelScripts)
 
@@ -341,7 +347,9 @@ because it was only used for debugging purposes during the implementation.
       - for general/chapter tabs: only General Information toggle is on
       - for sub/child tabs: only first active tab toggle (left-most) is on
     - destroys itself (script DestroyScriptsAndResetPanel) at last
-
+    - 
+################################################################################
+################################################################################
 
 ### 2. Scripts managing the player (in Assets - Scripts - PlayerScripts)
 
@@ -468,6 +476,8 @@ in front of a panel in the editor.
   - x- and z-position of the optimal position are assigned to the player
   - player and player camera are rotated towards the panel
 
+################################################################################
+################################################################################
 
 ### 3. Scripts managing the interactive table (in Assets - Scripts - TableScripts)
 
@@ -631,6 +641,9 @@ interactive table.
       and its correlative Content Card names (Carbon Removal, Emissions,
       Energy Supply, Transport, Buildings and Industry)
 
+################################################################################
+################################################################################
+
 ### 4. Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor)
 
 #### 4.1 Script ObjectForJson
@@ -672,6 +685,8 @@ not yet commented...
 
 ##### 4.3.3 Methods
 
+################################################################################
+################################################################################
 
 ### 5. Other scripts (in Assets - Scripts)
 
