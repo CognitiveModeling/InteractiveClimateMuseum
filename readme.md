@@ -28,7 +28,7 @@ This is not a complete list...
 
 ## Documentation of the Desktop Version
 
-# Contents:
+### Contents:
 
 0. General information about functions in Unity® scripts
 
@@ -64,12 +64,12 @@ the import of images, materials and textures (in Assets - Editor)
 5. Other scripts (in Assets - Scripts)
   5.1 QuitMuseum
 
-# 0. General information about functions in Unity® scripts
-# 1. Scripts managing the panels (in Assets - Scripts - PanelScripts)
-# 2. Scripts managing the player (in Assets - Scripts - PlayerScripts)
-# 3. Scripts managing the interactive table (in Assets - Scripts - TableScripts)
-# 4. Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor)
-# 5. Other scripts (in Assets - Scripts)
+### 0. General information about functions in Unity® scripts
+### 1. Scripts managing the panels (in Assets - Scripts - PanelScripts)
+### 2. Scripts managing the player (in Assets - Scripts - PlayerScripts)
+### 3. Scripts managing the interactive table (in Assets - Scripts - TableScripts)
+### 4. Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor)
+### 5. Other scripts (in Assets - Scripts)
 
 ## License
 
