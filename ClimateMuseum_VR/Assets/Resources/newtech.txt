@@ -1,0 +1,13 @@
+﻿{"name":"newtech",
+"information":"Discover a brand-new cheap source of electricity that does not emit \ngreenhouse gases. Some speculate that such a breakthrough could be \nnuclear fusion or thorium-based nuclear fission.",
+"examples":"New technology can be discovered by research and development, or other \ninvestment into new sources of energy supply such as thorium fission or \nnuclear fusion. Note, this does not include new technologies in CO2 removal, \ntransportation, electrification, or energy efficiency.",
+"big messages":"The potential contribution of a new energy supply technology is severely \nhampered by the long amount of time it takes new technologies to scale up. \nEven under optimal conditions, it would take decades to displace fossil fuels, \nand actually reduce greenhouse gas emissions.",
+"key dynamics":"Watch the orange area of New Zero-Carbon go up as a breakthrough in a new zero-carbon energy supply occurs in the “Global Sources of Primary Energy” graph. Notice that temperature drops only modestly. There are two reasons why: \n\n\u2022<indent=1em>First, notice it takes a long time for the new technology to grow and become \na large part of the global energy mix: \nIt takes 10 years to commercialize, several \nyears to plan and build, and then \ngrowing only as existing coal and \nnatural gas plants (which have a \nlifetime of 30 years) are retired. \nWatch how little Coal (brown area) \nand Natural Gas (dark blue area) \ngo down before 2040. Because of \nthis, very little carbon is kept \nunderground during a critical period.</indent> \n\n\u2022<indent=1em>Second, the reason new technology grows quickly is that it is cheaper than all \nother energy supplies, so the abundance of inexpensive energy increases \ndemand to higher than it would be otherwise.</indent>",
+"potential co-benefits":"A breakthrough in a new energy sources would create jobs along the supply \nchain from research and development to construction to operations. \nFurthermore, research advancements in new technologies may be useful for \nother applications.</indent></indent>",
+"equity considerations":"There are unknown consequences and risks associated with new energy sources.",
+"correlations":"
+[
+{"coal":"New technology will affect coal, but not in the next decades, since it takes a \nlong time to grow and become a large part of the global energy mix."},
+{"natural gas":"New technology will affect natural gas, but not in the next decades, since it \ntakes a long time to grow and become a large part of the global energy mix."}
+]"
+}
