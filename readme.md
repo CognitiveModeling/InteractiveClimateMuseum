@@ -21,7 +21,6 @@ The VR version relies on SteamVR. In order to work with the code, you need Steam
 This is not a complete list...
 
 * only English at the moment, the option to change language in the browser panels has been disabled, as it interferes with our custom DOM changes
-
 * in VR the scroll bars on some of the 'Key Dynamics' panels will not work (the respective mouse events are no emulated)
 
 ## License
