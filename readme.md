@@ -344,10 +344,349 @@ because it was only used for debugging purposes during the implementation.
       - for sub/child tabs: only first active tab toggle (left-most) is on
     - destroys itself (script DestroyScriptsAndResetPanel) at last
 
+
 ### 2. Scripts managing the player (in Assets - Scripts - PlayerScripts)
+
+#### 2.1 Script UserMovement
+
+##### 2.1.1 Description
+This script manages the user's control of the player and is assigned to the
+Player in the editor.
+
+##### 2.1.2 Attributes
+- public floats movementSpeed, rotateSpeed and scrollSpeed for the player's
+  movement, rotation and scrolling speed
+- a public GameObject playerCamera, a camera from the player's point of view
+
+##### 2.1.3 Methods
+- FixedUpdate()
+  - is called once per frame
+  - specifies user's commands to move the player with given movement speed: key
+    arrows (+ Shift) forwards (normal and fast speed) / backwards / left /
+    right
+  - specifies user's commands to rotate the player with given rotation speed:
+    hold right mouse button and move mouse to let the player
+    "look" left / right / up / down
+  - specifies user's command to move player slightly forward with given
+    scrolling speed: scroll mouse wheel
+
+################################################################################
+
+#### 2.2 Script Teleport
+
+##### 2.2.1 Description
+This script manages the player's teleportation to the target (the full-version
+simulator) and back to the original position where the player stood before this
+teleportation. It is assigned to the Player in the editor.
+
+##### 2.2.2 Attributes
+- variables needed for the teleportation
+  - a public teleportation target (position in front of the full-version
+    simulator)
+  - the public player's original position before the teleportation to the
+    simulator takes place
+  - a public boolean for the teleportation state (true if teleportation to
+    target happened, false if teleportation back to original position happened)
+
+- variables needed for fade-in/-out of the scene
+  - a public canvas, object can also be found in editor as "Fader Canvas"
+  - a public Fader, object can also be found in editor as "Fader"
+  - a private animator for realizing the scene's fading in/out during a
+    teleportation
+
+##### 2.2.3 Methods
+- Awake()
+  - initializes the animator as a component of the Fader
+
+- Update()
+  - if user presses "Return":
+    - canvas is activated and scene fades out
+    - player is teleported to
+        - full-version simulator or
+        - original position again (player's position before teleportation to
+          simulator happened)
+    -  canvas is deactivated and scene fades in again with small temporal delay
+
+- auxiliary methods:
+  - activateCanvas()
+    - method for deactivating the Fader Canvas
+  - deactivateCanvas()
+    - method for deactivating the Fader Canvas
+  - FadeOut()
+    - method for scene's fade-out, uses Fader's Animator anim
+  - FadeIn()
+    - method for scene's fade-in, uses Fader's Animator anim
+  - GoToDestination()
+    - changes the player's position to the target position (full-version
+      simulator) and faces player towards panel
+  - GoToOldPos()
+    - changes the player's position to the original position before player was
+      teleported to the simulator
+
+################################################################################
+
+#### 2.3 Script TeleportCheck
+
+##### 2.3.1 Description
+This script checks the teleportation state if the player moves through the door
+of the Simulator room. Thus, it is assigned to the object TeleportCheck of the
+Simulator room's door frame in the editor.
+
+##### 2.3.2 Methods
+- OnTriggerEnter()
+  - is called if user moves the player through the door to the Simulator room,
+    so the player hits the object TeleportCheck
+  - if the teleportation already happened and thus, the state "teleported" in
+    the script 2.2 Teleport is true:
+    - the teleportation state is set to false so that the next teleportation can
+      happen
+
+##### 2.3.3 Note
+This script was implemented because without it, the teleportation did not work
+properly. When the player was teleported to the simulator and then moved away
+with the arrow keys, the next teleportation took the player back to its old
+position where it was before the first teleportation instead of back to the
+simulator again. This script checks if the player has already entered/exited the
+Simulator room and if the teleportation has already happened. Then the boolean
+is set to false again so the Script Teleport can perform the next teleportation.
+
+################################################################################
+
+#### 2.4 Script MovePlayerToOptimalPosition
+
+##### 2.4.1 Description
+This script moves the player to the optimal position in front of a panel if user
+clicks at the green button on the floor. It is assigned to each Floor Position
+in front of a panel in the editor.
+
+##### 2.4.2 Attributes
+- public GameObject for the player which is assigned in the editor
+- public GameObject for the panel which is assigned in the editor
+
+##### 2.4.3 Methods
+- OnMouseDown()
+  - is called if user clicks on the optimal position in front of a panel (green
+    button on the floor)
+  - x- and z-position of the optimal position are assigned to the player
+  - player and player camera are rotated towards the panel
+
+
 ### 3. Scripts managing the interactive table (in Assets - Scripts - TableScripts)
+
+#### 3.1 Script ShowPathAndFrame
+
+##### 3.1.1 Description
+This script handles the orientation with the interactive table.
+If the user clicks onto a specific content card on the table (Afforestation,
+Technological Carbon Removal, ...), a frame appears around it and a path to the
+corresponding panel is shown. The script is assigned to the specific Content
+Cards on the interactive Table in the editor (s. Table - Content Cards).
+
+##### 3.1.2 Attribute
+- a public GameObject Path (s. Table - Paths in the editor)
+- a public GameObject Frame (s. Table - Content Card - [Specific Content Card
+  Name] - Frame in the editor)
+
+##### 3.1.3 Methods
+- OnMouseDown()
+  - if user clicks on the content card, a frame appears/disappears around it and
+    a path to the corresponding panel appears/disappears
+  - more concrete:
+    if frame is not active:
+      - all active frames and paths are collected and deactivated
+      - only the frame and path of the clicked content card are activated
+    if frame is active:
+      - frame and path of the clicked content card are deactivated
+
+################################################################################
+
+#### 3.2 Script BezierVisualizer
+
+##### 3.2.1 Definition
+This script extracts the points from the Bezier segments, concatenates them and
+sets them as positions for the line renderer. It is assigned to every
+BezierPoints object at the interactive Table in the editor (Table - Paths -
+[specific panel/Content Card name] - BezierPoints).
+
+##### 3.2.2 Attributes
+- a public array of Bezier curves called BezierSegments, assigned in the editor
+- a public LineRenderer called Renderer, assigned in the editor
+
+##### 3.2.3 Methods
+- Start()
+  - create a new list of points with 3-dimensional coordinates and save all
+    points of each Bezier segment in it
+  - create new array of 3-dimensional positions with same length as pointList
+  - fill array with points from pointList (copy pointList into array positions)
+  - set positions as positions for the line renderer
+
+################################################################################
+
+#### 3.3 BezierCurve
+
+##### 3.3.1 Definition
+This script creates a Bezier curve for the paths which reach from the
+interactive table to the panels. It is assigned to every BezierPoints child
+Segment 1 at the interactive Table in the editor (Table - Paths - [specific
+panel/Content Card name] - BezierPoints - Segment 1) and an array of
+BezierCurves is assigned to each BezierVisualizer.
+The idea is to have a controllable path segment, that can be concatenated by the
+BezierVisualizer. This implementation is close to the tutorial version here:
+https://www.habrador.com/tutorials/interpolation/2-bezier-curve/
+
+##### 3.3.2 Attributes
+- 4 public control points: Transform Start, ControlPointStart,
+  ControlPointEnd, End
+- 4 private 3-dimensional vectors: A, B, C, D
+
+##### 3.3.3 Methods
+- OnDrawGizmos()
+  - draws line segments successively
+  - initializes point positions A-D with positions of the 4 Transforms
+  - defines Bezier curve's color
+  - defines start position of the line
+  - defines resolution of the line (has to add up to 1, so 0.02 is chosen)
+  - defines amount of loops or line segments, respectively
+  - for each line segment:
+    - calculates current step along line
+    - calculates coordinates between control points with a Catmull-Rom spline
+      (s. DeCasteljausAlgorithm(step) below)
+    - draws the calculates line segment
+  - saves this position so the next line segment can be drawn
+
+- GetPoints() (similar to OnDrawGizmo, except of the drawing)
+  - returns a list of points of one Bezier Curve by calculating different line
+    segments
+  - creates new list of 3-dimensional points called points
+  - initializes point positions A-D with positions of the 4 Transforms
+  - defines start position of the line
+  - defines resolution of the line (has to add up to 1, so 0.02 is chosen)
+  - defines amount of loops or line segments, respectively
+  - for each line segment:
+    - adds current position on the line to the list points
+    - calculates current step along line
+    - calculates coordinates between control points with a Catmull-Rom spline
+      (s. DeCasteljausAlgorithm(step) below)
+    - saves this position so the next line segment can be calculated
+  - return the filled list of points
+
+- DeCasteljausAlgorithm(float step)
+  - is private
+  - implements De Casteljau's Algorithm
+  - gets the float step (current position/segment on the line)
+  - returns an interpolated position, a 3-dimensional vector
+
+################################################################################
+
+#### 3.4 Script ActivateCorrelationFrames
+
+##### 3.4.1 Description
+This script activates the frames around the Content Cards and sub topics that
+correlate to the clicked Content Card at the interactive table. It is assigned
+to each Content Card (Carbon Removal, ...) and their sub topics (Afforestation,
+...) at the Table in the editor.
+
+##### 3.4.2 Attributes
+- a public and static new dictionary of correlations between Content Cards and
+  their sub topics (s. script CorrelationDictionary)
+- a public and static event OnFrameStateChangeEvent of type OnFrameStateChange
+  (s. method below) that describes the state of a frame (on/off)
+
+##### 3.4.3 Methods
+  - OnFrameStateChange(string tableCardName)
+    - delegate method describing which content card is changed (on/off)
+  - OnMouseDown()
+    - if user clicks on Content Card or sub topic, event is provoked and state
+      of correlative Content Card is changed (on/off)
+  - Start()
+    - listens to event of a state change of the frame and calls the Response
+      function
+  - ResponseToFrameStateChange(string correlationTableCardName)
+    - as response to a frame state change, frame of deactivated correlative
+      Content Cards are activated and active ones are deactivated
+    - more concrete:
+      - array of correlative Cards is created with the help of the
+        correlation dictionary correlations
+      - each entry is visited and its frame is activated/deactivated if it
+        equals the correlative Card name (input string)
+
+################################################################################
+
+#### 3.5 Script CorrelationDictionary
+
+##### 3.5.1 Description
+This script creates and fills a dictionary with all correlations between the
+Content Cards (rooms and panels, respectively). The script
+ActivateCorrelationFrames uses this dictionary to draw frames around the Content
+Cards which correlate to the Content Card that the user has clicked on the
+interactive table.
+
+##### 3.5.2 Attributes
+- a public variable correlationDictionary of the type Dictionary which holds a
+  string (Content Card/panel name) and a list of strings (correlative Content
+  Card/panel names)
+
+##### 3.5.3 Methods
+ - CorrelationDictionary()
+    - creates the correlation dictionary
+    - fills the correlation dictionary with entries holding a Content Card name
+      and its correlative Content Card names (Carbon Removal, Emissions,
+      Energy Supply, Transport, Buildings and Industry)
+
 ### 4. Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor)
+
+#### 4.1 Script ObjectForJson
+
+##### 4.1.1 Description
+This script is not a class, but a struct and supports the script EditorWebRequest (below).
+It is not assigned to any object in the editor.
+
+##### 4.1.2 Attributes
+- public strings for the panel name and each child/sub tab name in the panel
+  (information, examples, ...)
+
+##### 4.1.3 Methods
+- ObjectForJson(string name, string information, ...)
+  - public constructor for the struct
+- ObjectClear()
+  - is public
+  - empties all strings
+
+################################################################################
+
+#### 4.2 EditorWebRequest
+
+##### 4.2.1 Description
+not yet commented...
+
+##### 4.2.2 Attributes
+
+##### 4.2.3 Methods
+
+################################################################################
+
+#### 4.3 MaterialProcessorWorking
+
+##### 4.3.1 Description
+not yet commented...
+
+##### 4.3.2 Attributes
+
+##### 4.3.3 Methods
+
+
 ### 5. Other scripts (in Assets - Scripts)
+
+#### 5.1 QuitMuseum
+
+##### 5.1.1 Definition
+This script quits the museum if the user clicks the quit button in the left
+upper corner. It is assigned to the Quit Button in the editor.
+
+##### 5.1.2 Methods
+- quit()
+  - If quit button is clicked, a log message about the quit museum is printed
+    and the whole museum is quit.
 
 ## License
 
