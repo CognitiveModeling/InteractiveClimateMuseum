@@ -5,8 +5,9 @@
 
 This project provides an interactive museum to learn about the [En-ROADS Simulator](https://www.climateinteractive.org/tools/en-roads/). The different topics featured in the simulator can be explored in different rooms, where the information is presented in terms of interactive panels. The simulator in terms of a browser window is integrated into the panels. In order to work with the code, you need the embedded browser provided by [zenfulcrum](https://assetstore.unity.com/packages/tools/gui/embedded-browser-55459) project. At the moment, the projects relies on this Unity plugin to integrate the En-ROADS simulator into the scene. Both projects were developed on Windows systems.
 
-Binaries can be obtained from
-> **TODO**
+We host the binaries in the microsoft cloud of the university of Tübingen. They come in zip archives, just download and extract them and run the executable file (ClimateMuseum.exe).
+> [Desktop Version](https://unitc-my.sharepoint.com/:u:/g/personal/iivbu01_cloud_uni-tuebingen_de/ERHgrVf_9uBAijgg83No9KMBMCksn7Mvwc6vV8jOGcAWTg?e=l46cfs)
+> [VR Version](https://unitc-my.sharepoint.com/:u:/g/personal/iivbu01_cloud_uni-tuebingen_de/EVgmqDklko1BlpGGXMttOUYBONEjttdPXgw5wW4IDNziCg?e=hshSWc)
 
 ## Desktop Version
 
