@@ -13,7 +13,7 @@ We host the binaries in the microsoft cloud of the university of Tübingen. They
 ## Desktop Version
 
 This version relies on mouse and keyboard for navigation. The project uses a mixed input setup, the embedded browser relies on Unity's classic input manager, while locomotion is realized with the [input system 1.0](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html). Keep in mind to obtain the embedded browser plugin if you want to develop with this code. Technically, the project should work on most platforms, however, when using MacOS, you might have to re-configure gatekeeper to accept unsigned code (the binaries of the embedded browser).
-The section [Documentation of the Desktop Version](#Documentation%20of%20the%20Desktop%20Version) provides an overview and explanations of the scripts used in the Desktop Version.
+The section [Documentation of the Desktop Version](https://github.com/CognitiveModeling/InteractiveClimateMuseum#documentation-of-the-desktop-version) provides an overview and explanations of the scripts used in the Desktop Version.
 
 ## VR Version
 
