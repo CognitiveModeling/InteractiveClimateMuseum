@@ -1,11 +1,11 @@
-﻿﻿
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
 
+// This script handles the import and processing of images, textures and materials.
 
 public class MaterialProcessorWorking : AssetPostprocessor
 {
@@ -42,6 +42,7 @@ public class MaterialProcessorWorking : AssetPostprocessor
             createdMaterial.mainTexture = createdTexture;
         }
     }
+
 
     public void OnPreprocessTexture ()
 	{
@@ -81,5 +82,4 @@ public class MaterialProcessorWorking : AssetPostprocessor
             }
     	}
     }
-
 }
