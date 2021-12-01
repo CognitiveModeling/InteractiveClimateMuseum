@@ -37,10 +37,10 @@ This is not a complete list...
 	2. PanelRenderer
 	3. OnEnableScript
 	4. CorrelationOnEnable
- 	5. CorrectContentPosition
-    	6. SimulationRenderer
-    	7. LoadingCircle
-    	8. DestroyScriptsAndResetPanel (only for debugging)
+	5. CorrectContentPosition
+	6. SimulationRenderer
+	7. LoadingCircle
+	8. DestroyScriptsAndResetPanel (only for debugging)
 
 2. [Scripts managing the player (in Assets - Scripts - PlayerScripts)](#PlayerScripts)
 	1. UserMovement
