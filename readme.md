@@ -385,7 +385,7 @@ Player in the editor.
 ##### 2.1.2 Attributes
 - public floats movementSpeed, rotateSpeed and scrollSpeed for the player's
   movement, rotation and scrolling speed
-- a public GameObject playerCamera, a camera from the player's point of view
+- a public GameObject playerCamera, the camera from the player's point of view
 
 ##### 2.1.3 Methods
 - FixedUpdate()
@@ -447,7 +447,7 @@ teleportation. It is assigned to the Player in the editor.
     - method for scene's fade-in, uses Fader's Animator anim
   - GoToDestination()
     - changes the player's position to the target position (full-version
-      simulator) and faces player towards panel
+      simulator) and faces player and its camera towards the panel
   - GoToOldPos()
     - changes the player's position to the original position before player was
       teleported to the simulator
@@ -471,13 +471,15 @@ Simulator room's door frame in the editor.
       happen
 
 ##### 2.3.3 Note
-This script was implemented because without it, the teleportation did not work
+- This script was implemented because without it, the teleportation did not work
 properly. When the player was teleported to the simulator and then moved away
 with the arrow keys, the next teleportation took the player back to its old
 position where it was before the first teleportation instead of back to the
 simulator again. This script checks if the player has already entered/exited the
 Simulator room and if the teleportation has already happened. Then the boolean
 is set to false again so the Script Teleport can perform the next teleportation.
+- The Layer IgnoreRaycast at the object TeleportCheck ensures that the click onto
+the green Floor Position point in the Simulator room still works properly.
 
 ################################################################################
 
