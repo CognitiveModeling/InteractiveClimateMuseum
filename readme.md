@@ -317,19 +317,19 @@ Dynamics", except for the full-version simulator).
 
 ##### 1.6.4 Open issues
 - Tab "Language" in the top toolbar (currently hidden)
-    This tab allows switching between languages. However, if the language is
-    changed, none of the sliders can be used anymore. In the
-    RenderingCoroutine()'s switch-case, also the relevant sliders' listeners are
-    deactivated incorrectly by the JS function deactivateListeners(elem)
-    defined in Start(). This happens because the sliders' names have changed
-    (they are not in English anymore) which are requested in the if-statement
-    of each case for deactivating and graying out the nonrelevant sliders.
-    Because the JS function destroys the listeners irrecoverably, all of the
-    sliders can not be used in the following, not even when changing the
-    language back to English again.
-    This could be fixed with rewriting the JS function
-    deactivateListeners(elem) in such a way that the listeners will not be
-    destroyed irrecoverably.
+	This tab allows switching between languages. However, if the language is
+	changed in the tabs "Key Dynamics", none of the sliders can be used anymore. In the
+	RenderingCoroutine()'s switch-case, also the relevant sliders' listeners are
+	deactivated incorrectly by the JS function deactivateListeners(elem)
+	defined in Start(). This happens because the sliders' names have changed
+	(they are not in English anymore) which are requested in the if-statement
+	of each case for deactivating and graying out the nonrelevant sliders.
+	Because the JS function destroys the listeners irrecoverably, all of the
+	sliders can not be used in the following, not even when changing the
+	language back to English again.
+	This could be fixed with rewriting the JS function
+	deactivateListeners(elem) in such a way that the listeners will not be
+	destroyed irrecoverably.
 
 ################################################################################
 
