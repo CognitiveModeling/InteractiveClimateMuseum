@@ -61,6 +61,29 @@ public class SimulationRenderer : MonoBehaviour
 
         // Javascript function to set opacity of selected element to 0.3
         browser.EvalJS("function lowOpacity(elem) {return elem.style.opacity = '0.3';}");
+
+        /* part of the attempt to fix the language problem:
+         * Javascript function to get an iterable with basic strings for all slider names (Coal/Kohle, Oil/Öl, ...)
+        browser.EvalJS("function mapping(items) {" +
+            "var basics = [];" +
+            "for (var i = 0; i < items.length; i++) {" +
+                //"window.alert(items[i].innerHTML);" +
+                "if (items[i].innerHTML == 'Technological' || items[i].innerHTML == 'Technologisch') { basics[i] = 'technological'; }" +
+                "if (items[i].innerHTML == 'Deforestation' || items[i].innerHTML == 'Entwaldung') { basics[i] = 'deforestation'; }" +
+                "else { basics[i] = 'x'; }" +
+
+            // better with switch-case?
+            //    "switch(items[i].innerHTML) {" +
+            //           "case 'Technological': basics[i] = 'technological'" +
+            //           "case 'Technologisch': basics[i] = 'technological'" +
+            //           "case 'Deforestation': basics[i] = 'deforestation'" +
+            //           "case 'Entwaldung': basics[i] = 'deforestation'" + ... 
+            
+            "}" +
+            //"window.alert(basics);" +
+            "return basics;" +
+        "}");
+        */
     }
 
     void Update()
@@ -90,6 +113,10 @@ public class SimulationRenderer : MonoBehaviour
             // define items and sections for designing the sliders individually for each panel:
             // Javascript function to save titles of the sub sections (Coal, Oil, ...), needs hard-coded, dynamic title for rendering the graphs
             browser.EvalJS("var items = document.getElementsByClassName('title svelte-1espllb');");
+
+            // part of the attempt to fix the language problem:
+            // browser.EvalJS("var basics = mapping(items);");
+
             // Javascript function to save titles of the six panel sections (Energy Supply, Transport, ...)
             browser.EvalJS("var sections = document.getElementsByClassName('section-title');");
 
@@ -104,9 +131,24 @@ public class SimulationRenderer : MonoBehaviour
                         "if (items[i].innerHTML.indexOf('Technological') != -1) { " +
                         "items[i].parentNode.parentNode.parentNode.style.border = 'thick solid #32CD32'; }" +
                         "if (items[i].innerHTML.indexOf('Deforestation') != -1) { " +
-                        "items[i].parentNode.parentNode.parentNode.style.border = 'thick solid #FFD700'; " +
-                        "}}");
+                        "items[i].parentNode.parentNode.parentNode.style.border = 'thick solid #FFD700'; }" +
+                        "}");
                     break;
+
+                /* attempts to fix the language problem:
+                 browser.EvalJS("for (var i = 0; i < basics.length; i++) { " +
+                     "if (basics[i] != 'technological' && basics[i] != 'deforestation') { " +
+                     "lowOpacity(items[i].parentNode.parentNode.parentNode);" +
+                     // deactivates slider
+                     "deactivateListeners(items[i].parentNode.parentNode.childNodes[1]); }" +
+                     // attempt not to deactivate whole name, but to only remove listener:
+                     // function name used by En-ROADS is not known, removing listener from name (Coal, Oil, ...) does not work: "items[i].removeEventListener('click', function); }" +
+                     "if (basics[i] == 'technological') { " +
+                     "items[i].parentNode.parentNode.parentNode.style.border = 'thick solid #32CD32'; }" +
+                     "if (basics[i] == 'deforestation') { " +
+                     "items[i].parentNode.parentNode.parentNode.style.border = 'thick solid #FFD700'; }" +
+                     "}");
+                */
                 case SIMULATOR_TYPE.AFFORESTATION:
                     browser.EvalJS("for (var i = 0; i < items.length; i++) { " +
                         "if (items[i].innerHTML.indexOf('Afforestation') == -1 && items[i].innerHTML.indexOf('Deforestation') == -1) { " +

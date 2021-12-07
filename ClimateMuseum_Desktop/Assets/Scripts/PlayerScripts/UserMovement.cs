@@ -12,7 +12,7 @@ public class UserMovement : MonoBehaviour
     public float rotateSpeed;
     public float scrollSpeed;
 
-    // a camera from the player's point of view
+    // the camera from the player's point of view
     public GameObject playerCamera;
 
     // Update is called once per frame

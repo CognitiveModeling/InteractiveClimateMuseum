@@ -16,6 +16,8 @@ public class Teleport : MonoBehaviour
     public Vector3 oldPos;
     // a teleportation state (true if teleportation to target happened, false if teleportation back to original position happened)
     public bool teleported = false;
+    // the camera attached to the player
+    public GameObject playerCamera;
 
     // variables needed for fade-in and -out:
     // a canvas, object can also be found in editor as "Fader Canvas"
@@ -102,11 +104,12 @@ public class Teleport : MonoBehaviour
         anim.SetBool("FadeIn", true);
     }
 
-    // method for changing the player's position to the target position (full-version simulator) and facing player towards panel
+    // method for changing the player's position to the target position (full-version simulator) and facing player and its camera towards panel
     void GoToDestination()
     { 
         this.gameObject.transform.position = new Vector3(target.transform.position.x, 0.6f, target.transform.position.z);
         this.gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+        this.gameObject.transform.Find("Camera").transform.localRotation = Quaternion.Euler(0, 0, 0);
         teleported = true;
     }
 
