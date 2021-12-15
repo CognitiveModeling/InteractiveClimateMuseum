@@ -32,7 +32,7 @@ public class HandleLoadingScreen : MonoBehaviour
     {
       Debug.Log(jse.Message);
     }
-    // not a nice solution, but it works: until the element is not defined (i.e. we get an error), we keep the laoding screen,
+    // not a nice solution, but it works: until the element is not defined (i.e. we get an error), we keep the loading screen,
     // if we get a value, we deactivate the loading screen
     if (promise != null)
     {

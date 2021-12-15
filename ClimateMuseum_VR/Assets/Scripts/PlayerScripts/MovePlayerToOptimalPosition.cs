@@ -22,13 +22,17 @@ public class MovePlayerToOptimalPosition : MonoBehaviour
 
   void OnMouseDown()
   {
+    // if VR version is run
     if (GameObject.FindGameObjectWithTag("VRPlayerRoot"))
     {
+      // get VR player
       Player player = Valve.VR.InteractionSystem.Player.instance;
 
+      // set player's position to the position of the green Floor Position tile (regarding feet offset)
       Vector3 playerFeetOffset = player.trackingOriginTransform.position - player.feetPositionGuess;
       player.trackingOriginTransform.position = this.transform.position + playerFeetOffset;
 
+      // if player has objects attached to its hands, reset attachment
       if (player.leftHand.currentAttachedObjectInfo.HasValue)
         player.leftHand.ResetAttachedTransform(player.leftHand.currentAttachedObjectInfo.Value);
       if (player.rightHand.currentAttachedObjectInfo.HasValue)
@@ -49,10 +53,13 @@ public class MovePlayerToOptimalPosition : MonoBehaviour
 
   }
 
+  // calls OnmOuseDown in Desktop version ???
   public void CallOnMouseDown()
   {
     this.OnMouseDown();
   }
+
+  // if an event from the VR controllers comes in and its target is the current Floor Position where this script is assigned to, call OnMouseDown
   private void HandleVivePointerEvent(object sender, PointerEventArgs e)
   {
     if (e.target == this.transform)
