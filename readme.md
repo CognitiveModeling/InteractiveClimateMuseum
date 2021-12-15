@@ -501,8 +501,20 @@ in front of a panel in the editor.
 - OnMouseDown()
   - is called if user clicks on the optimal position in front of a panel (green
     button on the floor)
-  - x- and z-position of the optimal position are assigned to the player
-  - player and player camera are rotated towards the panel
+  - if VR version is run:
+	- get VR player
+	- set player's position to the position of the green Floor Position tile (regarding feet offset)
+	- if player has objects attached to its hands, reset attachments
+  - else (if Desktop Version is run):
+	- x- and z-position of the optimal position are assigned to the player
+	- player and player camera are rotated towards the panel
+  
+  - CallOnMouseDown()
+	- calls OnMouseDown in Desktop version ???
+  
+  - HandleVivePointerEvent(object sender, PointerEventArgs e)
+	- if an event from the VR controllers comes in and its target is the current Floor Position where this script is assigned to, call OnMouseDown
+
 
 ################################################################################
 ################################################################################
