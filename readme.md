@@ -317,8 +317,8 @@ Dynamics", except for the full-version simulator).
 
 ##### 1.6.4 Open issues
 - 15.12.21: Tab "Language" can be used now. However, sliders that are deactivated
-	    when the simulator is initially rendered does not change their name to the 
-	    chosen language, but are still displayed in English
+	    when the simulator is initially rendered do not change their name to the 
+	    chosen language, but are still displayed in English.
 - 11/21: Tab "Language" in the top toolbar (currently hidden)
 	This tab allows switching between languages. However, if the language is
 	changed in the tabs "Key Dynamics", none of the sliders can be used anymore. In the
