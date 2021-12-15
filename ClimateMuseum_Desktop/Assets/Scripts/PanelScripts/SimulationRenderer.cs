@@ -240,15 +240,15 @@ public class SimulationRenderer : MonoBehaviour
                         "lowOpacity(sections[5].parentNode); deactivateListeners(sections[5].parentNode);" +
                         "sections[1].parentNode.childNodes[1].childNodes[1].style.border = 'thick solid #32CD32';" +
                         "sections[4].parentNode.childNodes[1].childNodes[0].style.border = 'thick solid #FFD700';" +
-                        "sections[1].parentNode.childNodes[1].childNodes[0].style.opacity = '0.3'; deactivateListeners(sections[1].parentNode.childNodes[1].childNodes[0]);" +
-                        "sections[4].parentNode.childNodes[1].childNodes[1].style.opacity = '0.3'; deactivateListeners(sections[4].parentNode.childNodes[1].childNodes[1]);" +
+                        "lowOpacity(sections[1].parentNode.childNodes[1].childNodes[0]); deactivateListeners(sections[1].parentNode.childNodes[1].childNodes[0]);" +
+                        "lowOpacity(sections[4].parentNode.childNodes[1].childNodes[1]); deactivateListeners(sections[4].parentNode.childNodes[1].childNodes[1]);" +
                         "sections[0].parentNode.style.border = 'thick solid #FFD700';");
                     break;
                 case SIMULATOR_TYPE.TEFFICIENCY:
                     browser.EvalJS("for (var i = 2; i < sections.length; i++) {" +
                         "lowOpacity(sections[i].parentNode); deactivateListeners(sections[i].parentNode); }" +
                         "sections[1].parentNode.childNodes[1].childNodes[0].style.border = 'thick solid #32CD32';" +
-                        "sections[1].parentNode.childNodes[1].childNodes[1].style.opacity = '0.3'; deactivateListeners(sections[1].parentNode.childNodes[1].childNodes[1]);" +
+                        "lowOpacity(sections[1].parentNode.childNodes[1].childNodes[1]); deactivateListeners(sections[1].parentNode.childNodes[1].childNodes[1]);" +
                         "sections[0].parentNode.style.border = 'thick solid #FFD700';");
                     break;
                 case SIMULATOR_TYPE.BIELECTRIFICATION:
@@ -273,7 +273,7 @@ public class SimulationRenderer : MonoBehaviour
                         "lowOpacity(sections[1].parentNode); deactivateListeners(sections[1].parentNode);" +
                         "lowOpacity(sections[2].parentNode); deactivateListeners(sections[2].parentNode);" +
                         "sections[3].parentNode.childNodes[1].childNodes[1].style.border = 'thick solid #32CD32';" +
-                        "sections[3].parentNode.childNodes[1].childNodes[0].style.opacity = '0.3'; deactivateListeners(sections[3].parentNode.childNodes[1].childNodes[0]);" +
+                        "lowOpacity(sections[3].parentNode.childNodes[1].childNodes[0]); deactivateListeners(sections[3].parentNode.childNodes[1].childNodes[0]);" +
                         "sections[0].parentNode.style.border = 'thick solid #FFD700';");
                     break;
                 case SIMULATOR_TYPE.GPOPULATION:
@@ -282,7 +282,7 @@ public class SimulationRenderer : MonoBehaviour
                         "lowOpacity(sections[1].parentNode); deactivateListeners(sections[1].parentNode);" +
                         "lowOpacity(sections[2].parentNode); deactivateListeners(sections[2].parentNode);" +
                         "sections[3].parentNode.childNodes[1].childNodes[0].style.border = 'thick solid #32CD32';" +
-                        "lowOpacity(sections[3].parentNode.childNodes[1].childNodes[1]); deactivateListeners(sections[2].parentNode.childNodes[1].childNodes[1]);" +
+                        "lowOpacity(sections[3].parentNode.childNodes[1].childNodes[1]); deactivateListeners(sections[3].parentNode.childNodes[1].childNodes[1]);" +
                         "sections[0].parentNode.style.border = 'thick solid #FFD700';");
                     break;
                 default:
