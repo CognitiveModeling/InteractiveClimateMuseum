@@ -46,9 +46,11 @@ This is not a complete list...
 	
 	1\.6 SimulationRenderer
 	
-	1\.7 LoadingCircle
+	1\.7 URLLanguageCheck
 	
-	1\.8 DestroyScriptsAndResetPanel (only for debugging)
+	1\.8 LoadingCircle
+	
+	1\.9 DestroyScriptsAndResetPanel (only for debugging)
 
 2. [Scripts managing the player (in Assets - Scripts - PlayerScripts)](#PlayerScripts)
 	
@@ -336,18 +338,50 @@ Dynamics", except for the full-version simulator).
 
 ################################################################################
 
-#### 1.7 Script Loading Circle
+#### 1.7 URLLanguageCheck
 
 ##### 1.7.1 Description
+This script checks if the language was changed and reloads the simulator page in the panel.
+
+##### 1.7.2 Attributes
+- a public browser, assigned in the editor
+- a string holding its url
+- a string holding the language in which its content is presented
+
+##### 1.7.3 Methods
+- Start()
+  - initializes English language
+  - checks the url for language changes
+  - sets current url to browser's url
+- Update()
+  - if the urls (current and browser) are not the same:
+  	- take browser's url as current
+  	- if language was changed (s. method checkLanguage()), reload page
+- bool checkLanguage(string url)
+	- if given url contains specific language suffix:
+		- takes index of suffix
+		- extracts the language to which was changed from the suffix
+		- if current language is not the one extracted from the url, language change has happened (bool set to true)
+		- sets current language to changed language
+	- if url does not contain specific language suffix:
+		- if current language is not English, language change has happened (bool set to true)
+		- sets current language to English
+	- returned bool shows if language change has happened
+
+################################################################################
+
+#### 1.8 Script Loading Circle
+
+##### 1.8.1 Description
 This script manages the rotation of the loading circle while the simulator
 website is loaded in the simulator panel. It is assigned to the Progress object
 of the Loading Circle in the Simulator panel.
 
-##### 1.7.2 Attributes
+##### 1.8.2 Attributes
 - a private RectTransform rectComponent, the Transform of a rectangle
 - a private float rotateSpeed, the speed of rotation for the loading circle
 
-##### 1.7.3 Methods
+##### 1.8.3 Methods
 - Start()
   - initializes the rectangle Transform
 - Update()
@@ -356,14 +390,14 @@ of the Loading Circle in the Simulator panel.
 
 ################################################################################
 
-#### 1.8 Script DestroyScriptsAndResetPanel (only for debugging)
+#### 1.9 Script DestroyScriptsAndResetPanel (only for debugging)
 
-##### 1.8.1 Description
+##### 1.9.1 Description
 This script destroys all scripts that are used to initialize the panels, if the
 user presses the Delete-key. It is not assigned to any object in the editor
 because it was only used for debugging purposes during the implementation.
 
-##### 1.8.2 Methods
+##### 1.9.2 Methods
 - Update()
   - if user presses the Delete-key:
     - destroys all scripts used to correctly initialize panel: PanelRenderer,
