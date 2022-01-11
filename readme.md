@@ -82,9 +82,29 @@ This is not a complete list...
 	
 	4\.3 MaterialProcessorWorking
 
-5. [Other scripts (in Assets - Scripts)](#OtherScripts)
+5. [Additional scripts for the VR version](#VRScripts)
 	
-	5\.1 QuitMuseum
+	5\.1 Additional scripts managing the panels
+		
+	5.1.1 ToggleVRSupport
+
+	5.1.2 ToggleVRSupportHelper
+
+	5.1.3 ScrollbarVRSupport
+
+	5.1.4 CameraRayCast
+	
+	5\.2 Scripts for the interaction between VR and browser
+
+	5.2.1 HandleLoadingScreen
+
+	5.2.2 VRControllerInputProxy
+
+	5.2.3 VRBrowserHand
+
+6. [Other scripts (in Assets - Scripts)](#OtherScripts)
+	
+	6\.1 QuitMuseum
 
 ################################################################################
 ################################################################################
@@ -762,15 +782,123 @@ not yet commented...
 ################################################################################
 ################################################################################
 
-### 5. Other scripts (in Assets - Scripts) <a name="OtherScripts"></a>
+### 5. Additional scripts for the VR version  <a name="VRScripts"></a>
 
-#### 5.1 QuitMuseum
+#### 5.1 Additional scripts managing the panels
 
-##### 5.1.1 Definition
+##### 5.1.1 ToggleVRSupport
+
+###### 5.1.1.1 Description
+not yet commented...
+
+###### 5.1.1.2 Attributes
+
+###### 5.1.1.3 Methods
+
+##### 5.1.2 ToggleVRSupportHelper
+
+###### 5.1.2.1 Description
+not yet commented...
+
+###### 5.1.2.2 Attributes
+
+###### 5.1.2.3 Methods
+
+##### 5.1.3 ScrollbarVRSupport
+
+###### 5.1.3.1 Description
+not yet commented...
+
+###### 5.1.3.2 Attributes
+
+###### 5.1.3.3 Methods
+
+##### 5.1.4 CameraRayCast
+
+###### 5.1.4.1 Description
+not yet commented...
+
+###### 5.1.4.2 Attributes
+
+###### 5.1.4.3 Methods
+
+#### 5.2 Scripts for the interaction between VR and browser
+
+##### 5.2.1 HandleLoadingScreen
+
+###### 5.2.1.1 Description
+This script handles the presentation of a loading screen while the browser is loaded.
+The script is assigned to the general simulator's tab panel and its start screen.
+
+###### 5.2.1.2 Attributes
+- a game object LoadingScreen representing the loading screen, assigned in the editor (Simulator - Tab Panel - Loading Screen)
+- an instance of the type Browser, assigned in the editor (Simulator - Tab Panel - Browser)
+- a boolean indicating if the query is running, initially false
+
+###### 5.2.1.3 Methods
+- Update()
+	- if the loading screen is active and the query does not run:
+		- boolean is set to true, query runs now
+		- starts the coroutine that checks if the browser is ready
+- checkBrowserReady()
+  - coroutine that checks if the browser is ready
+  - initializes a node and tries to fill it with an element on the website
+    (here: the temperature increase)
+  - not a nice solution, but it works:
+    - until the element promise is not defined (i.e. we get an error): keep the loading screen
+    - if we get a value in the variable promise: deactivates the loading screen
+  - query is set to false again
+
+##### 5.2.2 VRControllerInputProxy
+
+##### 5.2.2.1 Description
+This script communicates between the SteamVR and the scripts managing the
+browser (PonterUIMesh, PointerUIBase, VRBrowserHand). Like the script
+VRBrowserHand, it is assigned to the object VRBrowser (VRPlayer - SteamVRObjects - RightHand), represented by a cube in the information room.
+
+##### 5.2.2.2 Attributes
+- a VRBrowserHand
+- a specific boolean from SteamVR, indicating the trigger click, named
+  TriggerClick
+- a specific input source from SteamVR (SteamVR_Input_Sources.RightHand can
+  also be used)
+
+##### 5.2.2.3 Methods
+- OnEnable()
+  - adds listener for pressing to the input source (s. Press() below)
+  - adds listener for releasing to the input source (s. Release() below)
+
+- OnDisable()
+  - removes listener for pressing to the input source (s. Press() below)
+  - removes listener for releasing to the input source (s. Release() below)
+
+- Press(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+  - sets the amplitude of the VR browser hand to 1
+
+- Release(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+  - sets the amplitude of the VR browser hand to 0
+
+##### 5.2.3 VRBrowserHand
+
+###### 5.2.3.1 Description
+not yet commented...
+
+###### 5.2.3.2 Attributes
+
+###### 5.2.3.3 Methods
+
+################################################################################
+################################################################################
+
+### 6. Other scripts (in Assets - Scripts) <a name="OtherScripts"></a>
+
+#### 6.1 QuitMuseum
+
+##### 6.1.1 Definition
 This script quits the museum if the user clicks the quit button in the left
 upper corner. It is assigned to the Quit Button in the editor.
 
-##### 5.1.2 Methods
+##### 6.1.2 Methods
 - quit()
   - If quit button is clicked, a log message about the quit museum is printed
     and the whole museum is quit.
