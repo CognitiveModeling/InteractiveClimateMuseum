@@ -161,8 +161,11 @@ public abstract class PointerUIBase : MonoBehaviour, IBrowserUI {
 	/// </summary>
 	/// <param name="state"></param>
 	public virtual void FeedPointerState(PointerState state) {
+
+        // feed 2D pointers to browser, see MapPointerToBrowser() in PointerUIMesh
 		if (state.is2D) state.position2D = MapPointerToBrowser(state.position2D, state.id);
-		else {
+        // feed 3D pointers to browser, see MapPointerToBrowser() in PointerUIMesh
+        else {
 			Debug.DrawRay(state.position3D.origin, state.position3D.direction * (Mathf.Min(500, maxDistance)), Color.cyan);
 			state.position2D = MapRayToBrowser(state.position3D, state.id);
 			//Debug.Log("Pointer " + state.id + " at " + state.position3D.origin + " pointing " + state.position3D.direction + " maps to  " + state.position2D);
@@ -170,16 +173,20 @@ public abstract class PointerUIBase : MonoBehaviour, IBrowserUI {
 
 		if (float.IsNaN(state.position2D.x)) return;
 
-		if (state.id == currentPointerId) {
+        // if the given pointer is the current one / not (compares IDs) and if there are currently depressed buttons (activeButtons):
+  		if (state.id == currentPointerId) {
+            // update counters for pointers: p_currentDown, p_currentOver / p_anyDown, p_anyOver
 			p_currentOver = currentPointers.Count;
 
 			if (state.activeButtons != 0) p_currentDown = currentPointers.Count;
-		} else {
+		}
+        else {
 			p_anyOver = currentPointers.Count;
 
 			if (state.activeButtons != 0) p_anyDown = currentPointers.Count;
 		}
 
+        // add the given pointer to the list of pointers currentPointers
 		currentPointers.Add(state);
 	}
 
@@ -346,6 +353,7 @@ public abstract class PointerUIBase : MonoBehaviour, IBrowserUI {
 		if (enableMouseInput) FeedMousePointer();
 		if (enableTouchInput) FeedTouchPointers();
 		#if UNITY_2017_2_OR_NEWER
+            // if VR input is active, feed tracked controllers (VR browser hands) to browser
 			if (enableVRInput) FeedVRPointers();
 		#endif
 
@@ -482,26 +490,34 @@ public abstract class PointerUIBase : MonoBehaviour, IBrowserUI {
 	}
 
 #if UNITY_2017_2_OR_NEWER
+    // define a list of VR browser hands
 	protected VRBrowserHand[] vrHands = null;
-	protected virtual void FeedVRPointers() {
-		if (vrHands == null) {
-			vrHands = FindObjectsOfType<VRBrowserHand>();
-			if (vrHands.Length == 0 && XRSettings.enabled) {
-				Debug.LogWarning("VR input is enabled, but no VRBrowserHands were found in the scene", this);
-			}
-		}
 
-		for (int i = 0; i < vrHands.Length; i++) {
-			if (!vrHands[i].Tracked) continue;
-			Debug.Log("here...");
-			FeedPointerState(new PointerState {
-				id = 100 + i,
-				is2D = false,
-				position3D = new Ray(vrHands[i].transform.position, vrHands[i].transform.forward),
-				activeButtons = vrHands[i].DepressedButtons,
-				scrollDelta = vrHands[i].ScrollDelta,
-			});
-		}
+    // fills the list of VR browser hands and feeds them to the browser 
+	protected virtual void FeedVRPointers() {
+	    // if list is not filled	
+        if (vrHands == null) {
+                // fill the list
+			    vrHands = FindObjectsOfType<VRBrowserHand>();
+                // throw error if there are no vr browser hands in the scene, but VR input is enabled
+			    if (vrHands.Length == 0 && XRSettings.enabled) {
+				    Debug.LogWarning("VR input is enabled, but no VRBrowserHands were found in the scene", this);
+			    }
+		    }
+            // for each hand
+		    for (int i = 0; i < vrHands.Length; i++) {
+                // if the hand is not tracked, continue
+			    if (!vrHands[i].Tracked) continue;
+			    Debug.Log("here...");
+                // else: create a pointer state for each hand and feed it to browser
+			    FeedPointerState(new PointerState {
+				    id = 100 + i,
+				    is2D = false,
+				    position3D = new Ray(vrHands[i].transform.position, vrHands[i].transform.forward),
+				    activeButtons = vrHands[i].DepressedButtons,
+				    scrollDelta = vrHands[i].ScrollDelta,
+			    });
+		    }
 
 	}
 #endif
