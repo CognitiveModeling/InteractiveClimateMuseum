@@ -13,11 +13,11 @@ We host the binaries in the microsoft cloud of the university of Tübingen. They
 ## Desktop Version
 
 This version relies on mouse and keyboard for navigation. The project uses a mixed input setup, the embedded browser relies on Unity's classic input manager, while locomotion is realized with the [input system 1.0](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html). Keep in mind to obtain the embedded browser plugin if you want to develop with this code. Technically, the project should work on most platforms, however, when using MacOS, you might have to re-configure gatekeeper to accept unsigned code (the binaries of the embedded browser).
-The section [Documentation](https://github.com/CognitiveModeling/InteractiveClimateMuseum#documentation) provides an overview and explanations of the scripts used in the Desktop Version.
+The section [Additional scripts for the VR version](#VRScripts) in the documentation provides an overview and explanations of the scripts used in the VR Version.
 
 ## VR Version
 
-The VR version relies on SteamVR. In order to work with the code, you need SteamVR as well as the embedded browser. Locomotion is realized by means of the teleportation functionality provided by the SteamVR [interaction system]{https://valvesoftware.github.io/steamvr_unity_plugin/articles/Interaction-System.html}. Again, the project should work on most platforms, as long as SteamVR and the embedded browser work.
+The VR version relies on SteamVR. In order to work with the code, you need SteamVR as well as the embedded browser. Locomotion is realized by means of the teleportation functionality provided by the SteamVR [interaction system]{https://valvesoftware.github.io/steamvr_unity_plugin/articles/Interaction-System.html}. Again, the project should work on most platforms, as long as SteamVR and the embedded browser work. The section [Documentation](https://github.com/CognitiveModeling/InteractiveClimateMuseum#documentation) provides an overview and explanations of the scripts used in the Desktop Version.
 
 ## Bugs and Issues
 
@@ -84,7 +84,7 @@ This is not a complete list...
 
 5. [Additional scripts for the VR version](#VRScripts)
 	
-	5\.1 Additional scripts managing the panels
+	5\.1 [Additional scripts managing the panels](#VRPanelScripts)
 		
 	5.1.1 ToggleVRSupport
 
@@ -94,7 +94,7 @@ This is not a complete list...
 
 	5.1.4 CameraRayCast
 	
-	5\.2 Scripts for the interaction between VR and browser
+	5\.2 [Important scripts for the interaction between VR and browser](#VRBrowserScripts)
 
 	5.2.1 HandleLoadingScreen
 
@@ -114,9 +114,9 @@ This is not a complete list...
 The Unity® Documentation provides overviews of important classes and their
 execution order:
 
-[class MonoBehaviour]{https://docs.unity3d.com/Manual/class-MonoBehaviour.html} (last access: November/26/2021)
+[class MonoBehaviour](https://docs.unity3d.com/Manual/class-MonoBehaviour.html) (last access: November/26/2021)
 
-[Execution Order]{https://docs.unity3d.com/Manual/ExecutionOrder.html} (last access: November/26/2021)
+[Execution Order](https://docs.unity3d.com/Manual/ExecutionOrder.html) (last access: November/26/2021)
 
 Particularly important are:
 - Awake()
@@ -784,7 +784,7 @@ not yet commented...
 
 ### 5. Additional scripts for the VR version  <a name="VRScripts"></a>
 
-#### 5.1 Additional scripts managing the panels
+#### 5.1 Additional scripts managing the panels <a name="VRPanelScripts"></a>
 
 ##### 5.1.1 ToggleVRSupport
 
@@ -822,7 +822,7 @@ not yet commented...
 
 ###### 5.1.4.3 Methods
 
-#### 5.2 Scripts for the interaction between VR and browser
+#### 5.2 Scripts for the interaction between VR and browser <a name="VRBrowserScripts"></a>
 
 ##### 5.2.1 HandleLoadingScreen
 
@@ -881,11 +881,152 @@ VRBrowserHand, it is assigned to the object VRBrowser (VRPlayer - SteamVRObjects
 ##### 5.2.3 VRBrowserHand
 
 ###### 5.2.3.1 Description
-not yet commented...
+This script tracks the tracked controllers. This can be used for feeding the VR input to the
+browser by the method FeedVRPointers() in the script PointerUIBase.
+Like the script VRControllerInputProxy, this script is assigned to the object VRBrowser
+(VRPlayer - SteamVRObjects - RightHand), represented by a cube in the information
+room.
 
 ###### 5.2.3.2 Attributes
+- a public XRNode called hand indicating which hand we should look to track, set to left
+  hand
+- a public GameObject for optional visualization of the hand. It should be a child of the VRHand object and will be set active when the controller is tracking.
+- a public scroll threshold (0.1) indicating how much we must slide a finger/joystick before we start scrolling
+- a public trackpad scroll speed (0.05) indicating how fast the page moves as we move our finger across the touchpad. Set to a negative number to enable that infernal ""natural scrolling"" that's been making so many trackpads unusable lately.
+- a public joystick scroll speed (75) indicating how fast the page moves as we scroll with a joystick
+- a private 2-dimensional vector holding the last point that was touched
+- a private boolean indicating that the touch is currently scrolling
+- a bool Tracked indicating if we are currently tracking (has a getter and
+  setter)
+- a public MouseButton showing the currently depressed buttons (has a getter
+  and setter)
+- a public 2-dimensional vector showing how much we've scrolled since the
+  last frame (same units as Input.mouseScrollDelta, has a getter
+  and setter)
+- a private XRNodeState nodeState
+- a private VRInput input
+- 3 public floats for left, middle and right click amplitudes
+
+- private int lastFrame
+- private List<XRNodeState> states = new List<XRNodeState>()
+- a private boolean hasTouchpad indicating if a touchpad exists (currently not used)
 
 ###### 5.2.3.3 Methods
+- OnEnable()
+  - initialize VR input
+  - VR poses update after LateUpdate and before OnPreCull
+  - onPreCull of camera is updated by adding UpdatePreCull (s. below)
+  - if visualization of the hand is active, deactivate it
+
+- OnDisable()
+  - onPreCull of camera is updated by subtracting UpdatePreCull (s. below)
+
+- Update()
+  - if more than 5 frames have passed (giving the SteamVR SDK a chance to start
+    up), ReadInput() is called
+  
+- ReadInput()
+  - depressed buttons and scroll delta is set to 0
+  - if the left click amplitude is greater than 0.9, the number of depressed
+    buttons and the left mouse button is compared
+  - if the middle click amplitude is greater than 0.5, the number of depressed
+    buttons and the middle mouse button is compared
+  - if the right click amplitude is greater than 0.5, the number of depressed
+    buttons and the right mouse button is compared
+  - boolean Tracked is set to the tracking state of the XRNodeState
+  - amplitude of left, middle and right click is reported (see console)
+
+- ReadTouchpad()
+  - defines a 2-dimensional touchPoint with x- and y-coordinate of the touch
+    pad
+  - defines a boolean touchButton indicating if the axis between nodeState
+    (XRNodeState) and the touch on the pad is greater than 0.5
+  - if touchButton is true:
+    - difference between last and current touch point is calculated (delta)
+    - if player is not scrolling yet (boolean touchIsScrolling false)
+      - if delta's magnitude multiplied by the scroll speed of the pad is
+        greater than the scroll threshold
+        - player is scrolling -> sets boolean touchIsScrolling to true
+        - the last touch point is updated to the current one
+      - if scroll threshold is not exceeded: does nothing, especially does not
+        updating the touch pad yet
+    - if player is already scrolling:
+      - scrollDelta is updated by adding the product of the delta and the
+        scroll speed of the pad
+  - if touchButton is false:
+    - the last touch point is updated to the current one
+    - player is not scrolling -> boolean touchIsScrolling is set to false
+
+- ReadJoystick()
+  - defines a 2-dimensional position with x- and y-coordinate of the joy stick
+  - if x-coordinate (y-coordinate) is greater than the scroll threshold,
+    change its value (add/substract threshold), else set it to 0
+  - changes position by multiplicaiton with its magnitude, the scroll speed of
+    the joy stick and the time passed since the last frame
+  - scrollDelta is updated by adding the calculated position
+
+- UpdatePreCull(Camera cam)
+  - if we are still in the same frame, return
+  - sets lastFrame to current frame counter
+  - get all tracked states (VR browser hands, ...)
+  - for each state:
+    - if it is not the hand, continue
+    - if it is the hand (hand was found):
+      - get its pose and set it as local position
+      - get its rotation and set it as local rotation (if we are in the
+        hierarchy, we do not want to change the orientation)
+      - if the visualization of the hand is active, keep it activated if the
+        current hand is tracked and deactivate it if it is not
+	
+##### 5.2.4 PointerUIBase
+
+###### 5.2.4.1 Description
+This script handles the input for different inputs (mouse, touch, pointer, VR,
+nose) makes them able to interact with the browser.
+It is not assigned in the editor.
+
+###### 5.2.4.2 Attributes important for VR part
+- boolean enableVRInput, indicating if VR controllers are used, initially
+  false
+- a list of VR browser hands vrHands
+- a struct PointerState with:
+  - a unique id
+  - a boolean indicating if it is 2d or 3d
+  - a 2-dimensional position or a 3-dimensional position (Ray)
+  - a MouseButton activeButtons holding the currently depressed buttons
+  - a 2-dimensional scroll delta
+- an integer currentPointerId
+- list of PointerStates called currentPointers
+- integers p_currentDown, p_currentOver, p_anyDown, p_anyOver indicating how
+  many pointers are down/over
+
+###### 5.2.4.3 Methods important for VR part
+- OnHandlePointers()
+  - if VR input is active, feeds tracked controllers (VR browser hands) to the
+    browser
+
+- FeedVRPointers()
+  - if list vrHands is empty
+    - fills list by searching VRBrowserHands
+    - throws error if no hands are found but VR inout is enabled
+    - for each hand:
+      - if the hand is not tracked (s. boolean Tracked in VRBrowserHand),
+        continues
+      - else:
+        - creates a struct PointerState out of the given hand and feeds it to the browser
+
+- FeedPointerState(PointerState)
+  - feed the given pointer into the handler (browser), i.e.
+  - if the pointer is 2-dimensional, calls MapPointerToBrowser() in script PointerUIMesh that
+    converts the 2-dimensional coordinate from the screen-space to a browser-space
+    coordinate
+  - if the pointer is 3-dimensional, calls MapRayToBrowser()  in script PointerUIMesh that
+    converts the 3-dimensional ray from the world-space to a browser-space
+    coordinate
+  - if the given pointer is the current one / not (compares IDs) and if there
+    are currently depressed buttons (activeButtons):
+    - update counters for pointers: p_currentDown, p_currentOver, p_anyDown, p_anyOver
+  - add the given pointer to the list of pointers currentPointers
 
 ################################################################################
 ################################################################################
