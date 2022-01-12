@@ -101,6 +101,10 @@ This is not a complete list...
 	5.2.2 VRControllerInputProxy
 
 	5.2.3 VRBrowserHand
+	
+	5.2.4 PointerUIBase
+	
+	5.2.5 PointerUIMesh
 
 6. [Other scripts (in Assets - Scripts)](#OtherScripts)
 	
@@ -795,6 +799,8 @@ not yet commented...
 
 ###### 5.1.1.3 Methods
 
+################################################################################
+
 ##### 5.1.2 ToggleVRSupportHelper
 
 ###### 5.1.2.1 Description
@@ -803,6 +809,8 @@ not yet commented...
 ###### 5.1.2.2 Attributes
 
 ###### 5.1.2.3 Methods
+
+################################################################################
 
 ##### 5.1.3 ScrollbarVRSupport
 
@@ -813,6 +821,8 @@ not yet commented...
 
 ###### 5.1.3.3 Methods
 
+################################################################################
+
 ##### 5.1.4 CameraRayCast
 
 ###### 5.1.4.1 Description
@@ -821,6 +831,8 @@ not yet commented...
 ###### 5.1.4.2 Attributes
 
 ###### 5.1.4.3 Methods
+
+################################################################################
 
 #### 5.2 Scripts for the interaction between VR and browser <a name="VRBrowserScripts"></a>
 
@@ -848,6 +860,8 @@ The script is assigned to the general simulator's tab panel and its start screen
     - until the element promise is not defined (i.e. we get an error): keep the loading screen
     - if we get a value in the variable promise: deactivates the loading screen
   - query is set to false again
+
+################################################################################
 
 ##### 5.2.2 VRControllerInputProxy
 
@@ -877,6 +891,8 @@ VRBrowserHand, it is assigned to the object VRBrowser (VRPlayer - SteamVRObjects
 
 - Release(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
   - sets the amplitude of the VR browser hand to 0
+
+################################################################################
 
 ##### 5.2.3 VRBrowserHand
 
@@ -913,7 +929,7 @@ room.
 
 ###### 5.2.3.3 Methods
 - OnEnable()
-  - initialize VR input
+  - initializes VR input
   - VR poses update after LateUpdate and before OnPreCull
   - onPreCull of camera is updated by adding UpdatePreCull (s. below)
   - if visualization of the hand is active, deactivate it
@@ -970,13 +986,15 @@ room.
   - sets lastFrame to current frame counter
   - get all tracked states (VR browser hands, ...)
   - for each state:
-    - if it is not the hand, continue
+    - if it is not the hand, continues
     - if it is the hand (hand was found):
-      - get its pose and set it as local position
-      - get its rotation and set it as local rotation (if we are in the
+      - gets its pose and sets it as local position
+      - gets its rotation and sets it as local rotation (if we are in the
         hierarchy, we do not want to change the orientation)
-      - if the visualization of the hand is active, keep it activated if the
-        current hand is tracked and deactivate it if it is not
+      - if the visualization of the hand is active, keeps it activated if the
+        current hand is tracked and deactivates it if it is not
+
+################################################################################
 	
 ##### 5.2.4 PointerUIBase
 
@@ -1027,6 +1045,46 @@ It is not assigned in the editor.
     are currently depressed buttons (activeButtons):
     - update counters for pointers: p_currentDown, p_currentOver, p_anyDown, p_anyOver
   - add the given pointer to the list of pointers currentPointers
+
+################################################################################
+
+##### 5.2.5 PointerUIMesh
+
+###### 5.2.5.1 Description
+This script, a child of PointerUIBase is a BrowserUI that tracks pointer interaction through a camera to a mesh of some sort.
+It is assigned to each panel's browser in the editor.
+
+###### 5.2.5.2 Attributes
+- a mesh collider
+- a dictionary holding integers ans RaycastHits called rayHits
+- a LayerMask called layerMask, indicating which layers should UI rays collide with (and be able to hit), initially -1 (everything)
+
+###### 5.2.5.3 Methods
+- Awake()
+	- initializes mesh collider
+	
+- MapPointerToBrowser(screenPosition, pointerId)
+	- converts a 2D screen-space coordinate to browser-space coordinates
+	- if camera gets a view, uses it, else uses main camera
+	- if there is no camera: throws error, sets mouse input boolean to false and return NaN vector
+	- if camera is found: calls MapRayToBrowser() below with the screen pointer transformed to a ray
+	
+- MapRayToBrowser(worldRay, pointerId)
+	- converts a 3D world-space ray to a browser-space coordinate.
+	- defines a hit and fill it with the clostest collider that is hit (if any), ray starting from given worldspace and using layerMask
+	- stores hit data for GetCurrentHitLocation in the dictionary rayHits
+	- if nothing was hit or the hit collider is not the same as the current one (check via mesh collider):
+		- player has not aimed at it: returns Nan vector
+	- else: returns the texture coordinates of the hit collider, usable as browser-space coordinates
+	
+- GetCurrentHitLocation(out pos, out rot)
+	- determines current hit location
+	- if there is no pointer, sets position to NaN vector and rotation to identity and returns
+	- else:
+		- takes information about hit collider out of dictionary
+		- determines the a vector that defines in which direction is "up" (using the collider's local orientation's up)
+		- sets position to point in world space where ray hit collider
+		- rotates to the negative normal of the surface the ray hit, using the "up" defined before
 
 ################################################################################
 ################################################################################
