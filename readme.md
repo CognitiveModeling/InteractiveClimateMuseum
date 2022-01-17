@@ -923,19 +923,19 @@ room.
 - a private VRInput input
 - 3 public floats for left, middle and right click amplitudes
 
-- private int lastFrame
-- private List<XRNodeState> states = new List<XRNodeState>()
+- a private integer lastFrame
+- a private list of XRNodeStates called states
 - a private boolean hasTouchpad indicating if a touchpad exists (currently not used)
 
 ###### 5.2.3.3 Methods
 - OnEnable()
   - initializes VR input
   - VR poses update after LateUpdate and before OnPreCull
-  - onPreCull of camera is updated by adding UpdatePreCull (s. below)
+  - event is registered by camera via onPrecull, an event function that unity calls before a camera culls the scene (https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnPreCull.html)
   - if visualization of the hand is active, deactivate it
 
 - OnDisable()
-  - onPreCull of camera is updated by subtracting UpdatePreCull (s. below)
+  - event is no longer registered by camera (ReSharper disable once DelegateSubtraction)
 
 - Update()
   - if more than 5 frames have passed (giving the SteamVR SDK a chance to start
@@ -944,11 +944,11 @@ room.
 - ReadInput()
   - depressed buttons and scroll delta is set to 0
   - if the left click amplitude is greater than 0.9, the number of depressed
-    buttons and the left mouse button is compared
+    buttons and the left mouse button is compared bitwise
   - if the middle click amplitude is greater than 0.5, the number of depressed
-    buttons and the middle mouse button is compared
+    buttons and the middle mouse button is compared bitwise
   - if the right click amplitude is greater than 0.5, the number of depressed
-    buttons and the right mouse button is compared
+    buttons and the right mouse button is compared bitwise
   - boolean Tracked is set to the tracking state of the XRNodeState
   - amplitude of left, middle and right click is reported (see console)
 
@@ -1001,9 +1001,10 @@ room.
 ###### 5.2.4.1 Description
 This script handles the input for different inputs (mouse, touch, pointer, VR,
 nose) makes them able to interact with the browser.
-It is not assigned in the editor.
+It is not assigned in the editor because it is an abstract class used as parent of PointerUIMesh.
 
 ###### 5.2.4.2 Attributes important for VR part
+- a Browser called browser
 - boolean enableVRInput, indicating if VR controllers are used, initially
   false
 - a list of VR browser hands vrHands
@@ -1019,6 +1020,10 @@ It is not assigned in the editor.
   many pointers are down/over
 
 ###### 5.2.4.3 Methods important for VR part
+- Awake()
+  - initializes browser
+  - registers the event for handling the pointers
+
 - OnHandlePointers()
   - if VR input is active, feeds tracked controllers (VR browser hands) to the
     browser
@@ -1035,10 +1040,10 @@ It is not assigned in the editor.
 
 - FeedPointerState(PointerState)
   - feed the given pointer into the handler (browser), i.e.
-  - if the pointer is 2-dimensional, calls MapPointerToBrowser() in script PointerUIMesh that
+  - if the pointer is 2-dimensional, calls MapPointerToBrowser() that
     converts the 2-dimensional coordinate from the screen-space to a browser-space
     coordinate
-  - if the pointer is 3-dimensional, calls MapRayToBrowser()  in script PointerUIMesh that
+  - if the pointer is 3-dimensional, calls MapRayToBrowser()  that
     converts the 3-dimensional ray from the world-space to a browser-space
     coordinate
   - if the given pointer is the current one / not (compares IDs) and if there
@@ -1046,12 +1051,18 @@ It is not assigned in the editor.
     - update counters for pointers: p_currentDown, p_currentOver, p_anyDown, p_anyOver
   - add the given pointer to the list of pointers currentPointers
 
+- MapPointerToBrowser(Vector2 screenPosition, int pointerId)
+	- abstract method
+	- overridden in child PointerUIMesh, converts the 2-dimensional coordinate from the screen-space to a browser-space coordinate
+- MapRayToBrowser(Vector2 screenPosition, int pointerId)
+ 	- abstract method
+	- overridden in child PointerUIMesh, converts the 3-dimensional coordinate from the world-space to a browser-space coordinate
 ################################################################################
 
 ##### 5.2.5 PointerUIMesh
 
 ###### 5.2.5.1 Description
-This script, a child of PointerUIBase is a BrowserUI that tracks pointer interaction through a camera to a mesh of some sort.
+This script, a child of PointerUIBase, is a BrowserUI that tracks pointer interaction through a camera to a mesh of some sort.
 It is assigned to each panel's browser in the editor.
 
 ###### 5.2.5.2 Attributes
@@ -1061,16 +1072,17 @@ It is assigned to each panel's browser in the editor.
 
 ###### 5.2.5.3 Methods
 - Awake()
+	- calls the Awake() method from its parent PointerUIBase, so browser and event listener is initialized
 	- initializes mesh collider
 	
 - MapPointerToBrowser(screenPosition, pointerId)
-	- converts a 2D screen-space coordinate to browser-space coordinates
+	- overrides the homonymous abstract method from PointerUIBase, converts a 2D screen-space coordinate to browser-space coordinates
 	- if camera gets a view, uses it, else uses main camera
 	- if there is no camera: throws error, sets mouse input boolean to false and return NaN vector
 	- if camera is found: calls MapRayToBrowser() below with the screen pointer transformed to a ray
 	
 - MapRayToBrowser(worldRay, pointerId)
-	- converts a 3D world-space ray to a browser-space coordinate.
+	- overrides the homonymous abstract method from PointerUIBase, converts a 3D world-space ray to a browser-space coordinate.
 	- defines a hit and fill it with the clostest collider that is hit (if any), ray starting from given worldspace and using layerMask
 	- stores hit data for GetCurrentHitLocation in the dictionary rayHits
 	- if nothing was hit or the hit collider is not the same as the current one (check via mesh collider):
