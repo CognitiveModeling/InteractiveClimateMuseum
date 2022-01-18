@@ -836,6 +836,9 @@ not yet commented...
 
 #### 5.2 Scripts for the interaction between VR and browser <a name="VRBrowserScripts"></a>
 
+The image below gives an overview of the scripts, methods and variables that are important for the interaction between VR and browser.
+<img src="graphic_vr_browser_interaction.png" width="900" height="600" align="center" />
+
 ##### 5.2.1 HandleLoadingScreen
 
 ###### 5.2.1.1 Description
