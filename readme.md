@@ -96,15 +96,15 @@ This is not a complete list...
 	
 	5\.2 [Important scripts for the interaction between VR and browser](#VRBrowserScripts)
 
-	5.2.1 HandleLoadingScreen
+	5.2.1 VRControllerInputProxy
 
-	5.2.2 VRControllerInputProxy
+	5.2.2 VRBrowserHand
 
-	5.2.3 VRBrowserHand
+	5.2.3 PointerUIBase
 	
-	5.2.4 PointerUIBase
+	5.2.4 PointerUIMesh
 	
-	5.2.5 PointerUIMesh
+	5.2.5 HandleLoadingScreen
 
 6. [Other scripts (in Assets - Scripts)](#OtherScripts)
 	
@@ -837,50 +837,28 @@ not yet commented...
 #### 5.2 Scripts for the interaction between VR and browser <a name="VRBrowserScripts"></a>
 
 The image below gives an overview of the scripts, methods and variables that are important for the interaction between VR and browser.
+
 <img src="graphic_vr_browser_interaction.png" width="900" height="600" align="center" />
 
-##### 5.2.1 HandleLoadingScreen
+VRControllerInputProxy communicates between the SteamVR and the script VRBrowserHand by changing the VRBrowserHand's amplitude if the button on the controller is clicked.
+If the VR input is enabled, PointerUIBase collects all the currently tracked controllers (VRBrowserHands) and transforms them into PointerStates. These current pointers are collected in a list and their world-space coordinates are converted by the methods MapPointerToBrowser() and MapRayToBrowser() in PointerUIMesh. Finally, CalculatePointers() calls a click action for one pointer in the list, so that the click is performed in the browser.
+In the following, all the scripts are described in more detail.
 
-###### 5.2.1.1 Description
-This script handles the presentation of a loading screen while the browser is loaded.
-The script is assigned to the general simulator's tab panel and its start screen.
+##### 5.2.1 VRControllerInputProxy
 
-###### 5.2.1.2 Attributes
-- a game object LoadingScreen representing the loading screen, assigned in the editor (Simulator - Tab Panel - Loading Screen)
-- an instance of the type Browser, assigned in the editor (Simulator - Tab Panel - Browser)
-- a boolean indicating if the query is running, initially false
-
-###### 5.2.1.3 Methods
-- Update()
-	- if the loading screen is active and the query does not run:
-		- boolean is set to true, query runs now
-		- starts the coroutine that checks if the browser is ready
-- checkBrowserReady()
-  - coroutine that checks if the browser is ready
-  - initializes a node and tries to fill it with an element on the website
-    (here: the temperature increase)
-  - not a nice solution, but it works:
-    - until the element promise is not defined (i.e. we get an error): keep the loading screen
-    - if we get a value in the variable promise: deactivates the loading screen
-  - query is set to false again
-
-################################################################################
-
-##### 5.2.2 VRControllerInputProxy
-
-##### 5.2.2.1 Description
+##### 5.2.1.1 Description
 This script communicates between the SteamVR and the scripts managing the
-browser (PonterUIMesh, PointerUIBase, VRBrowserHand). Like the script
+browser, especially VRBrowserHand. Like the script
 VRBrowserHand, it is assigned to the object VRBrowser (VRPlayer - SteamVRObjects - RightHand), represented by a cube in the information room.
 
-##### 5.2.2.2 Attributes
+##### 5.2.1.2 Attributes
 - a VRBrowserHand
 - a specific boolean from SteamVR, indicating the trigger click, named
   TriggerClick
 - a specific input source from SteamVR (SteamVR_Input_Sources.RightHand can
   also be used)
 
-##### 5.2.2.3 Methods
+##### 5.2.1.3 Methods
 - OnEnable()
   - adds listener for pressing to the input source (s. Press() below)
   - adds listener for releasing to the input source (s. Release() below)
@@ -897,16 +875,16 @@ VRBrowserHand, it is assigned to the object VRBrowser (VRPlayer - SteamVRObjects
 
 ################################################################################
 
-##### 5.2.3 VRBrowserHand
+##### 5.2.2 VRBrowserHand
 
-###### 5.2.3.1 Description
+###### 5.2.2.1 Description
 This script tracks the tracked controllers. This can be used for feeding the VR input to the
 browser by the method FeedVRPointers() in the script PointerUIBase.
 Like the script VRControllerInputProxy, this script is assigned to the object VRBrowser
 (VRPlayer - SteamVRObjects - RightHand), represented by a cube in the information
 room.
 
-###### 5.2.3.2 Attributes
+###### 5.2.2.2 Attributes
 - a public XRNode called hand indicating which hand we should look to track, set to left
   hand
 - a public GameObject for optional visualization of the hand. It should be a child of the VRHand object and will be set active when the controller is tracking.
@@ -930,7 +908,7 @@ room.
 - a private list of XRNodeStates called states
 - a private boolean hasTouchpad indicating if a touchpad exists (currently not used)
 
-###### 5.2.3.3 Methods
+###### 5.2.2.3 Methods
 - OnEnable()
   - initializes VR input
   - VR poses update after LateUpdate and before OnPreCull
@@ -999,14 +977,14 @@ room.
 
 ################################################################################
 	
-##### 5.2.4 PointerUIBase
+##### 5.2.3 PointerUIBase
 
-###### 5.2.4.1 Description
+###### 5.2.3.1 Description
 This script handles the input for different inputs (mouse, touch, pointer, VR,
 nose) makes them able to interact with the browser.
 It is not assigned in the editor because it is an abstract class used as parent of PointerUIMesh.
 
-###### 5.2.4.2 Attributes important for VR part
+###### 5.2.3.2 Attributes important for VR part
 - a Browser called browser
 - boolean enableVRInput, indicating if VR controllers are used, initially
   false
@@ -1022,7 +1000,7 @@ It is not assigned in the editor because it is an abstract class used as parent 
 - integers p_currentDown, p_currentOver, p_anyDown, p_anyOver indicating how
   many pointers are down/over
 
-###### 5.2.4.3 Methods important for VR part
+###### 5.2.3.3 Methods important for VR part
 - Awake()
   - initializes browser
   - registers the event for handling the pointers
@@ -1057,23 +1035,31 @@ It is not assigned in the editor because it is an abstract class used as parent 
 - MapPointerToBrowser(Vector2 screenPosition, int pointerId)
 	- abstract method
 	- overridden in child PointerUIMesh, converts the 2-dimensional coordinate from the screen-space to a browser-space coordinate
+
 - MapRayToBrowser(Vector2 screenPosition, int pointerId)
  	- abstract method
 	- overridden in child PointerUIMesh, converts the 3-dimensional coordinate from the world-space to a browser-space coordinate
+
+- CalculatePointers()
+	- chooeses one pointer from the list of current pointers
+	- if we go from having no buttons down to 1 or more buttons down (0 MouseButtons, but 1 or more activeButtons): calls the event action OnClick()
+	- if Button(s) held or being released, do some extra logic to prevent unintentional dragging during clicks
+	- if no buttons held (or being released), no need to fiddle with the position
+
 ################################################################################
 
-##### 5.2.5 PointerUIMesh
+##### 5.2.4 PointerUIMesh
 
-###### 5.2.5.1 Description
+###### 5.2.4.1 Description
 This script, a child of PointerUIBase, is a BrowserUI that tracks pointer interaction through a camera to a mesh of some sort.
 It is assigned to each panel's browser in the editor.
 
-###### 5.2.5.2 Attributes
+###### 5.2.4.2 Attributes
 - a mesh collider
 - a dictionary holding integers ans RaycastHits called rayHits
 - a LayerMask called layerMask, indicating which layers should UI rays collide with (and be able to hit), initially -1 (everything)
 
-###### 5.2.5.3 Methods
+###### 5.2.4.3 Methods
 - Awake()
 	- calls the Awake() method from its parent PointerUIBase, so browser and event listener is initialized
 	- initializes mesh collider
@@ -1100,6 +1086,33 @@ It is assigned to each panel's browser in the editor.
 		- determines the a vector that defines in which direction is "up" (using the collider's local orientation's up)
 		- sets position to point in world space where ray hit collider
 		- rotates to the negative normal of the surface the ray hit, using the "up" defined before
+
+################################################################################
+
+##### 5.2.5 HandleLoadingScreen
+
+###### 5.2.5.1 Description
+This script handles the presentation of a loading screen while the browser is loaded.
+The script is assigned to the general simulator's tab panel and its start screen.
+
+###### 5.2.5.2 Attributes
+- a game object LoadingScreen representing the loading screen, assigned in the editor (Simulator - Tab Panel - Loading Screen)
+- an instance of the type Browser, assigned in the editor (Simulator - Tab Panel - Browser)
+- a boolean indicating if the query is running, initially false
+
+###### 5.2.5.3 Methods
+- Update()
+	- if the loading screen is active and the query does not run:
+		- boolean is set to true, query runs now
+		- starts the coroutine that checks if the browser is ready
+- checkBrowserReady()
+  - coroutine that checks if the browser is ready
+  - initializes a node and tries to fill it with an element on the website
+    (here: the temperature increase)
+  - not a nice solution, but it works:
+    - until the element promise is not defined (i.e. we get an error): keep the loading screen
+    - if we get a value in the variable promise: deactivates the loading screen
+  - query is set to false again
 
 ################################################################################
 ################################################################################
