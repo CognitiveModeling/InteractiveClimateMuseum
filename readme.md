@@ -148,9 +148,18 @@ It is assigned to the StartScreen of each panel in the editor.
   appears instead of the start screen is assigned to it in the editor
 
 ##### 1.1.3 Methods
+- Start() (additional for VR)
+  - listens for and registers events of the Vive controllers
+
 - OnMouseDown()
   - if user clicks onto the start screen, panel's start screen is deactivated
     and tab panel is activated
+
+- CallOnMouseDown() (additional for VR)
+	- a public method for calling OnMouseDown() from other scripts	
+	
+- HandleVivePointerEvent() (additional in VR version)
+	- if the target of the Vive controller click really is the start screen where this script is assigned to, call OnMouseDown()
 
 ################################################################################
 
@@ -790,47 +799,86 @@ not yet commented...
 
 #### 5.1 Additional scripts managing the panels <a name="VRPanelScripts"></a>
 
-##### 5.1.1 ToggleVRSupport
+##### 5.1.1 ToggleVRSupportHelper (in Assets - Scripts - PanelScripts)
 
 ###### 5.1.1.1 Description
-not yet commented...
+This script prepares toggles, scrollbars and browsers in all panels
+so they can be used by the event listener scripts ToggleVRSupport, ScrollbarVrSupport and the scripts important for the browser interaction.
+It is assigned to the object Panels (Museum_VR - Panels) in the editor.
 
 ###### 5.1.1.2 Attributes
+- an event system, the object Panels is assigned in the editor
+- a VR camera, the object VRCamera (Museum_VR - VR_Player - SteamVRObjects - VRCamera) is assigned in the editor
 
 ###### 5.1.1.3 Methods
+- Start()
+	- goes through the hierarchy, checks for toggles, scrollbars and browsers and prepares them for future use / event listeners
+	- collects all toggles in all the panels, including inactive toggles
+	- for each toggle in this list:
+		- if the toggle has no box collider:
+			- adds a box collider of the size of the toggle (using its rect transform)
+		- if the toggle does not have the event system script ToggleVRSupport (applies to every toggle):
+			- adds the script, set its controlled toggle and event system to the current ones
+	- repeats exactly the same procedure for scrollbars
+	- repeats a similar procedure for browsers: enables VR input, sets browser's camera to the VRCamera and changes browser's position
 
 ################################################################################
 
-##### 5.1.2 ToggleVRSupportHelper
+##### 5.1.2 ToggleVRSupport (in Assets - Scripts - PanelScripts)
 
 ###### 5.1.2.1 Description
-not yet commented...
+This script handles the clicks/pointers that the player performs with the Vive controllers on the panels.
+It is not assigned in the editor at the beginning, but the helper script ToggleVRSupportHelper assigns it to every toggle.
 
 ###### 5.1.2.2 Attributes
+- a toggle assigned via ToggleVRSupportHelper
+- an event system assigned via ToggleVRSupportHelper
 
 ###### 5.1.2.3 Methods
+- Start()
+	- listens for pointer events of the Vive controllers
 
+- HandleVivePointerEvent(object sender, PointerEventArgs e)
+	- if target of the Vive controller click is the assigned scrollbar, a pointer event is performed
+	
 ################################################################################
 
-##### 5.1.3 ScrollbarVRSupport
+##### 5.1.3 ScrollbarVRSupport (in Assets - Scripts - PanelScripts)
 
 ###### 5.1.3.1 Description
-not yet commented...
+This script handles the clicks/pointers that the player performs with the Vive controllers on the scrollbars of the panels.
+It is not assigned in the editor at the beginning, but the helper script ToggleVRSupportHelper assigns it to every toggle.
 
 ###### 5.1.3.2 Attributes
+- a scrollbar assigned via ToggleVRSupportHelper
+- an event system assigned via ToggleVRSupportHelper
 
 ###### 5.1.3.3 Methods
+- Start()
+	- listens for pointer events of the Vive controllers
+
+- HandleVivePointerEvent(object sender, PointerEventArgs e) (not working at the moment)
+	- if target of the Vive controller click is the assigned scrollbar, a pointer event is performed
+	- TODO: 29.11. this is not working at the moment, we do not have the texture coordinates which would be necessary to create a fake event
 
 ################################################################################
 
-##### 5.1.4 CameraRayCast
+##### 5.1.4 CameraRayCast for testing purposes (in Assets - Scripts)
 
 ###### 5.1.4.1 Description
-not yet commented...
+This script was used to test a raycast based interaction scheme.
+For the actual VR input management, we rely on the SteamVR_LaserPointer.PointerClick delegate (see for instance the HideOnClick script).
+It is assigned to ... in the editor.
 
 ###### 5.1.4.2 Attributes
+- a game object Indicator, for the point in world space where a ray hit a collider
 
 ###### 5.1.4.3 Methods
+- Update()
+	- gets camera position & orientation
+	- shoot a ray from camera to facing direction (has to be built new every frame)
+	- if ray hits something:
+		- depending on the hit object's (collider) scripts, call the methods CallMouseDown() inside (here exemplary with HideOnClick and MovePlayerToOptimalPosition)
 
 ################################################################################
 
@@ -840,11 +888,13 @@ The image below gives an overview of the scripts, methods and variables that are
 
 <img src="graphic_vr_browser_interaction.png" width="900" height="600" align="center" />
 
-VRControllerInputProxy communicates between the SteamVR and the script VRBrowserHand by changing the VRBrowserHand's amplitude if the button on the controller is clicked.
-If the VR input is enabled, PointerUIBase collects all the currently tracked controllers (VRBrowserHands) and transforms them into PointerStates. These current pointers are collected in a list and their world-space coordinates are converted by the methods MapPointerToBrowser() and MapRayToBrowser() in PointerUIMesh. Finally, CalculatePointers() calls a click action for one pointer in the list, so that the click is performed in the browser.
+[[VRControllerInputProxy](#VRControllerInputProxy) communicates between the SteamVR and the script [VRBrowserHand](#VRBrowserHand) by changing the VRBrowserHand's amplitude if the button on the controller is clicked.
+If the VR input is enabled, FeedVRPointers() in the script [PointerUIBase](#PointerUIBase) collects all the currently tracked controllers (VRBrowserHands) and transforms them into PointerStates. 
+These current pointers are collected in a list and their world-space coordinates are converted by the methods MapPointerToBrowser() and MapRayToBrowser() in [PointerUIMesh](#PointerUIMesh).
+Finally, CalculatePointers() calls a click action for one pointer in the list, so that the click is performed in the browser.
 In the following, all the scripts are described in more detail.
 
-##### 5.2.1 VRControllerInputProxy
+##### 5.2.1 VRControllerInputProxy (in Assets - Scripts - BrowserUtilities) <a name="VRControllerInputProxy"></a>
 
 ##### 5.2.1.1 Description
 This script communicates between the SteamVR and the scripts managing the
@@ -875,7 +925,7 @@ VRBrowserHand, it is assigned to the object VRBrowser (VRPlayer - SteamVRObjects
 
 ################################################################################
 
-##### 5.2.2 VRBrowserHand
+##### 5.2.2 VRBrowserHand (in Assets - ZFBrowser - Scripts - VR) <a name="VRBrowserHand"></a>
 
 ###### 5.2.2.1 Description
 This script tracks the tracked controllers. This can be used for feeding the VR input to the
@@ -977,7 +1027,7 @@ room.
 
 ################################################################################
 	
-##### 5.2.3 PointerUIBase
+##### 5.2.3 PointerUIBase (in Assets - ZFBrowser - Scripts - BrowserUI) <a name="PointerUIBase"></a>
 
 ###### 5.2.3.1 Description
 This script handles the input for different inputs (mouse, touch, pointer, VR,
@@ -1041,14 +1091,14 @@ It is not assigned in the editor because it is an abstract class used as parent 
 	- overridden in child PointerUIMesh, converts the 3-dimensional coordinate from the world-space to a browser-space coordinate
 
 - CalculatePointers()
-	- chooeses one pointer from the list of current pointers
+	- chooses one pointer from the list of current pointers
 	- if we go from having no buttons down to 1 or more buttons down (0 MouseButtons, but 1 or more activeButtons): calls the event action OnClick()
 	- if Button(s) held or being released, do some extra logic to prevent unintentional dragging during clicks
 	- if no buttons held (or being released), no need to fiddle with the position
 
 ################################################################################
 
-##### 5.2.4 PointerUIMesh
+##### 5.2.4 PointerUIMesh (in Assets - ZFBrowser - Scripts - BrowserUI) <a name="PointerUIMesh"></a>
 
 ###### 5.2.4.1 Description
 This script, a child of PointerUIBase, is a BrowserUI that tracks pointer interaction through a camera to a mesh of some sort.
@@ -1089,7 +1139,7 @@ It is assigned to each panel's browser in the editor.
 
 ################################################################################
 
-##### 5.2.5 HandleLoadingScreen
+##### 5.2.5 HandleLoadingScreen (in Assets - Scripts - BrowserUtilities)
 
 ###### 5.2.5.1 Description
 This script handles the presentation of a loading screen while the browser is loaded.
