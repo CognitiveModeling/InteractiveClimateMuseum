@@ -17,7 +17,7 @@ The section [Additional scripts for the VR version](#VRScripts) in the documenta
 
 ## VR Version
 
-The VR version relies on SteamVR. In order to work with the code, you need SteamVR as well as the embedded browser. Locomotion is realized by means of the teleportation functionality provided by the SteamVR [interaction system]{https://valvesoftware.github.io/steamvr_unity_plugin/articles/Interaction-System.html}. Again, the project should work on most platforms, as long as SteamVR and the embedded browser work. The section [Documentation](https://github.com/CognitiveModeling/InteractiveClimateMuseum#documentation) provides an overview and explanations of the scripts used in the Desktop Version.
+The VR version relies on SteamVR. In order to work with the code, you need SteamVR as well as the embedded browser. Locomotion is realized by means of the teleportation functionality provided by the SteamVR [interaction system](https://valvesoftware.github.io/steamvr_unity_plugin/articles/Interaction-System.html). Again, the project should work on most platforms, as long as SteamVR and the embedded browser work. The section [Documentation](https://github.com/CognitiveModeling/InteractiveClimateMuseum#documentation) provides an overview and explanations of the scripts used in the Desktop Version.
 
 ## Bugs and Issues
 
@@ -888,7 +888,7 @@ The image below gives an overview of the scripts, methods and variables that are
 
 <img src="graphic_vr_browser_interaction.png" width="900" height="600" align="center" />
 
-[[VRControllerInputProxy](#VRControllerInputProxy) communicates between the SteamVR and the script [VRBrowserHand](#VRBrowserHand) by changing the VRBrowserHand's amplitude if the button on the controller is clicked.
+[VRControllerInputProxy](#VRControllerInputProxy) communicates between the SteamVR and the script [VRBrowserHand](#VRBrowserHand) by changing the VRBrowserHand's amplitude if the button on the controller is clicked.
 If the VR input is enabled, FeedVRPointers() in the script [PointerUIBase](#PointerUIBase) collects all the currently tracked controllers (VRBrowserHands) and transforms them into PointerStates. 
 These current pointers are collected in a list and their world-space coordinates are converted by the methods MapPointerToBrowser() and MapRayToBrowser() in [PointerUIMesh](#PointerUIMesh).
 Finally, CalculatePointers() calls a click action for one pointer in the list, so that the click is performed in the browser.
