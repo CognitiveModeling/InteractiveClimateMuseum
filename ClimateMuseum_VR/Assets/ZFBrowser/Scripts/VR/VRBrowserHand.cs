@@ -70,7 +70,8 @@ namespace ZenFulcrum.EmbeddedBrowser
             VRInput.Init();
             input = VRInput.Impl;
 
-            //VR poses update after LateUpdate and before OnPreCull, onPreCull of camera is updated by adding UpdatePreCull (s. below)
+            // VR poses update after LateUpdate and before OnPreCull, event is registered by camera
+            // onPreCull is an event function that unity calls before a camera culls the scene. (https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnPreCull.html)
             Camera.onPreCull += UpdatePreCull;
 
             // if visualization of the hand is active, deactivate it
@@ -79,13 +80,13 @@ namespace ZenFulcrum.EmbeddedBrowser
 
         public void OnDisable()
         {
-            // ReSharper disable once DelegateSubtraction, onPreCull of camera is updated by subtracting UpdatePreCull (s. below)
+            // ReSharper disable once DelegateSubtraction, event is no longer registered by camera
             Camera.onPreCull -= UpdatePreCull;
         }
 
         public virtual void Update()
         {
-            if (Time.frameCount < 5) return; //give the SteamVR SDK a chance to start up
+            if (Time.frameCount < 5) return; // give the SteamVR SDK a chance to start up
             ReadInput();
         }
 
@@ -95,7 +96,8 @@ namespace ZenFulcrum.EmbeddedBrowser
             DepressedButtons = 0;
             ScrollDelta = Vector2.zero;
 
-            // if the left (/ middle / right) click amplitude is greater than 0.9 (/0.5), the number of depressed buttons and the left (/ middle / right) mouse button is compared
+            // if the left (/ middle / right) click amplitude is greater than 0.9 (/0.5),
+            // the number of depressed buttons and the left (/ middle / right) mouse button are compared bitwise
             if (LeftClickAmplitude > .9f) DepressedButtons |= MouseButton.Left;
             if (MiddleClickAmplitude > .5f) DepressedButtons |= MouseButton.Middle;
             if (RightClickAmplitude > .5f) DepressedButtons |= MouseButton.Right;
@@ -120,6 +122,7 @@ namespace ZenFulcrum.EmbeddedBrowser
             if ((joyTypes & JoyPadType.Joystick) != 0) ReadJoystick();
             if ((joyTypes & JoyPadType.TouchPad) != 0) ReadTouchpad();
             */
+
             // amplitude of left, middle and right click is reported (see console)
             Debug.Log(LeftClickAmplitude + " : " + MiddleClickAmplitude + " : " + RightClickAmplitude);
         }
@@ -222,7 +225,7 @@ namespace ZenFulcrum.EmbeddedBrowser
                 var pose = input.GetPose(nodeState);
                 transform.localPosition = pose.pos;
 
-                // et its rotation and set it as local rotation
+                // get its rotation and set it as local rotation
                 //if we are in the hierarchy, we do not want to change the orientation
                 transform.localRotation = Quaternion.identity;// pose.rot;
 
