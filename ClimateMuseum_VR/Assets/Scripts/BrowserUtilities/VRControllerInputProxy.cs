@@ -24,28 +24,28 @@ public class VRControllerInputProxy : MonoBehaviour
     // SteamVR_Actions._default.Squeeze.GetAxis(RightInputSource)
     // would have given us the trigger strength
 
-    // adds listeners for pressing (s. Press() below) and for releasing to the input source (s. Release() below)
+    // adds listeners for pressing (s. Press() below) and for releasing (s. Release() below) to the input source
     private void OnEnable()
     {
         TriggerClick.AddOnStateDownListener(this.Press, this.inputSource);
         TriggerClick.AddOnStateUpListener(this.Release, this.inputSource);
     }
 
-    // removes listeners for pressing (s. Press() below) and for releasing to the input source (s. Release() below)
+    // removes listeners for pressing (s. Press() below) and for releasing (s. Release() below) to the input source
     private void OnDisable()
     {
         TriggerClick.RemoveOnStateDownListener(this.Press, this.inputSource);
         TriggerClick.RemoveOnStateUpListener(this.Release, this.inputSource);
     }
 
-    // sets the amplitude of the VR browser hand to 1
+    // sets the amplitude of the VR browser hand to 1 if the trigger is pressed
     private void Press(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         this.VRBrowserHand.LeftClickAmplitude = 1.0f;
         print("press...");
     }
 
-    // sets the amplitude of the VR browser hand to 0
+    // sets the amplitude of the VR browser hand to 0 if the trigger is released
     private void Release(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         this.VRBrowserHand.LeftClickAmplitude = 0.0f;
