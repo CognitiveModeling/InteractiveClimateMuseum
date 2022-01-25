@@ -91,8 +91,6 @@ This is not a complete list...
 	5.1.2 ToggleVRSupportHelper
 
 	5.1.3 ScrollbarVRSupport
-
-	5.1.4 CameraRayCast
 	
 	5\.2 [Important scripts for the interaction between VR and browser](#VRBrowserScripts)
 
@@ -865,24 +863,6 @@ It is not assigned in the editor at the beginning, but the helper script ToggleV
 	- TODO: 29.11. this is not working at the moment, we do not have the texture coordinates which would be necessary to create a fake event
 
 ################################################################################
-
-##### 5.1.4 CameraRayCast for testing purposes (in Assets - Scripts)
-
-###### 5.1.4.1 Description
-This script was used to test a raycast based interaction scheme.
-For the actual VR input management, we rely on the SteamVR_LaserPointer.PointerClick delegate (see for instance the HideOnClick script).
-It is assigned to ... in the editor.
-
-###### 5.1.4.2 Attributes
-- a game object Indicator, for the point in world space where a ray hit a collider
-
-###### 5.1.4.3 Methods
-- Update()
-	- gets camera position & orientation
-	- shoot a ray from camera to facing direction (has to be built new every frame)
-	- if ray hits something:
-		- depending on the hit object's (collider) scripts, call the methods CallMouseDown() inside (here exemplary with HideOnClick and MovePlayerToOptimalPosition)
-
 ################################################################################
 
 #### 5.2 Scripts for the interaction between VR and browser <a name="VRBrowserScripts"></a>
