@@ -568,9 +568,9 @@ in front of a panel in the editor.
 - Start() (additional for VR)
 	- if the Floor Position where script is assigned to does not have a collider yet, a Sphere collider with a trigger is added
 	- listens for events of the Vive controllers
+
 - OnMouseDown()
-  - is called if user clicks on the optimal position in front of a panel (green
-    button on the floor)
+  - is called if user clicks on the optimal position in front of a panel (green button on the floor)
   - if VR version is running:
 	- gets VR player
 	- sets player's position to the position of the green Floor Position tile (regarding feet offset)
@@ -579,10 +579,10 @@ in front of a panel in the editor.
 	- x- and z-position of the optimal position (Floor Position) are assigned to the player
 	- player and player camera are rotated towards the panel
   
-  - CallOnMouseDown() (additional for VR)
+- CallOnMouseDown() (additional for VR)
 	- a public method for calling OnMouseDown() from other scripts
   
-  - HandleVivePointerEvent(object sender, PointerEventArgs e) (additional for VR)
+- HandleVivePointerEvent(object sender, PointerEventArgs e) (additional for VR)
 	- if an event from the VR controllers comes in and its target is the current Floor Position where this script is assigned to, call OnMouseDown
 
 
