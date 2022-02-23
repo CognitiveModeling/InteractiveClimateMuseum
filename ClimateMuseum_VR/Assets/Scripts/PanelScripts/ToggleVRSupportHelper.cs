@@ -46,8 +46,37 @@ public class ToggleVRSupportHelper : MonoBehaviour
       }
     }
 
+    // repeat the same procedure for buttons
+
+    // collect all buttons in all the panels, including inactive buttons
+    Button[] buttons = this.GetComponentsInChildren<Button>(true);
+
+    // for each button in this list:
+    foreach (Button button in buttons)
+    {
+      // if the button has no box collider
+      if (!button.GetComponent<BoxCollider>())
+      {
+        // add a box collider of the size of the button (using its rect transform)
+        BoxCollider collider = button.gameObject.AddComponent<BoxCollider>();
+        // get button's rect transform (infos for a rectangle)
+        RectTransform rect = button.gameObject.GetComponent<RectTransform>();
+        // set the box collider's size to rectangle
+        collider.size = new Vector3(rect.rect.size.x, rect.rect.size.y, .1f);
+      }
+
+      // if the button does not have the event system script ButtonVRSupport (applies to every button)
+      if (!button.GetComponent<ButtonVRSupport>())
+      {
+        // add the script, set its controlled button and event system to the current ones
+        ButtonVRSupport vrSupport = button.gameObject.AddComponent<ButtonVRSupport>();
+        vrSupport.ControlledButton = button;
+        vrSupport.ButtonEventSystem = this.MainEventSystem;
+      }
+    }
+
     // repeat the same procedure for scrollbars
-    
+
     // collect all scrollbars in all the panels, including inactive scrollbars
     Scrollbar[] scrollbars = this.GetComponentsInChildren<Scrollbar>(true);
 
