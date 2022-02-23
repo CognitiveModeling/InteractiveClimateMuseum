@@ -90,7 +90,9 @@ This is not a complete list...
 
 	5.1.2 ToggleVRSupportHelper
 
-	5.1.3 ScrollbarVRSupport
+	5.1.3 ButtonVRSupport
+
+	5.1.4 ChangeTexts
 	
 	5\.2 [Important scripts for the interaction between VR and browser](#VRBrowserScripts)
 
@@ -813,14 +815,14 @@ It is assigned to the object Panels (Museum_VR - Panels) in the editor.
 
 ###### 5.1.1.3 Methods
 - Start()
-	- goes through the hierarchy, checks for toggles, scrollbars and browsers and prepares them for future use / event listeners
+	- goes through the hierarchy, checks for toggles, buttons, scrollbars and browsers and prepares them for future use / event listeners
 	- collects all toggles in all the panels, including inactive toggles
 	- for each toggle in this list:
 		- if the toggle has no box collider:
 			- adds a box collider of the size of the toggle (using its rect transform)
 		- if the toggle does not have the event system script ToggleVRSupport (applies to every toggle):
 			- adds the script, set its controlled toggle and event system to the current ones
-	- repeats exactly the same procedure for scrollbars
+	- repeats exactly the same procedure for buttons and scrollbars
 	- repeats a similar procedure for browsers: enables VR input, sets browser's camera to the VRCamera and changes browser's position
 
 ################################################################################
@@ -828,7 +830,7 @@ It is assigned to the object Panels (Museum_VR - Panels) in the editor.
 ##### 5.1.2 ToggleVRSupport (in Assets - Scripts - PanelScripts)
 
 ###### 5.1.2.1 Description
-This script handles the clicks/pointers that the player performs with the Vive controllers on the panels.
+This script handles the clicks/pointers that the player performs with the Vive controllers on the toggles of the panels.
 It is not assigned in the editor at the beginning, but the helper script ToggleVRSupportHelper assigns it to every toggle.
 
 ###### 5.1.2.2 Attributes
@@ -844,14 +846,15 @@ It is not assigned in the editor at the beginning, but the helper script ToggleV
 	
 ################################################################################
 
-##### 5.1.3 ScrollbarVRSupport (in Assets - Scripts - PanelScripts)
+##### 5.1.3 ButtonVRSupport (in Assets - Scripts - PanelScripts)
 
 ###### 5.1.3.1 Description
-This script handles the clicks/pointers that the player performs with the Vive controllers on the scrollbars of the panels.
-It is not assigned in the editor at the beginning, but the helper script ToggleVRSupportHelper assigns it to every toggle.
+This script handles the clicks/pointers that the player performs with the Vive controllers on the buttons of the panels.
+(In the Desktop version you can scroll through one large text, in VR you can click through smaller text tiles.)
+The script is not assigned in the editor at the beginning, but the helper script ToggleVRSupportHelper assigns it to every toggle.
 
 ###### 5.1.3.2 Attributes
-- a scrollbar assigned via ToggleVRSupportHelper
+- a button assigned via ToggleVRSupportHelper
 - an event system assigned via ToggleVRSupportHelper
 
 ###### 5.1.3.3 Methods
@@ -859,8 +862,42 @@ It is not assigned in the editor at the beginning, but the helper script ToggleV
 	- listens for pointer events of the Vive controllers
 
 - HandleVivePointerEvent(object sender, PointerEventArgs e) (not working at the moment)
-	- if target of the Vive controller click is the assigned scrollbar, a pointer event is performed
-	- TODO: 29.11. this is not working at the moment, we do not have the texture coordinates which would be necessary to create a fake event
+	- if target of the Vive controller click is the assigned button, a pointer event is performed
+	
+################################################################################
+	
+##### 5.1.4 ChangeTexts (in Assets - Scripts - PanelScripts)
+
+###### 5.1.4.1 Description
+This scripts changes the displayed text in the tab "Key Dynamics" in the panels if the player clicks onto the "<" or ">" button.
+
+###### 5.1.4.2 Attributes
+- an array of TextMeshProUGUI text tiles that will be presented subsequently
+- an index indicating the current text tile
+- two buttons for jumping through the text tiles (left and right)
+
+###### 5.1.4.3 Methods
+- Awake()
+  - at the beginning, the left button (<) is set inactive, the right button (>) is set active
+
+- DisplayText(int index)
+  - for each text tile:
+    - enables the one corresponding to the current index, so it will be displayed
+    - disables all others, so they will not be displayed
+
+- DisplayNext()
+  - if the right button is clicked, the next tile is displayed
+  - if the displayed text is already the last one, index does not change (keeps it displayed) and keeps button not interactable
+  - if the displayed text is the second-last one, increases index (displays the last one) and sets button to not interactable
+  - if the displayed text is the third-last or lower one, increases index
+  - display the text at the calculated index
+
+- DisplayPrevious()
+  - if the left button is clicked, the previous tile is displayed
+  - if the displayed text is already the first one, index does not change (keeps it displayed) and keeps button not interactable
+  - if the displayed text is the second one, decreases index (displays the first one) and sets button to not interactable
+  - if the displayed text is the third or higher one, increases index
+  - display the text at the calculated index
 
 ################################################################################
 ################################################################################
