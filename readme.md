@@ -8,7 +8,7 @@ This project provides an interactive museum to learn about the [En-ROADS Simulat
 We host the binaries in the microsoft cloud of the university of Tübingen. They come in zip archives, just download and extract them and run the executable file (ClimateMuseum.exe).
 > [Desktop Version](https://unitc-my.sharepoint.com/:u:/g/personal/iivbu01_cloud_uni-tuebingen_de/ERHgrVf_9uBAijgg83No9KMBMCksn7Mvwc6vV8jOGcAWTg?e=l46cfs)
 
-> [VR Version](https://unitc-my.sharepoint.com/:u:/g/personal/iivbu01_cloud_uni-tuebingen_de/EVgmqDklko1BlpGGXMttOUYBONEjttdPXgw5wW4IDNziCg?e=hshSWc)
+> [VR Version](https://unitc-my.sharepoint.com/:u:/g/personal/iivbu01_cloud_uni-tuebingen_de/EVgmqDklko1BlpGGXMttOUYBONEjttdPXgw5wW4IDNziCg?e=Gs8WmG)
 
 ## Desktop Version
 
