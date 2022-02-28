@@ -1,14 +1,4 @@
-@@ -1,3 +1,4 @@
-<<<<<<< Updated upstream
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
-@ -382,3 +383,389 @@ public class SimulationRenderer : MonoBehaviour
-        browser.EvalJS(addPadding(getFirstByClassName("bottom-content"), "bottom", 20));
-    }
-}
-=======
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using ZenFulcrum.EmbeddedBrowser;
