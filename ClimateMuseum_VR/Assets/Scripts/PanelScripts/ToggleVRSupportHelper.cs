@@ -74,32 +74,7 @@ public class ToggleVRSupportHelper : MonoBehaviour
         vrSupport.ButtonEventSystem = this.MainEventSystem;
       }
     }
-
-    // repeat the same procedure for scrollbars
-
-    // collect all scrollbars in all the panels, including inactive scrollbars
-    Scrollbar[] scrollbars = this.GetComponentsInChildren<Scrollbar>(true);
-
-    // for each scrollbar in this list:
-    foreach (Scrollbar scrollbar in scrollbars)
-    {
-      if (!scrollbar.GetComponent<BoxCollider>())
-      {
-        // add a box collider of the size of the scrollbar (using its rect transform)
-        BoxCollider collider = scrollbar.gameObject.AddComponent<BoxCollider>();
-        RectTransform rect = scrollbar.gameObject.GetComponent<RectTransform>();
-        collider.size = new Vector3(rect.rect.size.x, rect.rect.size.y, .05f);
-      }
-
-      // if the scrollbar does not have the script ToggleVRSupport
-      if (!scrollbar.GetComponent<ScrollbarVRSupport>())
-      {
-        // add the script, set its controlled scrollbar and event system to the current ones
-        ScrollbarVRSupport vrSupport = scrollbar.gameObject.AddComponent<ScrollbarVRSupport>();
-        vrSupport.ControlledScrollbar = scrollbar;
-        vrSupport.ScrollbarEventSystem = this.MainEventSystem;
-      }
-    }
+  
 
     // repeat a similar procedure for browsers
 

@@ -65,6 +65,8 @@ public class Teleport : MonoBehaviour
     void GoToDestination()
     { 
         this.gameObject.transform.position = new Vector3(target.transform.position.x, 0.6f, target.transform.position.z);
+        this.gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+        this.gameObject.transform.Find("Camera").transform.localRotation = Quaternion.Euler(0, 0, 0);
         teleported = true;
     }
 
