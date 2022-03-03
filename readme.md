@@ -822,7 +822,7 @@ It is assigned to the object Panels (Museum_VR - Panels) in the editor.
 			- adds a box collider of the size of the toggle (using its rect transform)
 		- if the toggle does not have the event system script ToggleVRSupport (applies to every toggle):
 			- adds the script, set its controlled toggle and event system to the current ones
-	- repeats exactly the same procedure for buttons and scrollbars
+	- repeats exactly the same procedure for buttons
 	- repeats a similar procedure for browsers: enables VR input, sets browser's camera to the VRCamera and changes browser's position
 
 ################################################################################
@@ -913,6 +913,8 @@ If the VR input is enabled, FeedVRPointers() in the script [PointerUIBase](#Poin
 These current pointers are collected in a list and their world-space coordinates are converted by the methods MapPointerToBrowser() and MapRayToBrowser() in [PointerUIMesh](#PointerUIMesh).
 Finally, CalculatePointers() calls a click action for one pointer in the list, so that the click is performed in the browser.
 In the following, all the scripts are described in more detail.
+
+################################################################################
 
 ##### 5.2.1 VRControllerInputProxy (in Assets - Scripts - BrowserUtilities) <a name="VRControllerInputProxy"></a>
 
