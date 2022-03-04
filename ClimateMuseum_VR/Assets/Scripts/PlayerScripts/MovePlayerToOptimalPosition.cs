@@ -41,12 +41,10 @@ public class MovePlayerToOptimalPosition : MonoBehaviour
             player.trackingOriginTransform.position = this.transform.position + playerFeetOffset;
 
             // if player has objects attached to its hands, reset attachment
-            /*if (player.leftHand.currentAttachedObjectInfo.HasValue)
+            if (player.leftHand.currentAttachedObjectInfo.HasValue)
                 player.leftHand.ResetAttachedTransform(player.leftHand.currentAttachedObjectInfo.Value);
             if (player.rightHand.currentAttachedObjectInfo.HasValue)
-                player.rightHand.ResetAttachedTransform(player.rightHand.currentAttachedObjectInfo.Value);*/
-
-            player.transform.Find("VRCamera").transform.localRotation = Quaternion.Euler(0, 0, 0);
+                player.rightHand.ResetAttachedTransform(player.rightHand.currentAttachedObjectInfo.Value);
         }
 
         // if Desktop Version is running
@@ -59,17 +57,9 @@ public class MovePlayerToOptimalPosition : MonoBehaviour
             player.transform.position = newPosition;
 
             // rotate player and its camera
-            //player.transform.rotation = panel.transform.rotation;
-            
-            //player.transform.Find("Camera").transform.localRotation = Quaternion.Euler(0, 0, 0);
+            player.transform.rotation = panel.transform.rotation;
+            player.transform.Find("Camera").transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-
-        // rotate player and its camera
-        //Debug.Log(player.transform.rotation);
-        //Debug.Log(panel.transform.rotation);
-        player.transform.rotation = panel.transform.rotation;
-        //Debug.Log(player.transform.rotation);
-        
     }
 
     // additional for VR: a public method for calling OnMouseDown() from other scripts
