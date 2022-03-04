@@ -1,403 +1,1300 @@
 Using pre-set license
-Built from '2020.3/staging' branch; Version is '2020.3.6f1 (338bb68529b2) revision 3378102'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19044.1526; Version 2009; 64bit' Language: 'de' Physical Memory: 16217 MB
+Built from '2020.3/release' branch; Version is '2020.3.12f1 (b3b2c6512326) revision 11776710'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19042.1466; Version 2009; 64bit' Language: 'de' Physical Memory: 16253 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\Unity\Editor\Unity.exe
+C:\Program Files\Unity2019.1.6f1\2020.3.12f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/unity/GitHub/ClimateMuseum_VR
+C:/Users/VR System/Documents/GitHub/InteractiveClimateMuseum/ClimateMuseum_VR
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50486
-Successfully changed project path to: C:/unity/GitHub/ClimateMuseum_VR
-C:/unity/GitHub/ClimateMuseum_VR
+53503
+Successfully changed project path to: C:/Users/VR System/Documents/GitHub/InteractiveClimateMuseum/ClimateMuseum_VR
+C:/Users/VR System/Documents/GitHub/InteractiveClimateMuseum/ClimateMuseum_VR
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 64.57 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 1.04 ms.
-Initialize engine version: 2020.3.6f1 (338bb68529b2)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/Unity/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/unity/GitHub/ClimateMuseum_VR/Assets
+Refreshing native plugins compatible for Editor in 106.13 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.87 ms.
+Initialize engine version: 2020.3.12f1 (b3b2c6512326)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity2019.1.6f1/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/VR System/Documents/GitHub/InteractiveClimateMuseum/ClimateMuseum_VR/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) UHD Graphics 620 (ID=0x5917)
+    Renderer: NVIDIA GeForce GTX 1060 3GB (ID=0x1c02)
     Vendor:   
-    VRAM:     8108 MB
-    Driver:   27.20.100.8854
+    VRAM:     2988 MB
+    Driver:   27.21.14.5671
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/Unity/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/Unity/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56840
+Mono path[0] = 'C:/Program Files/Unity2019.1.6f1/2020.3.12f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity2019.1.6f1/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity2019.1.6f1/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56252
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003138 seconds.
+Register platform support module: C:/Program Files/Unity2019.1.6f1/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002621 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 62.83 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.16 ms.
+Refreshing native plugins compatible for Editor in 81.52 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.206 seconds
+- Completed reload, in  1.401 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.015487 seconds.
+Registered in 0.013906 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 70.83 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.12 ms.
+Refreshing native plugins compatible for Editor in 82.61 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
 [XR] OculusXRPlugin: registering subsystems
 [XR] Unable to register display lifecyle provider: [1]
 [XR] Oculus Input lifecycle provider registered.
 [XR] Unable to register input lifecyle provider: [1]
 NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
 
 (Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.447 seconds
+- Completed reload, in  1.444 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 1.12 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.10 ms.
-Unloading 2280 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 102.2 MB.
-System memory in use after: 102.4 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2717.
-Total: 3.942100 ms (FindLiveObjects: 0.657600 ms CreateObjectMapping: 0.180000 ms MarkObjects: 2.946800 ms  DeleteObjects: 0.156300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012645 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.41 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.12 ms.
-NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
-
-(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.389 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.42 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.17 ms.
-Unloading 2218 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.8 MB.
-System memory in use after: 99.0 MB.
-
-Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 2720.
-Total: 5.184100 ms (FindLiveObjects: 0.387400 ms CreateObjectMapping: 0.244100 ms MarkObjects: 4.500800 ms  DeleteObjects: 0.050300 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Scripts/PanelScripts
-  artifactKey: Guid(cf6de722196ad4d4bb5aa1412a46b1a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PanelScripts using Guid(cf6de722196ad4d4bb5aa1412a46b1a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '466e41dd0253800d5801040c24e271d4') in 0.013869 seconds
-  Import took 0.018618 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 113.406598 seconds.
-  path: Assets/Scripts/PanelScripts/ButtonVRSupport.cs
-  artifactKey: Guid(5b70be2baebecbc44ad7bc3445cd099a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PanelScripts/ButtonVRSupport.cs using Guid(5b70be2baebecbc44ad7bc3445cd099a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a5d3b3aa2cb7f5169d3ff46376168f4') in 0.038395 seconds
-  Import took 0.043012 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.041972 seconds.
-  path: Assets/Scripts/PanelScripts/ButtonVRSupport.cs
-  artifactKey: Guid(5b70be2baebecbc44ad7bc3445cd099a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PanelScripts/ButtonVRSupport.cs using Guid(5b70be2baebecbc44ad7bc3445cd099a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a5d3b3aa2cb7f5169d3ff46376168f4') in 0.008175 seconds
-  Import took 0.015821 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 213.079951 seconds.
-  path: Assets/Scripts/PanelScripts/ToggleVRSupportHelper.cs
-  artifactKey: Guid(278f9f05e1502c0418e0554f53917e95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PanelScripts/ToggleVRSupportHelper.cs using Guid(278f9f05e1502c0418e0554f53917e95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4a78c1655a62270a955823c6c3b1c54') in 0.010922 seconds
-  Import took 0.016891 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.459313 seconds.
-  path: Assets/Scripts/PanelScripts/EventSystemFinder.cs
-  artifactKey: Guid(bbee2d80b91fcc34d87503c19889fad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PanelScripts/EventSystemFinder.cs using Guid(bbee2d80b91fcc34d87503c19889fad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '815a24ecabbe9930308a1caecd5cc455') in 0.015121 seconds
-  Import took 0.021042 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012032 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 13 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.03 ms, found 19 plugins.
 Preloading 1 native plugins for Editor in 0.09 ms.
-NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+Unloading 2298 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 105.1 MB.
+System memory in use after: 105.3 MB.
 
-(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2726.
+Total: 2.810800 ms (FindLiveObjects: 0.334300 ms CreateObjectMapping: 0.113300 ms MarkObjects: 2.247700 ms  DeleteObjects: 0.114500 ms)
 
-Mono: successfully reloaded assembly
-- Completed reload, in  1.276 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.45 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.13 ms.
-Unloading 2219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.8 MB.
-System memory in use after: 99.1 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2725.
-Total: 3.043000 ms (FindLiveObjects: 0.396600 ms CreateObjectMapping: 0.155800 ms MarkObjects: 2.469200 ms  DeleteObjects: 0.020500 ms)
-
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.011965 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.37 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.13 ms.
-NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
-
-(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.326 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.09 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.09 ms.
-Unloading 2219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.9 MB.
-System memory in use after: 99.1 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2729.
-Total: 3.564900 ms (FindLiveObjects: 0.449600 ms CreateObjectMapping: 0.217300 ms MarkObjects: 2.847400 ms  DeleteObjects: 0.049200 ms)
+Received Import Request.
+  path: Assets/Prefabs/Panels
+  artifactKey: Guid(6de36738889ecf9509505b50081b7318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels using Guid(6de36738889ecf9509505b50081b7318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebb9a7b507f454affb16fbef5186d1e4') in 0.018574 seconds 
+  Import took 0.031967 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 188.835583 seconds.
-  path: Assets/Scripts/PanelScripts/EventSystemFinder.cs
-  artifactKey: Guid(bbee2d80b91fcc34d87503c19889fad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PanelScripts/EventSystemFinder.cs using Guid(bbee2d80b91fcc34d87503c19889fad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6aedd35c1b1a7d15181d3186a0ff57d9') in 0.007708 seconds
-  Import took 0.013968 seconds .
+  Time since last request: 0.000259 seconds.
+  path: Assets/Prefabs/Panels/PanelContent
+  artifactKey: Guid(56f55e9b53ae8db488b2de2a8c0e6ebc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent using Guid(56f55e9b53ae8db488b2de2a8c0e6ebc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '324175dad158ef9e9b5895e9c9e07d8d') in 0.007916 seconds 
+  Import took 0.011825 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.024142 seconds.
+  path: Assets/Prefabs/BackgroundImages
+  artifactKey: Guid(3f86b0d7c3e5a1cccaa0561c6d10a1d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages using Guid(3f86b0d7c3e5a1cccaa0561c6d10a1d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eb964203d0f1c69be0f5aea087679b5') in 0.008960 seconds 
+  Import took 0.013079 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.667797 seconds.
+  path: Assets/Prefabs/Headers
+  artifactKey: Guid(bfcc653d04d4618c9b565a127c0f9fd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers using Guid(bfcc653d04d4618c9b565a127c0f9fd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '003d2b5af40a86e9907dd02b08abaf35') in 0.008001 seconds 
+  Import took 0.011662 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.944034 seconds.
+  path: Assets/Prefabs/CorrelationChild.prefab
+  artifactKey: Guid(22163fbde09917fe0957e24b9bb2fbe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CorrelationChild.prefab using Guid(22163fbde09917fe0957e24b9bb2fbe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7197aa1056202e49060f1ef98e21bf7a') in 0.131763 seconds 
+  Import took 0.136435 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.733567 seconds.
+  path: Assets/SteamVR/Prefabs/[CameraRig].prefab
+  artifactKey: Guid(4d293c8e162f3874b982baadd71153d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/[CameraRig].prefab using Guid(4d293c8e162f3874b982baadd71153d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '821957145935f2fd62fe231abddf4095') in 0.050947 seconds 
+  Import took 0.081433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Prefabs/BackgroundImages/CarbonRemoval/Afforestation.prefab
+  artifactKey: Guid(6eb1abaef9a4cd45b8110b7a2551369d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/CarbonRemoval/Afforestation.prefab using Guid(6eb1abaef9a4cd45b8110b7a2551369d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4440fcad72d5919a54c37fa4aeca451') in 0.007920 seconds 
+  Import took 0.011754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/SteamVR/Prefabs/[SteamVR].prefab
+  artifactKey: Guid(4f35fa249b5008c44ac2998be6f82d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/[SteamVR].prefab using Guid(4f35fa249b5008c44ac2998be6f82d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed5b6630f345862dea6f44970568c69f') in 0.008104 seconds 
+  Import took 0.023336 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Prefabs/Headers/Carbon Removal/Afforestation/AfforestationHeaderLarge.prefab
+  artifactKey: Guid(a8c94d9efd833a646a7d0bb2fdccb1d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Carbon Removal/Afforestation/AfforestationHeaderLarge.prefab using Guid(a8c94d9efd833a646a7d0bb2fdccb1d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a548cd623725c9d8e3a85fff8404658') in 0.010729 seconds 
+  Import took 0.014756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Prefabs/Headers/Carbon Removal/Afforestation/AfforestationHeaderWhite.prefab
+  artifactKey: Guid(effa756e67211f50b8ef47fe518cfe4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Carbon Removal/Afforestation/AfforestationHeaderWhite.prefab using Guid(effa756e67211f50b8ef47fe518cfe4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09d8aaff5f02e32ae6bb8f33483a1d2c') in 0.009184 seconds 
+  Import took 0.013143 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Afforestation Panel Content.prefab
+  artifactKey: Guid(244326e386e84e55b93d8a4c78646b10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Afforestation Panel Content.prefab using Guid(244326e386e84e55b93d8a4c78646b10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac1e0bba5f8c093e1cf2acb720f27ccc') in 0.140944 seconds 
+  Import took 0.145206 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Prefabs/Arrow.prefab
+  artifactKey: Guid(81fc1450441aca64e8cc1a0e14b1aa77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Prefabs/Arrow.prefab using Guid(81fc1450441aca64e8cc1a0e14b1aa77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec178879e838aa87ca53deb393d25301') in 1.504608 seconds 
+  Import took 1.509341 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Prefabs/Headers/Energy Supply/Carbon Pricing/CarbonPricingHeaderLarge.prefab
+  artifactKey: Guid(a049a17743c2ead30b833a2c3eb32e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Energy Supply/Carbon Pricing/CarbonPricingHeaderLarge.prefab using Guid(a049a17743c2ead30b833a2c3eb32e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '975f344ca0842bb05d497e3a54910173') in 0.009746 seconds 
+  Import took 0.013979 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Prefabs/Panels/Browser (Mouse)(1).prefab
+  artifactKey: Guid(6d0eba239745edb4c9ddbd7bb4399a66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/Browser (Mouse)(1).prefab using Guid(6d0eba239745edb4c9ddbd7bb4399a66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6292f3f0235e26b1229fa09f98301e2') in 0.019224 seconds 
+  Import took 0.024110 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Carbon Pricing Panel Content.prefab
+  artifactKey: Guid(fe76e310cd2a3f5c1b9beea91df76ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Carbon Pricing Panel Content.prefab using Guid(fe76e310cd2a3f5c1b9beea91df76ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10497a9e623b6d9a9a0b79899584bfe4') in 0.043124 seconds 
+  Import took 0.048338 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Prefabs/Headers/Energy Supply/Bioenergy/BioenergyHeaderWhite.prefab
+  artifactKey: Guid(efad6268b27079dd8834aa3baedfb4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Energy Supply/Bioenergy/BioenergyHeaderWhite.prefab using Guid(efad6268b27079dd8834aa3baedfb4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4db933ffe513ef9327b6f79048c21dfa') in 0.009189 seconds 
+  Import took 0.035836 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Prefabs/Balloon.prefab
+  artifactKey: Guid(8e13c6e5a21aeea4db3c25ef0e529308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Prefabs/Balloon.prefab using Guid(8e13c6e5a21aeea4db3c25ef0e529308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fcf974fe9647a29236bbcf47ce95481') in 0.588497 seconds 
+  Import took 0.593288 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Prefabs/Headers/Buildings _ Industry/Electrification/BIElectrificationHeaderWhite.prefab
+  artifactKey: Guid(b7890fd715b884f64b8718357a8b2ab0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Buildings _ Industry/Electrification/BIElectrificationHeaderWhite.prefab using Guid(b7890fd715b884f64b8718357a8b2ab0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b43c990723ebbefe5d50becbfcd9bc75') in 0.007961 seconds 
+  Import took 0.012002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000525 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Coal Panel Content.prefab
+  artifactKey: Guid(3412225354e9baadca69f1d252244318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Coal Panel Content.prefab using Guid(3412225354e9baadca69f1d252244318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58885c7f98e6c37003716fea800a136f') in 0.043293 seconds 
+  Import took 0.049009 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000342 seconds.
+  path: Assets/Prefabs/Headers/Energy Supply/Bioenergy/BioenergyHeaderLarge.prefab
+  artifactKey: Guid(c90ea16001acc0e77ba2d4051f25fc22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Energy Supply/Bioenergy/BioenergyHeaderLarge.prefab using Guid(c90ea16001acc0e77ba2d4051f25fc22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0290878b4b5cf629da5920d10d20622') in 0.009418 seconds 
+  Import took 0.014965 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/Prefabs/Headers/Energy Supply/Coal/CoalHeaderWhite.prefab
+  artifactKey: Guid(c6e08e7091dd45092b094b407b40ae4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Energy Supply/Coal/CoalHeaderWhite.prefab using Guid(c6e08e7091dd45092b094b407b40ae4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a5ac0531a04fa20521faee338aefe23') in 0.010017 seconds 
+  Import took 0.015946 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Prefabs/BalloonSpawner.prefab
+  artifactKey: Guid(01c670ceb931d524b9a80b70652eb18b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Prefabs/BalloonSpawner.prefab using Guid(01c670ceb931d524b9a80b70652eb18b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f56a683820ec47e9f626b660ebeb1ee0') in 0.112544 seconds 
+  Import took 0.117907 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Prefabs/Panels/Browser (Mouse).prefab
+  artifactKey: Guid(06f075a998c33314e8e3d3c666a84142) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/Browser (Mouse).prefab using Guid(06f075a998c33314e8e3d3c666a84142) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5b581a8eebdc4d19748c87cefdf8cbc') in 0.012429 seconds 
+  Import took 0.016980 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Prefabs/Headers/Energy Supply/Coal/CoalHeaderBlack.prefab
+  artifactKey: Guid(a7625a6400310554eb52ef2445577f6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Energy Supply/Coal/CoalHeaderBlack.prefab using Guid(a7625a6400310554eb52ef2445577f6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb214d1b79785e3c76938850b75995bf') in 0.009947 seconds 
+  Import took 0.014968 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Prefabs/BackgroundImages/EnergySupply/Carbon Pricing.prefab
+  artifactKey: Guid(501e4c26a581e53cc9c5295162bffd44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/EnergySupply/Carbon Pricing.prefab using Guid(501e4c26a581e53cc9c5295162bffd44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6538412470ec479725add1512920b61') in 0.009245 seconds 
+  Import took 0.032303 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Prefabs/Button.prefab
+  artifactKey: Guid(88075a54c7fb1484ba25db394b612917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Prefabs/Button.prefab using Guid(88075a54c7fb1484ba25db394b612917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df8a09c5ab1ea179fe4de64c9d767313') in 0.019839 seconds 
+  Import took 0.024206 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/ZFBrowser/Prefabs/Legacy/BrowserQuad.prefab
+  artifactKey: Guid(f2e09d52524cce94e8594b983b316198) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Prefabs/Legacy/BrowserQuad.prefab using Guid(f2e09d52524cce94e8594b983b316198) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '552561ccb8eadca019671d6db8753981') in 0.012672 seconds 
+  Import took 0.017229 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Prefabs/Headers/Buildings _ Industry/Efficiency/BIEfficiencyHeaderWhite.prefab
+  artifactKey: Guid(3ccdbcd5c278f68dd867fb5462231177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Buildings _ Industry/Efficiency/BIEfficiencyHeaderWhite.prefab using Guid(3ccdbcd5c278f68dd867fb5462231177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdbd6e2fc56bde90ad1d4d13e9533c42') in 0.009818 seconds 
+  Import took 0.014584 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/ZFBrowser/Demo/Prefabs/BigCoin.prefab
+  artifactKey: Guid(ca250b83fd1968d449d9ec6156726be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Prefabs/BigCoin.prefab using Guid(ca250b83fd1968d449d9ec6156726be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19e04e14d95cc19e8c54ce60a0ee3268') in 0.179812 seconds 
+  Import took 0.184491 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Prefabs/Headers/Buildings _ Industry/Electrification/BIElectrificationHeaderBlack.prefab
+  artifactKey: Guid(74f3e4d59cc3642fe8843d9fedf992f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Buildings _ Industry/Electrification/BIElectrificationHeaderBlack.prefab using Guid(74f3e4d59cc3642fe8843d9fedf992f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e865fec0353738a2779507e22914e55b') in 0.010086 seconds 
+  Import took 0.013784 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/ZFBrowser/Prefabs/Legacy/BrowserQuad (FPS UI).prefab
+  artifactKey: Guid(d4c6772b5f2c6b24fbe986c42e886cec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Prefabs/Legacy/BrowserQuad (FPS UI).prefab using Guid(d4c6772b5f2c6b24fbe986c42e886cec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33c359587b81908b62856808cc64c98c') in 0.015195 seconds 
+  Import took 0.020125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/SteamVR/Prefabs/[Status].prefab
+  artifactKey: Guid(255333d57084e4e46b3d948279746a47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/[Status].prefab using Guid(255333d57084e4e46b3d948279746a47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a89413230481fe6f10ee96b169616093') in 0.114912 seconds 
+  Import took 0.119402 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Prefabs/ArcheryWeeble.prefab
+  artifactKey: Guid(7fe1fef3cfad86946b3a549d6934330b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Prefabs/ArcheryWeeble.prefab using Guid(7fe1fef3cfad86946b3a549d6934330b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2625b470b7c356e0247e4c73cad8cc4') in 0.246536 seconds 
+  Import took 0.251279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Prefabs/Headers/Energy Supply/Coal/CoalHeaderLarge.prefab
+  artifactKey: Guid(56d699a05e242aa429241c571bf42185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Energy Supply/Coal/CoalHeaderLarge.prefab using Guid(56d699a05e242aa429241c571bf42185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0db8e1cb4762b3a8d10dac7e0ceb249f') in 0.008247 seconds 
+  Import took 0.012496 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Prefabs/Headers/Buildings _ Industry/Efficiency/BIEfficiencyHeaderBlack.prefab
+  artifactKey: Guid(12c71a1d05225cfdc8bcb06d813d09f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Buildings _ Industry/Efficiency/BIEfficiencyHeaderBlack.prefab using Guid(12c71a1d05225cfdc8bcb06d813d09f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c99b18941cb8142805c9c688b50bf766') in 0.009164 seconds 
+  Import took 0.014065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Bioenergy Panel Content.prefab
+  artifactKey: Guid(9c7f671f9a0ea5b02a67be6bbca28e17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Bioenergy Panel Content.prefab using Guid(9c7f671f9a0ea5b02a67be6bbca28e17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfc9814ae0313bce23c983fcc878cae4') in 0.043013 seconds 
+  Import took 0.047898 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Prefabs/Buggy Controller.prefab
+  artifactKey: Guid(d9803cc69067105488f4a78449f2aeec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Prefabs/Buggy Controller.prefab using Guid(d9803cc69067105488f4a78449f2aeec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f71032b122758152ff2993ab244f29ef') in 0.271351 seconds 
+  Import took 0.276361 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Prefabs/BackgroundImages/EnergySupply/Bioenergy.prefab
+  artifactKey: Guid(9a9e0d2e718c844edac4130e0b1c7967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/EnergySupply/Bioenergy.prefab using Guid(9a9e0d2e718c844edac4130e0b1c7967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b1e18542e577b95263a2e1ca4a921a6') in 0.011196 seconds 
+  Import took 0.019553 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Prefabs/BackgroundImages/EnergySupply/Coal.prefab
+  artifactKey: Guid(1c4b7f988224579f5982afba08f60ac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/EnergySupply/Coal.prefab using Guid(1c4b7f988224579f5982afba08f60ac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b9c9d06b9f9200edf1d4da0c69d98f7') in 0.010672 seconds 
+  Import took 0.019642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Prefabs/BalloonPop.prefab
+  artifactKey: Guid(9d2dddaae5c812841accc43e4da1fccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Prefabs/BalloonPop.prefab using Guid(9d2dddaae5c812841accc43e4da1fccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '362479a484df82955e333d37fc97f234') in 0.010601 seconds 
+  Import took 0.015604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Prefabs/Headers/Buildings _ Industry/Electrification/BIElectrificationHeaderLarge.prefab
+  artifactKey: Guid(e2114756fd20d0262846c2328c4cd339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Buildings _ Industry/Electrification/BIElectrificationHeaderLarge.prefab using Guid(e2114756fd20d0262846c2328c4cd339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f948b187cade837e98f5f9c9dfc7659') in 0.007726 seconds 
+  Import took 0.012073 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Prefabs/BackgroundImages/BuildingsIndustry/Buildings _ Industry.prefab
+  artifactKey: Guid(9d56d98afdc3463908b30a26db697d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/BuildingsIndustry/Buildings _ Industry.prefab using Guid(9d56d98afdc3463908b30a26db697d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bee3e10bb90293cb406060f88468d7b') in 0.008875 seconds 
+  Import took 0.014165 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/ZFBrowser/Demo/Prefabs/ControlledDoor.prefab
+  artifactKey: Guid(948c27e78bb70dc4c8938884beff76fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Prefabs/ControlledDoor.prefab using Guid(948c27e78bb70dc4c8938884beff76fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1c4ee4ff573b6b6a528ba1e360e0a6a') in 0.176364 seconds 
+  Import took 0.180930 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/ZFBrowser/Prefabs/Legacy/BrowserSphere.prefab
+  artifactKey: Guid(9235bdfc47c24ba46ab4ce15e45728cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Prefabs/Legacy/BrowserSphere.prefab using Guid(9235bdfc47c24ba46ab4ce15e45728cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07ecde9f1278b69fb264adf6a9ab4012') in 0.013322 seconds 
+  Import took 0.017720 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Prefabs/Headers/Energy Supply/Carbon Pricing/CarbonPricingHeaderBlack.prefab
+  artifactKey: Guid(33282b5eed297e3b5b4e18944b30283d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Energy Supply/Carbon Pricing/CarbonPricingHeaderBlack.prefab using Guid(33282b5eed297e3b5b4e18944b30283d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd695d61bf75018c065c233473bc9b073') in 0.010014 seconds 
+  Import took 0.015603 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Prefabs/BackgroundImages/CarbonRemoval/Carbon Removal.prefab
+  artifactKey: Guid(2804f15992b55e4a595fb95221e8a4c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/CarbonRemoval/Carbon Removal.prefab using Guid(2804f15992b55e4a595fb95221e8a4c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efeb3f41dba262af074214d5c593d8a0') in 0.009166 seconds 
+  Import took 0.013550 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Prefabs/Headers/Buildings _ Industry/Efficiency/BIEfficiencyHeaderLarge.prefab
+  artifactKey: Guid(81a4531e266b3aa5ea46850cb4902b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Buildings _ Industry/Efficiency/BIEfficiencyHeaderLarge.prefab using Guid(81a4531e266b3aa5ea46850cb4902b44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd48d8dbe2a1aa8acbc7df17652b679c1') in 0.009353 seconds 
+  Import took 0.014539 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Prefabs/BackgroundImages/BuildingsIndustry/BI Efficiency.prefab
+  artifactKey: Guid(8b114ebff408da735b842aff94d61d51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/BuildingsIndustry/BI Efficiency.prefab using Guid(8b114ebff408da735b842aff94d61d51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bf00c26181b1a1837420bab3e27f3a6') in 0.011027 seconds 
+  Import took 0.015588 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Prefabs/Headers/Energy Supply/Bioenergy/BioenergyHeaderBlack.prefab
+  artifactKey: Guid(88053c817af4da80c898bf5fce6904cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Energy Supply/Bioenergy/BioenergyHeaderBlack.prefab using Guid(88053c817af4da80c898bf5fce6904cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54f75e2acd2ea684c4815d0afaffab4d') in 0.009448 seconds 
+  Import took 0.014326 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/BlockPrototype04x04x04.prefab
+  artifactKey: Guid(ab33e6080ae416b4d899f39fa8951b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/BlockPrototype04x04x04.prefab using Guid(ab33e6080ae416b4d899f39fa8951b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '132c3c6ecc7eb28d0a373e776b5e1b67') in 0.066150 seconds 
+  Import took 0.070301 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Prefabs/Headers/Carbon Removal/Afforestation/AfforestationHeaderBlack.prefab
+  artifactKey: Guid(d1b3d42a3c126c31bad8555138e7108a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Carbon Removal/Afforestation/AfforestationHeaderBlack.prefab using Guid(d1b3d42a3c126c31bad8555138e7108a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91ab31ba1641ab81203f814c9c77cf95') in 0.010041 seconds 
+  Import took 0.014883 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000320 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/BI Efficiency Panel Content.prefab
+  artifactKey: Guid(14dd85a765f74edf5a784de35dbb5caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/BI Efficiency Panel Content.prefab using Guid(14dd85a765f74edf5a784de35dbb5caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5708519b52d79a0c02dfeff74671ad3c') in 0.049811 seconds 
+  Import took 0.055622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/SteamVR/InteractionSystem/Hints/Prefabs/ControllerTextHint.prefab
+  artifactKey: Guid(5fa42bb9e52706a42b8a1eaf0b54326a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Hints/Prefabs/ControllerTextHint.prefab using Guid(5fa42bb9e52706a42b8a1eaf0b54326a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0b913cbb195e637e74ce59bdb44a98b') in 0.019121 seconds 
+  Import took 0.024131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/BI Electrification Panel Content.prefab
+  artifactKey: Guid(0f0a93744a72713e79db422bbc3a3a49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/BI Electrification Panel Content.prefab using Guid(0f0a93744a72713e79db422bbc3a3a49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ffb050e72ad000239d7c2f29635742a') in 0.068029 seconds 
+  Import took 0.072733 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Prefabs/Buggy.prefab
+  artifactKey: Guid(1e914d8e31fa95b488c87df17e68d504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Prefabs/Buggy.prefab using Guid(1e914d8e31fa95b488c87df17e68d504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '819b57f3adb19f846f813c051eacda64') in 0.389585 seconds 
+  Import took 0.394774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Prefabs/ArrowHand.prefab
+  artifactKey: Guid(d410d7126dd411c4ea651fc94eae9202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Prefabs/ArrowHand.prefab using Guid(d410d7126dd411c4ea651fc94eae9202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '095b5010f865433332255942e1cc2522') in 4.056481 seconds 
+  Import took 4.062839 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/CubePrototype02x02x02.prefab
+  artifactKey: Guid(2b127815fd0f2074eae3a0c6a4786d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/CubePrototype02x02x02.prefab using Guid(2b127815fd0f2074eae3a0c6a4786d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0eeaccacc7a0471261d4e8951ca3ad82') in 0.048595 seconds 
+  Import took 0.053725 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Prefabs/Headers/Emissions/Deforestation/DeforestationHeaderWhite.prefab
+  artifactKey: Guid(69fffb3cf0ad25514876a8876c9503eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Emissions/Deforestation/DeforestationHeaderWhite.prefab using Guid(69fffb3cf0ad25514876a8876c9503eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e707127c9ce228ab9ce5c8480cccac2b') in 0.009539 seconds 
+  Import took 0.014134 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/CubePrototype08x08x08.prefab
+  artifactKey: Guid(90d8e09703679534295bd2cacb73d6de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/CubePrototype08x08x08.prefab using Guid(90d8e09703679534295bd2cacb73d6de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e703313a91ffd4e2844519208c1faa7') in 0.066105 seconds 
+  Import took 0.070833 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/CubePrototype04x04x04.prefab
+  artifactKey: Guid(5d2e4237b4429b34fae4c9eb3cd9efd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/CubePrototype04x04x04.prefab using Guid(5d2e4237b4429b34fae4c9eb3cd9efd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c82d98f44dd262e88d3d91972152452') in 0.057559 seconds 
+  Import took 0.061492 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/ZFBrowser/Demo/Prefabs/Dialogue.prefab
+  artifactKey: Guid(7f9bda6aad5017a41b5b8538bf43c56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Prefabs/Dialogue.prefab using Guid(7f9bda6aad5017a41b5b8538bf43c56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96b459ac51086bb1007adcd62e0aa860') in 0.008896 seconds 
+  Import took 0.012827 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Prefabs/Headers/Emissions/Deforestation/DeforestationHeaderLarge.prefab
+  artifactKey: Guid(03e7c2520eb8ae22c96fd01497a23a5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Emissions/Deforestation/DeforestationHeaderLarge.prefab using Guid(03e7c2520eb8ae22c96fd01497a23a5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36325fac9d766f3c27fe31ec2f2e4570') in 0.008884 seconds 
+  Import took 0.013982 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Prefabs/BackgroundImages/Emissions/Deforestation.prefab
+  artifactKey: Guid(6cf7491718fc15d8f90bfdd1f110f833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/Emissions/Deforestation.prefab using Guid(6cf7491718fc15d8f90bfdd1f110f833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66d3fc8b165daeec66e445c39d71d001') in 0.009320 seconds 
+  Import took 0.013327 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000332 seconds.
+  path: Assets/ZFBrowser/Demo/Prefabs/DemoCharacter.prefab
+  artifactKey: Guid(9d4177d5d30b644bd87802a347eaccbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Prefabs/DemoCharacter.prefab using Guid(9d4177d5d30b644bd87802a347eaccbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f450b3a803c9c3932d217f5e0b1fc796') in 0.010988 seconds 
+  Import took 0.015702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/Prefabs/Headers/Emissions/Deforestation/DeforestationHeaderBlack.prefab
+  artifactKey: Guid(0ebb643d4bdc626caacc060449b33e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Emissions/Deforestation/DeforestationHeaderBlack.prefab using Guid(0ebb643d4bdc626caacc060449b33e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ce0971f57cdd8169432c77a9c0ed90b') in 0.009040 seconds 
+  Import took 0.014318 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Deforestation Panel Content.prefab
+  artifactKey: Guid(adad8f64c4ecb8a0e9989b7101ad83be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Deforestation Panel Content.prefab using Guid(adad8f64c4ecb8a0e9989b7101ad83be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '503445271608f052185b804b51489b06') in 0.038694 seconds 
+  Import took 0.043976 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Prefabs/BackgroundImages/BuildingsIndustry/BI Electrification.prefab
+  artifactKey: Guid(90e9527f68885e3afb4cd3329e7a42c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/BuildingsIndustry/BI Electrification.prefab using Guid(90e9527f68885e3afb4cd3329e7a42c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9766d528ad38bd1a070e2333c999928c') in 0.009444 seconds 
+  Import took 0.013641 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/ZFBrowser/Prefabs/Legacy/BrowserGUI.prefab
+  artifactKey: Guid(12ff9e1c143947a49961a83c621b8a55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Prefabs/Legacy/BrowserGUI.prefab using Guid(12ff9e1c143947a49961a83c621b8a55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cfadc0c141d62818629596677de3269') in 0.038316 seconds 
+  Import took 0.043137 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Prefabs/Headers/Energy Supply/Carbon Pricing/CarbonPricingHeaderWhite.prefab
+  artifactKey: Guid(f9f9a8d0ad4b6709a8dcd19f3b7d9292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Energy Supply/Carbon Pricing/CarbonPricingHeaderWhite.prefab using Guid(f9f9a8d0ad4b6709a8dcd19f3b7d9292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5604f304e9ad391e709ab25e8de5ac18') in 0.009936 seconds 
+  Import took 0.014996 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/SteamVR/Prefabs/controller.prefab
+  artifactKey: Guid(e789c2cc0c98a4c4198a4033fb8ccf96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/controller.prefab using Guid(e789c2cc0c98a4c4198a4033fb8ccf96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3706c13c3e1480c5656cc43ad4506b38') in 0.011377 seconds 
+  Import took 0.016095 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Prefabs/BackgroundImages/Emissions/Emissions.prefab
+  artifactKey: Guid(72f889dc176fcd36d812eda4329c8004) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/Emissions/Emissions.prefab using Guid(72f889dc176fcd36d812eda4329c8004) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cbe651c22719e4581ec9a917ceb6db4') in 0.008959 seconds 
+  Import took 0.013852 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Prefabs/BalloonPopNoSound.prefab
+  artifactKey: Guid(a41945a8549c580408301691c2fd374e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Prefabs/BalloonPopNoSound.prefab using Guid(a41945a8549c580408301691c2fd374e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9a630d29df73498168feee65e8283a5') in 0.010718 seconds 
+  Import took 0.016127 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000342 seconds.
+  path: Assets/ZFBrowser/Demo/Prefabs/Coin.prefab
+  artifactKey: Guid(78c2f10fcd0d95449b1b62811f4d4a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Prefabs/Coin.prefab using Guid(78c2f10fcd0d95449b1b62811f4d4a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0a7f2b845d6a24b5cd26c78c3f624fc') in 0.015333 seconds 
+  Import took 0.020741 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.741085 seconds.
+  path: Assets/Prefabs/BackgroundImages/EnergySupply/Energy Supply.prefab
+  artifactKey: Guid(63aeb88d2006621d9b26fdfdf4b5cefa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/EnergySupply/Energy Supply.prefab using Guid(63aeb88d2006621d9b26fdfdf4b5cefa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f9a882e5e98049ef0dab078439815a3') in 0.020472 seconds 
+  Import took 0.024679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Prefabs/FireWhip.prefab
+  artifactKey: Guid(daf28736fcb032a44b7a5c1fd0a27b15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Prefabs/FireWhip.prefab using Guid(daf28736fcb032a44b7a5c1fd0a27b15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b05390a9ea0cbb68665baf2e43bbc6a') in 0.018265 seconds 
+  Import took 0.021857 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/FloorPrototype04x01x04.prefab
+  artifactKey: Guid(4620f3c93dca8c94c9124d8ba443f43e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/FloorPrototype04x01x04.prefab using Guid(4620f3c93dca8c94c9124d8ba443f43e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85f2cf5436db453231a87b01f0e7688d') in 0.062853 seconds 
+  Import took 0.066295 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/FloorPrototype64x01x64.prefab
+  artifactKey: Guid(3681543e5b0f59742b73073cb379cdc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/FloorPrototype64x01x64.prefab using Guid(3681543e5b0f59742b73073cb379cdc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3d2bc2d2420a67ffc6ac43ec2ab6359') in 0.048021 seconds 
+  Import took 0.051587 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000351 seconds.
+  path: Assets/Prefabs/Headers/Growth/Population/GPopulationHeaderBlack.prefab
+  artifactKey: Guid(7a8f5cf1635a05846b00b5116ecdb3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Growth/Population/GPopulationHeaderBlack.prefab using Guid(7a8f5cf1635a05846b00b5116ecdb3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9708a1afeb92ccfc8a8e716f7a7d4fe2') in 0.008153 seconds 
+  Import took 0.013023 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Prefabs/Headers/Growth/Population/GPopulationHeaderLarge.prefab
+  artifactKey: Guid(6cb5d71dd3567cf43af26c6ba8cfb6e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Growth/Population/GPopulationHeaderLarge.prefab using Guid(6cb5d71dd3567cf43af26c6ba8cfb6e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f6e3f7aaf5b7e683e9331bdb8e47ceb') in 0.009048 seconds 
+  Import took 0.014519 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Information Panel Content.prefab
+  artifactKey: Guid(09929d53a1a8b2a67b412c46c04bf0cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Information Panel Content.prefab using Guid(09929d53a1a8b2a67b412c46c04bf0cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd67d0f51b58f4ea8d4d892ba84c46b94') in 0.037758 seconds 
+  Import took 0.043292 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/FloorPrototype08x01x08.prefab
+  artifactKey: Guid(584a8ef4749c89745b7ae07f3ba7617f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/FloorPrototype08x01x08.prefab using Guid(584a8ef4749c89745b7ae07f3ba7617f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83527f5c2f87758e7324b3da6a0eb1ad') in 0.050055 seconds 
+  Import took 0.054770 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Oil Panel Content.prefab
+  artifactKey: Guid(0b49515fe84c91d2cb61496cbcf3caac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Oil Panel Content.prefab using Guid(0b49515fe84c91d2cb61496cbcf3caac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eccc2ffba3b8766a2842f5e912c72bc3') in 0.040006 seconds 
+  Import took 0.044932 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PlatformPrototype04x01x04.prefab
+  artifactKey: Guid(831c1389ceffed84d947c9aa3fc86ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PlatformPrototype04x01x04.prefab using Guid(831c1389ceffed84d947c9aa3fc86ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '607e7800256eb16dec319276072418df') in 0.061659 seconds 
+  Import took 0.065714 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/RampPrototype04x02x02.prefab
+  artifactKey: Guid(4e11ef4f39bc65e44a4b0755ecac6ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/RampPrototype04x02x02.prefab using Guid(4e11ef4f39bc65e44a4b0755ecac6ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '515bad8999c2c047b64cea2647d124c7') in 0.090047 seconds 
+  Import took 0.094642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Prefabs/BackgroundImages/Transport/Transport.prefab
+  artifactKey: Guid(a66a0cfc90925627d94389b48ef47c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/Transport/Transport.prefab using Guid(a66a0cfc90925627d94389b48ef47c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8facb7ffd112e751adff79b7eb7ce98') in 0.008309 seconds 
+  Import took 0.012304 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PlatformPrototype02x01x02.prefab
+  artifactKey: Guid(45635d5190a12bc4884469b7dcafa846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PlatformPrototype02x01x02.prefab using Guid(45635d5190a12bc4884469b7dcafa846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1c659fe8546f1c4660095671dd76350') in 0.055556 seconds 
+  Import took 0.059203 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/T Efficiency Panel Content.prefab
+  artifactKey: Guid(750a14e772251511f8bd13c57af44544) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/T Efficiency Panel Content.prefab using Guid(750a14e772251511f8bd13c57af44544) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24d4cff411e4793d0c41cde26ca7cfea') in 0.067411 seconds 
+  Import took 0.089636 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/SteamVR/Prefabs/vr_hand_floppy_left.prefab
+  artifactKey: Guid(85d52d9937d11064295294895b28d068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/vr_hand_floppy_left.prefab using Guid(85d52d9937d11064295294895b28d068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc9d12e267f7886765b5070904ae2c74') in 0.121402 seconds 
+  Import took 0.125738 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Prefabs/LongbowItemPackage.prefab
+  artifactKey: Guid(98a3ad29136d5c04f8a025adf1cbd704) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Prefabs/LongbowItemPackage.prefab using Guid(98a3ad29136d5c04f8a025adf1cbd704) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '913118b3734f62169a91f8efe106318a') in 0.053095 seconds 
+  Import took 0.058375 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Natural Gas Panel Content.prefab
+  artifactKey: Guid(38fa9bea9b2e41113ad0ee293bbca0bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Natural Gas Panel Content.prefab using Guid(38fa9bea9b2e41113ad0ee293bbca0bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68e45d6f4952f2a9cbca1e4fef4e45b3') in 0.049626 seconds 
+  Import took 0.055418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/G Economic Panel Content.prefab
+  artifactKey: Guid(c6ca8dbb187d58c2db8b68e9e262c964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/G Economic Panel Content.prefab using Guid(c6ca8dbb187d58c2db8b68e9e262c964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fde226d1ce2e0881f7cf4b4593570647') in 0.040059 seconds 
+  Import took 0.045221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Renewables Panel Content.prefab
+  artifactKey: Guid(0bfabe6c220028d95be655e6eb6a7c52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Renewables Panel Content.prefab using Guid(0bfabe6c220028d95be655e6eb6a7c52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2cb86f800c462067d012bb7366bb7bc') in 0.055892 seconds 
+  Import took 0.060708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PillarPrototype01x02x01.prefab
+  artifactKey: Guid(88b5bfec6f1bd17439b2f4339902dca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PillarPrototype01x02x01.prefab using Guid(88b5bfec6f1bd17439b2f4339902dca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '537515649b3e272757a7c7124c0eeb21') in 0.051422 seconds 
+  Import took 0.055304 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Prefabs/BackgroundImages/Growth/G Population.prefab
+  artifactKey: Guid(9b0a32877fe1046bb8892fc6031ff604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BackgroundImages/Growth/G Population.prefab using Guid(9b0a32877fe1046bb8892fc6031ff604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24ed1a86d165311a523be871768b46de') in 0.291048 seconds 
+  Import took 0.294615 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Methane _ Co Panel Content.prefab
+  artifactKey: Guid(e93d654fbf0766f4e8f47679e1cfd739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Methane _ Co Panel Content.prefab using Guid(e93d654fbf0766f4e8f47679e1cfd739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40e44e2098e718ea448746fdd3e86634') in 0.040783 seconds 
+  Import took 0.044971 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/JoinOuterPrototype02x06x02.prefab
+  artifactKey: Guid(b321aed21e0872743a175d8dbbe12ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/JoinOuterPrototype02x06x02.prefab using Guid(b321aed21e0872743a175d8dbbe12ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c78ab79c9d99a844b94a6e7c8682cf71') in 0.014706 seconds 
+  Import took 0.019051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/SteamVR/InteractionSystem/Core/Prefabs/RightRenderModelFloppy.prefab
+  artifactKey: Guid(4c5fea2300124fe49a30168e29627064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Core/Prefabs/RightRenderModelFloppy.prefab using Guid(4c5fea2300124fe49a30168e29627064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e21b6a0f24dc133c36789897401e2b40') in 0.014126 seconds 
+  Import took 0.019444 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Prefabs/TeleportPoint.prefab
+  artifactKey: Guid(73ac470d3d909d645a6c89a4664b6849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Prefabs/TeleportPoint.prefab using Guid(73ac470d3d909d645a6c89a4664b6849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85ea088f383af774cd2d31c6956df6e1') in 0.053489 seconds 
+  Import took 0.059393 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/New Technologies Panel Content.prefab
+  artifactKey: Guid(f67002c555d18ef5197fff8070c3479b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/New Technologies Panel Content.prefab using Guid(f67002c555d18ef5197fff8070c3479b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b361533cc4317388cbc816c859a88c30') in 0.042054 seconds 
+  Import took 0.047288 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PillarPrototype02x08x02.prefab
+  artifactKey: Guid(44884af1ac1d64d42902da40268ba120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PillarPrototype02x08x02.prefab using Guid(44884af1ac1d64d42902da40268ba120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb97da56c640543dd67d37dc8bceec42') in 0.049459 seconds 
+  Import took 0.053864 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Prefabs/LongbowPreview.prefab
+  artifactKey: Guid(a5b684916cfe6804985d74652a2af09f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Prefabs/LongbowPreview.prefab using Guid(a5b684916cfe6804985d74652a2af09f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bd565a553049a3a457a9f6b9c583f36') in 0.195607 seconds 
+  Import took 0.201239 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PickupPrototype.prefab
+  artifactKey: Guid(c02747e7134ef1948a039c94a8f33c5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PickupPrototype.prefab using Guid(c02747e7134ef1948a039c94a8f33c5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd04ffb02401a3b3bdd895ad57140b99d') in 0.009623 seconds 
+  Import took 0.014466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/StepsPrototype04x02x02.prefab
+  artifactKey: Guid(d85d3a32fb6157d488e31edf82b7b1c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/StepsPrototype04x02x02.prefab using Guid(d85d3a32fb6157d488e31edf82b7b1c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54640a52071e7bcba6eb545ffce27903') in 0.063557 seconds 
+  Import took 0.068873 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/ZFBrowser/Demo/Prefabs/VRDemoPane.prefab
+  artifactKey: Guid(78d66b9648013c348b09e644e11b1369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Prefabs/VRDemoPane.prefab using Guid(78d66b9648013c348b09e644e11b1369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b197eec43d46247fccb092451a0de506') in 0.159072 seconds 
+  Import took 0.163188 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/SteamVR/InteractionSystem/Core/Prefabs/Player.prefab
+  artifactKey: Guid(dc06161b6d97feb419f45f03b62e14b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Core/Prefabs/Player.prefab using Guid(dc06161b6d97feb419f45f03b62e14b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f389c6685ffae5f4d04a30ce1b88df3') in 0.049685 seconds 
+  Import took 0.054532 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Technological Carbon Removal Panel Content.prefab
+  artifactKey: Guid(89550cb39568baedc9f6ce5d31787feb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Technological Carbon Removal Panel Content.prefab using Guid(89550cb39568baedc9f6ce5d31787feb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aed1fd1d78e71c9e02a2c95488635b14') in 0.067611 seconds 
+  Import took 0.072384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/G Population Panel Content.prefab
+  artifactKey: Guid(1a3c8f28547e8b8abbf0c2b93bfba4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/G Population Panel Content.prefab using Guid(1a3c8f28547e8b8abbf0c2b93bfba4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cd2f47558fefcd4e0c7be946642e57d') in 0.064553 seconds 
+  Import took 0.070365 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/JoinInnerPrototype01x06x01.prefab
+  artifactKey: Guid(9ae7f9f9eacff4142b21eb85ae606fdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/JoinInnerPrototype01x06x01.prefab using Guid(9ae7f9f9eacff4142b21eb85ae606fdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1eb594563f3f48c89e423d1c09834a9e') in 0.049796 seconds 
+  Import took 0.054276 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Prefabs/Panels/GraphTexts.prefab
+  artifactKey: Guid(d7d334ee93f3bcf40a43584be974b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/GraphTexts.prefab using Guid(d7d334ee93f3bcf40a43584be974b557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e682fd06c59705e0b835105a8545825') in 0.014267 seconds 
+  Import took 0.019492 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000377 seconds.
+  path: Assets/SteamVR/Prefabs/vr_hand_floppy_right.prefab
+  artifactKey: Guid(48a64ca49a112494fa864087de12b75c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/vr_hand_floppy_right.prefab using Guid(48a64ca49a112494fa864087de12b75c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaae685562a9ba548baecd6456d176ec') in 0.025418 seconds 
+  Import took 0.031005 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Prefabs/Headers/Growth/Population/GPopulationHeaderWhite.prefab
+  artifactKey: Guid(d17112fe32ce99d60a8c211f22e9e4e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Headers/Growth/Population/GPopulationHeaderWhite.prefab using Guid(d17112fe32ce99d60a8c211f22e9e4e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36645ffe2eaccc6ef03d046dd52dcc1c') in 0.009843 seconds 
+  Import took 0.015376 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/T Electrification Panel Content.prefab
+  artifactKey: Guid(1cba57b9bdc69e90eb7231b7577cbf2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/T Electrification Panel Content.prefab using Guid(1cba57b9bdc69e90eb7231b7577cbf2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '668cb43317b9110f628c7cb107fc8530') in 0.041322 seconds 
+  Import took 0.046757 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Prefabs/Panels/PanelContent/Nuclear Panel Content.prefab
+  artifactKey: Guid(651591074ccadeaa4be2f9c20500357b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panels/PanelContent/Nuclear Panel Content.prefab using Guid(651591074ccadeaa4be2f9c20500357b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21e321e00ddd219001517a661f8afe51') in 0.038956 seconds 
+  Import took 0.043909 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/ZFBrowser/Demo/Prefabs/SimplePlayerController.prefab
+  artifactKey: Guid(a021ec9c8bd1b3d48aea8e6c29653f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Prefabs/SimplePlayerController.prefab using Guid(a021ec9c8bd1b3d48aea8e6c29653f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f29052879b7ae4803a0411ff81f0b3c3') in 0.008372 seconds 
+  Import took 0.013288 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/HousePrototype16x16x24.prefab
+  artifactKey: Guid(5862bbfe91a75054ca72c13b555b6ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/HousePrototype16x16x24.prefab using Guid(5862bbfe91a75054ca72c13b555b6ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2373f4f8b38aa73275bfe9067dcdd688') in 0.078146 seconds 
+  Import took 0.082504 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PlatformPrototype08x01x08.prefab
+  artifactKey: Guid(7f114e6b62ad5134b9ba4e0a01ddc050) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/PlatformPrototype08x01x08.prefab using Guid(7f114e6b62ad5134b9ba4e0a01ddc050) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ba2454a186d674ecddf5cafee49410a') in 0.051550 seconds 
+  Import took 0.055342 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/SteamVR/InteractionSystem/Core/Prefabs/LeftRenderModelFloppy.prefab
+  artifactKey: Guid(534d2fcf558316441a41841275676807) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Core/Prefabs/LeftRenderModelFloppy.prefab using Guid(534d2fcf558316441a41841275676807) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '762e803a38b4c301870d22a2737ef2cb') in 0.013280 seconds 
+  Import took 0.018386 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/JoinMidPrototype04x06x01.prefab
+  artifactKey: Guid(04a24b5e91096bd4e8ae6fba35c4dbf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ZFBrowser/Demo/Standard Assets/Prototyping/Prefabs/JoinMidPrototype04x06x01.prefab using Guid(04a24b5e91096bd4e8ae6fba35c4dbf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97623ae13fcb4b945052f8051e4edb01') in 0.067308 seconds 
+  Import took 0.071150 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Prefabs/Teleporting.prefab
+  artifactKey: Guid(7a135b1a2cb9c8f488d4dd00c55ab283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Prefabs/Teleporting.prefab using Guid(7a135b1a2cb9c8f488d4dd00c55ab283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca551b83ca235542f204fa2e6fb9cfbf') in 0.016691 seconds 
+  Import took 0.020877 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.011223 seconds.
+Registered in 0.015693 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.40 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.19 ms.
-NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
-
-(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.878 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.83 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.10 ms.
-Unloading 2219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.9 MB.
-System memory in use after: 99.1 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2733.
-Total: 6.502600 ms (FindLiveObjects: 0.444600 ms CreateObjectMapping: 0.205700 ms MarkObjects: 5.785700 ms  DeleteObjects: 0.064300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.013121 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.69 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.15 ms.
-NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
-
-(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.614 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.86 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.17 ms.
-Unloading 2219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.8 MB.
-System memory in use after: 99.0 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2737.
-Total: 7.269900 ms (FindLiveObjects: 0.647700 ms CreateObjectMapping: 0.324100 ms MarkObjects: 6.226500 ms  DeleteObjects: 0.069500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.015644 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 13 plugins.
+Refreshing native plugins compatible for Editor in 1.65 ms, found 19 plugins.
 Preloading 1 native plugins for Editor in 0.12 ms.
 NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
 
 (Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.525 seconds
+- Completed reload, in  1.566 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.96 ms, found 13 plugins.
+Refreshing native plugins compatible for Editor in 1.34 ms, found 19 plugins.
 Preloading 1 native plugins for Editor in 0.10 ms.
-Unloading 2219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.9 MB.
-System memory in use after: 99.1 MB.
+Unloading 2238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.3 MB.
+System memory in use after: 120.5 MB.
 
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2741.
-Total: 2.769400 ms (FindLiveObjects: 0.251300 ms CreateObjectMapping: 0.138900 ms MarkObjects: 2.348600 ms  DeleteObjects: 0.029500 ms)
+Unloading 55 unused Assets to reduce memory usage. Loaded Objects now: 2746.
+Total: 3.428400 ms (FindLiveObjects: 0.221000 ms CreateObjectMapping: 0.095800 ms MarkObjects: 3.050600 ms  DeleteObjects: 0.059600 ms)
 
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.012859 seconds.
+Registered in 0.015315 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.08 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.12 ms.
-NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
-
-(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.679 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.48 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.24 ms.
-Unloading 2219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.9 MB.
-System memory in use after: 99.1 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2745.
-Total: 6.403000 ms (FindLiveObjects: 0.764300 ms CreateObjectMapping: 0.263300 ms MarkObjects: 5.317000 ms  DeleteObjects: 0.056300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012943 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.83 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.18 ms.
-NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
-
-(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.838 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.02 ms, found 13 plugins.
+Refreshing native plugins compatible for Editor in 1.66 ms, found 19 plugins.
 Preloading 1 native plugins for Editor in 0.11 ms.
-Unloading 2219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.9 MB.
-System memory in use after: 99.2 MB.
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2749.
-Total: 3.236400 ms (FindLiveObjects: 0.270700 ms CreateObjectMapping: 0.129100 ms MarkObjects: 2.804000 ms  DeleteObjects: 0.031000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.013156 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.05 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.12 ms.
 NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
 
 (Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.653 seconds
+- Completed reload, in  1.534 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.51 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.19 ms.
-Unloading 2219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.9 MB.
-System memory in use after: 99.2 MB.
+Refreshing native plugins compatible for Editor in 2.11 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.12 ms.
+Unloading 2238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.3 MB.
+System memory in use after: 120.6 MB.
 
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2753.
-Total: 7.208300 ms (FindLiveObjects: 0.368700 ms CreateObjectMapping: 0.172300 ms MarkObjects: 6.589400 ms  DeleteObjects: 0.075000 ms)
+Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 2750.
+Total: 4.359800 ms (FindLiveObjects: 0.419100 ms CreateObjectMapping: 0.156100 ms MarkObjects: 3.740100 ms  DeleteObjects: 0.043000 ms)
 
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.017444 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.60 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.17 ms.
+NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.585 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.26 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.10 ms.
+Unloading 2238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.4 MB.
+System memory in use after: 120.6 MB.
+
+Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 2754.
+Total: 3.467500 ms (FindLiveObjects: 0.247200 ms CreateObjectMapping: 0.130100 ms MarkObjects: 3.044400 ms  DeleteObjects: 0.044400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.012934 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.31 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.26 ms.
+NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.415 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.50 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.10 ms.
+Unloading 2238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.4 MB.
+System memory in use after: 120.6 MB.
+
+Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 2758.
+Total: 3.654800 ms (FindLiveObjects: 0.324700 ms CreateObjectMapping: 0.221400 ms MarkObjects: 3.065500 ms  DeleteObjects: 0.041600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.014356 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.44 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.11 ms.
+NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.413 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.31 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.09 ms.
+Unloading 2238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.3 MB.
+System memory in use after: 120.5 MB.
+
+Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 2762.
+Total: 2.601000 ms (FindLiveObjects: 0.218100 ms CreateObjectMapping: 0.092900 ms MarkObjects: 2.259500 ms  DeleteObjects: 0.029600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 328.803187 seconds.
-  path: Packages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs
-  artifactKey: Guid(76c392e42b5098c458856cdf6ecaaaa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs using Guid(76c392e42b5098c458856cdf6ecaaaa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cf7899c23a9eb49e5ca9715a343292c') in 0.012120 seconds
-  Import took 0.022469 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 71.157959 seconds.
-  path: Assets/Scripts/PanelScripts/ToggleVRSupport.cs
-  artifactKey: Guid(d87bfdd7be84dbe43bcf45e5ad434f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PanelScripts/ToggleVRSupport.cs using Guid(d87bfdd7be84dbe43bcf45e5ad434f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c268a8608b7489995e9ef8f421c70a2') in 0.011363 seconds
-  Import took 0.028077 seconds .
+  Time since last request: 381.890392 seconds.
+  path: Assets/InputSystem.inputsettings.asset
+  artifactKey: Guid(04c7e786ca9c9724abc6bf5f8f3ea963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InputSystem.inputsettings.asset using Guid(04c7e786ca9c9724abc6bf5f8f3ea963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ef0a16402ab69eefa572fbbbf9a209d') in 0.086525 seconds 
+  Import took 0.091309 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.014300 seconds.
+Registered in 0.015559 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 13 plugins.
+Refreshing native plugins compatible for Editor in 1.86 ms, found 19 plugins.
 Preloading 1 native plugins for Editor in 0.15 ms.
 NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\unity\GitHub\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
 
 (Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.673 seconds
+- Completed reload, in  1.437 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.18 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.20 ms.
-Unloading 2219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 98.9 MB.
-System memory in use after: 99.1 MB.
+Refreshing native plugins compatible for Editor in 1.62 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.12 ms.
+Unloading 2238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.4 MB.
+System memory in use after: 120.6 MB.
 
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2757.
-Total: 6.827800 ms (FindLiveObjects: 0.633300 ms CreateObjectMapping: 0.296700 ms MarkObjects: 5.847800 ms  DeleteObjects: 0.046900 ms)
+Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 2766.
+Total: 2.635800 ms (FindLiveObjects: 0.225600 ms CreateObjectMapping: 0.100300 ms MarkObjects: 2.263800 ms  DeleteObjects: 0.045000 ms)
 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.013319 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.22 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.11 ms.
+NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\VR System\Documents\GitHub\InteractiveClimateMuseum\ClimateMuseum_VR\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.430 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.83 ms, found 19 plugins.
+Preloading 1 native plugins for Editor in 0.15 ms.
+Unloading 2238 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.4 MB.
+System memory in use after: 120.6 MB.
+
+Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 2770.
+Total: 2.605400 ms (FindLiveObjects: 0.229100 ms CreateObjectMapping: 0.095100 ms MarkObjects: 2.250000 ms  DeleteObjects: 0.030200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
