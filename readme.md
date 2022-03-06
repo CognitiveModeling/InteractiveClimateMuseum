@@ -24,7 +24,9 @@ The section [Additional scripts for the VR version](#VRScripts) in the documenta
 
 This is not a complete list...
 
-* only English at the moment, the option to change language in the browser panels has been disabled, as it interferes with our custom DOM changes
+* only English at the moment
+	* the option to change language in the browser panels has been disabled, as it interferes with our custom DOM changes
+	* the option to change language in the menu (for the whole museum) is not possible yet
 
 ## Documentation
 
