@@ -74,41 +74,43 @@ This is not a complete list...
 	
 	3\.5 CorrelationDictionary
 
-4. [Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor)](#EditorScripts)
+4. [Scripts managing the menu (in Assets - Scripts - MenuScripts)](#MenuScripts)
+  
+  4\.1 ShowMenu
 	
-	4\.1 ObjectForJson
-	
-	4\.2 EditorWebRequest
-	
-	4\.3 MaterialProcessorWorking
+	4\.2 MenuManager
 
-5. [Additional scripts for the VR version](#VRScripts)
+5. [Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor)](#EditorScripts)
 	
-	5\.1 [Additional scripts managing the panels](#VRPanelScripts)
+	5\.1 ObjectForJson
+	
+	5\.2 EditorWebRequest
+	
+	5\.3 MaterialProcessorWorking
+
+6. [Additional scripts for the VR version](#VRScripts)
+	
+	6\.1 [Additional scripts managing the panels](#VRPanelScripts)
 		
-	5.1.1 ToggleVRSupport
+	6.1.1 ToggleVRSupport
 
-	5.1.2 ToggleVRSupportHelper
+	6.1.2 ToggleVRSupportHelper
 
-	5.1.3 ButtonVRSupport
+	6.1.3 ButtonVRSupport
 
-	5.1.4 ChangeTexts
+	6.1.4 ChangeTexts
 	
-	5\.2 [Important scripts for the interaction between VR and browser](#VRBrowserScripts)
+	6\.2 [Important scripts for the interaction between VR and browser](#VRBrowserScripts)
 
-	5.2.1 VRControllerInputProxy
+	6.2.1 VRControllerInputProxy
 
-	5.2.2 VRBrowserHand
+	6.2.2 VRBrowserHand
 
-	5.2.3 PointerUIBase
+	6.2.3 PointerUIBase
 	
-	5.2.4 PointerUIMesh
+	6.2.4 PointerUIMesh
 	
-	5.2.5 HandleLoadingScreen
-
-6. [Other scripts (in Assets - Scripts)](#OtherScripts)
-	
-	6\.1 QuitMuseum
+	6.2.5 HandleLoadingScreen
 
 ################################################################################
 ################################################################################
@@ -754,19 +756,67 @@ interactive table.
 ################################################################################
 ################################################################################
 
-### 4. Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor) <a name="EditorScripts"></a>
+### 4. Scripts managing the menu
 
-#### 4.1 Script ObjectForJson
+#### 4.1 Script ShowMenu
 
 ##### 4.1.1 Description
+This script displays the menu canvas if the user presses the "M" key.
+It is assigned to the player in the editor.
+
+##### 4.1.2 Attributes
+- a public game object, the menu canvas
+
+##### 4.1.3 Methods
+- Update()
+  - if "M" is pressed, menu canvas is activated
+
+################################################################################
+
+#### 4.2 Script MenuManager
+
+##### 4.1.1 Description
+This script manages the menu canvas with the buttons Quit, Explore and Select Language.
+It is assigned to the Menu canvas in the editor.
+
+##### 4.1.2 Attributes
+- two Buttons for selecting languages, EnglishButton, GermanButton (s. also in the editor)
+
+##### 4.1.3 Methods
+- ExploreMuseum()
+  - if Explore button is clicked, the menu is closed so the user is back in the museum
+
+- SelectEnglishLanguage()
+  - if English button is clicked:
+    - the button is selected (colour change)
+    - the English version of the museum is loaded (TODO)
+
+- SelectGermanLanguage()
+  - if German button is clicked:
+    - the button is selected (colour change)
+    - the German version of the museum is loaded (TODO)
+
+- QuitMuseum()
+  - if quit button is clicked
+    - a log message about the quit museum is printed
+    - the whole museum is quit
+
+################################################################################
+################################################################################
+
+### 5. Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor) <a name="EditorScripts"></a>
+
+#### 5.1 Script ObjectForJson
+
+##### 5.1.1 Description
 This script is not a class, but a struct and supports the script EditorWebRequest (below).
 It is not assigned to any object in the editor.
 
-##### 4.1.2 Attributes
+##### 5.1.2 Attributes
 - public strings for the panel name and each child/sub tab name in the panel
   (information, examples, ...)
 
-##### 4.1.3 Methods
+##### 5.1.3 Methods
 - ObjectForJson(string name, string information, ...)
   - public constructor for the struct
 - ObjectClear()
@@ -775,45 +825,45 @@ It is not assigned to any object in the editor.
 
 ################################################################################
 
-#### 4.2 EditorWebRequest
+#### 5.2 EditorWebRequest
 
-##### 4.2.1 Description
+##### 5.2.1 Description
 not yet commented...
 
-##### 4.2.2 Attributes
+##### 5.2.2 Attributes
 
-##### 4.2.3 Methods
+##### 5.2.3 Methods
 
 ################################################################################
 
-#### 4.3 MaterialProcessorWorking
+#### 5.3 MaterialProcessorWorking
 
-##### 4.3.1 Description
+##### 5.3.1 Description
 not yet commented...
 
-##### 4.3.2 Attributes
+##### 5.3.2 Attributes
 
-##### 4.3.3 Methods
+##### 5.3.3 Methods
 
 ################################################################################
 ################################################################################
 
-### 5. Additional scripts for the VR version  <a name="VRScripts"></a>
+### 6. Additional scripts for the VR version  <a name="VRScripts"></a>
 
-#### 5.1 Additional scripts managing the panels <a name="VRPanelScripts"></a>
+#### 6.1 Additional scripts managing the panels <a name="VRPanelScripts"></a>
 
-##### 5.1.1 ToggleVRSupportHelper (in Assets - Scripts - PanelScripts)
+##### 6.1.1 ToggleVRSupportHelper (in Assets - Scripts - PanelScripts)
 
-###### 5.1.1.1 Description
+###### 6.1.1.1 Description
 This script prepares toggles, scrollbars and browsers in all panels
 so they can be used by the event listener scripts ToggleVRSupport, ScrollbarVrSupport and the scripts important for the browser interaction.
 It is assigned to the object Panels (Museum_VR - Panels) in the editor.
 
-###### 5.1.1.2 Attributes
+###### 6.1.1.2 Attributes
 - an event system, the object Panels is assigned in the editor
 - a VR camera, the object VRCamera (Museum_VR - VR_Player - SteamVRObjects - VRCamera) is assigned in the editor
 
-###### 5.1.1.3 Methods
+###### 6.1.1.3 Methods
 - Start()
 	- goes through the hierarchy, checks for toggles, buttons, scrollbars and browsers and prepares them for future use / event listeners
 	- collects all toggles in all the panels, including inactive toggles
@@ -827,17 +877,17 @@ It is assigned to the object Panels (Museum_VR - Panels) in the editor.
 
 ################################################################################
 
-##### 5.1.2 ToggleVRSupport (in Assets - Scripts - PanelScripts)
+##### 6.1.2 ToggleVRSupport (in Assets - Scripts - PanelScripts)
 
-###### 5.1.2.1 Description
+###### 6.1.2.1 Description
 This script handles the clicks/pointers that the player performs with the Vive controllers on the toggles of the panels.
 It is not assigned in the editor at the beginning, but the helper script ToggleVRSupportHelper assigns it to every toggle.
 
-###### 5.1.2.2 Attributes
+###### 6.1.2.2 Attributes
 - a toggle assigned via ToggleVRSupportHelper
 - an event system assigned via ToggleVRSupportHelper
 
-###### 5.1.2.3 Methods
+###### 6.1.2.3 Methods
 - Start()
 	- listens for pointer events of the Vive controllers
 
@@ -846,18 +896,18 @@ It is not assigned in the editor at the beginning, but the helper script ToggleV
 	
 ################################################################################
 
-##### 5.1.3 ButtonVRSupport (in Assets - Scripts - PanelScripts)
+##### 6.1.3 ButtonVRSupport (in Assets - Scripts - PanelScripts)
 
-###### 5.1.3.1 Description
+###### 6.1.3.1 Description
 This script handles the clicks/pointers that the player performs with the Vive controllers on the buttons of the panels.
 (In the Desktop version you can scroll through one large text, in VR you can click through smaller text tiles.)
 The script is not assigned in the editor at the beginning, but the helper script ToggleVRSupportHelper assigns it to every toggle.
 
-###### 5.1.3.2 Attributes
+###### 6.1.3.2 Attributes
 - a button assigned via ToggleVRSupportHelper
 - an event system assigned via ToggleVRSupportHelper
 
-###### 5.1.3.3 Methods
+###### 6.1.3.3 Methods
 - Start()
 	- listens for pointer events of the Vive controllers
 
@@ -866,17 +916,17 @@ The script is not assigned in the editor at the beginning, but the helper script
 	
 ################################################################################
 	
-##### 5.1.4 ChangeTexts (in Assets - Scripts - PanelScripts)
+##### 6.1.4 ChangeTexts (in Assets - Scripts - PanelScripts)
 
-###### 5.1.4.1 Description
+###### 6.1.4.1 Description
 This scripts changes the displayed text in the tab "Key Dynamics" in the panels if the player clicks onto the "<" or ">" button.
 
-###### 5.1.4.2 Attributes
+###### 6.1.4.2 Attributes
 - an array of TextMeshProUGUI text tiles that will be presented subsequently
 - an index indicating the current text tile
 - two buttons for jumping through the text tiles (left and right)
 
-###### 5.1.4.3 Methods
+###### 6.1.4.3 Methods
 - Awake()
   - at the beginning, the left button (<) is set inactive, the right button (>) is set active
 
@@ -902,7 +952,7 @@ This scripts changes the displayed text in the tab "Key Dynamics" in the panels 
 ################################################################################
 ################################################################################
 
-#### 5.2 Scripts for the interaction between VR and browser <a name="VRBrowserScripts"></a>
+#### 6.2 Scripts for the interaction between VR and browser <a name="VRBrowserScripts"></a>
 
 The image below gives an overview of the scripts, methods and variables that are important for the interaction between VR and browser.
 
@@ -916,21 +966,21 @@ In the following, all the scripts are described in more detail.
 
 ################################################################################
 
-##### 5.2.1 VRControllerInputProxy (in Assets - Scripts - BrowserUtilities) <a name="VRControllerInputProxy"></a>
+##### 6.2.1 VRControllerInputProxy (in Assets - Scripts - BrowserUtilities) <a name="VRControllerInputProxy"></a>
 
-##### 5.2.1.1 Description
+##### 6.2.1.1 Description
 This script communicates between the SteamVR and the scripts managing the
 browser, especially VRBrowserHand. Like the script
 VRBrowserHand, it is assigned to the object VRBrowser (VRPlayer - SteamVRObjects - RightHand), represented by a cube in the information room.
 
-##### 5.2.1.2 Attributes
+##### 6.2.1.2 Attributes
 - a VRBrowserHand
 - a specific boolean from SteamVR, indicating the trigger click, named
   TriggerClick
 - a specific input source from SteamVR (SteamVR_Input_Sources.RightHand can
   also be used)
 
-##### 5.2.1.3 Methods
+##### 6.2.1.3 Methods
 - OnEnable()
   - adds listener for pressing to the input source (s. Press() below)
   - adds listener for releasing to the input source (s. Release() below)
@@ -947,16 +997,16 @@ VRBrowserHand, it is assigned to the object VRBrowser (VRPlayer - SteamVRObjects
 
 ################################################################################
 
-##### 5.2.2 VRBrowserHand (in Assets - ZFBrowser - Scripts - VR) <a name="VRBrowserHand"></a>
+##### 6.2.2 VRBrowserHand (in Assets - ZFBrowser - Scripts - VR) <a name="VRBrowserHand"></a>
 
-###### 5.2.2.1 Description
+###### 6.2.2.1 Description
 This script tracks the tracked controllers. This can be used for feeding the VR input to the
 browser by the method FeedVRPointers() in the script PointerUIBase.
 Like the script VRControllerInputProxy, this script is assigned to the object VRBrowser
 (VRPlayer - SteamVRObjects - RightHand), represented by a cube in the information
 room.
 
-###### 5.2.2.2 Attributes
+###### 6.2.2.2 Attributes
 - a public XRNode called hand indicating which hand we should look to track, set to left
   hand
 - a public GameObject for optional visualization of the hand. It should be a child of the VRHand object and will be set active when the controller is tracking.
@@ -980,7 +1030,7 @@ room.
 - a private list of XRNodeStates called states
 - a private boolean hasTouchpad indicating if a touchpad exists (currently not used)
 
-###### 5.2.2.3 Methods
+###### 6.2.2.3 Methods
 - OnEnable()
   - initializes VR input
   - VR poses update after LateUpdate and before OnPreCull
@@ -1049,14 +1099,14 @@ room.
 
 ################################################################################
 	
-##### 5.2.3 PointerUIBase (in Assets - ZFBrowser - Scripts - BrowserUI) <a name="PointerUIBase"></a>
+##### 6.2.3 PointerUIBase (in Assets - ZFBrowser - Scripts - BrowserUI) <a name="PointerUIBase"></a>
 
-###### 5.2.3.1 Description
+###### 6.2.3.1 Description
 This script handles the input for different inputs (mouse, touch, pointer, VR,
 nose) makes them able to interact with the browser.
 It is not assigned in the editor because it is an abstract class used as parent of PointerUIMesh.
 
-###### 5.2.3.2 Attributes important for VR part
+###### 6.2.3.2 Attributes important for VR part
 - a Browser called browser
 - boolean enableVRInput, indicating if VR controllers are used, initially
   false
@@ -1072,7 +1122,7 @@ It is not assigned in the editor because it is an abstract class used as parent 
 - integers p_currentDown, p_currentOver, p_anyDown, p_anyOver indicating how
   many pointers are down/over
 
-###### 5.2.3.3 Methods important for VR part
+###### 6.2.3.3 Methods important for VR part
 - Awake()
   - initializes browser
   - registers the event for handling the pointers
@@ -1120,18 +1170,18 @@ It is not assigned in the editor because it is an abstract class used as parent 
 
 ################################################################################
 
-##### 5.2.4 PointerUIMesh (in Assets - ZFBrowser - Scripts - BrowserUI) <a name="PointerUIMesh"></a>
+##### 6.2.4 PointerUIMesh (in Assets - ZFBrowser - Scripts - BrowserUI) <a name="PointerUIMesh"></a>
 
-###### 5.2.4.1 Description
+###### 6.2.4.1 Description
 This script, a child of PointerUIBase, is a BrowserUI that tracks pointer interaction through a camera to a mesh of some sort.
 It is assigned to each panel's browser in the editor.
 
-###### 5.2.4.2 Attributes
+###### 6.2.4.2 Attributes
 - a mesh collider
 - a dictionary holding integers ans RaycastHits called rayHits
 - a LayerMask called layerMask, indicating which layers should UI rays collide with (and be able to hit), initially -1 (everything)
 
-###### 5.2.4.3 Methods
+###### 6.2.4.3 Methods
 - Awake()
 	- calls the Awake() method from its parent PointerUIBase, so browser and event listener is initialized
 	- initializes mesh collider
@@ -1161,18 +1211,18 @@ It is assigned to each panel's browser in the editor.
 
 ################################################################################
 
-##### 5.2.5 HandleLoadingScreen (in Assets - Scripts - BrowserUtilities)
+##### 6.2.5 HandleLoadingScreen (in Assets - Scripts - BrowserUtilities)
 
-###### 5.2.5.1 Description
+###### 6.2.5.1 Description
 This script handles the presentation of a loading screen while the browser is loaded.
 The script is assigned to the general simulator's tab panel and its start screen.
 
-###### 5.2.5.2 Attributes
+###### 6.2.5.2 Attributes
 - a game object LoadingScreen representing the loading screen, assigned in the editor (Simulator - Tab Panel - Loading Screen)
 - an instance of the type Browser, assigned in the editor (Simulator - Tab Panel - Browser)
 - a boolean indicating if the query is running, initially false
 
-###### 5.2.5.3 Methods
+###### 6.2.5.3 Methods
 - Update()
 	- if the loading screen is active and the query does not run:
 		- boolean is set to true, query runs now
@@ -1188,19 +1238,6 @@ The script is assigned to the general simulator's tab panel and its start screen
 
 ################################################################################
 ################################################################################
-
-### 6. Other scripts (in Assets - Scripts) <a name="OtherScripts"></a>
-
-#### 6.1 QuitMuseum
-
-##### 6.1.1 Definition
-This script quits the museum if the user clicks the quit button in the left
-upper corner. It is assigned to the Quit Button in the editor.
-
-##### 6.1.2 Methods
-- quit()
-  - If quit button is clicked, a log message about the quit museum is printed
-    and the whole museum is quit.
 
 ## License
 
