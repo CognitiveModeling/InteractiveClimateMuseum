@@ -76,7 +76,7 @@ This is not a complete list...
 
 4. [Scripts managing the menu (in Assets - Scripts - MenuScripts)](#MenuScripts)
   
-  4\.1 ShowMenu
+ 	4\.1 ShowMenu
 	
 	4\.2 MenuManager
 
@@ -756,7 +756,7 @@ interactive table.
 ################################################################################
 ################################################################################
 
-### 4. Scripts managing the menu
+### 4. Scripts managing the menu <a name="MenuScripts"></a>
 
 #### 4.1 Script ShowMenu
 
