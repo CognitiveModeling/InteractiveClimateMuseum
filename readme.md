@@ -763,15 +763,34 @@ interactive table.
 #### 4.1 Script ShowMenu
 
 ##### 4.1.1 Description
-This script displays the menu canvas if the user presses the "M" key.
-It is assigned to the player in the editor.
+This script displays the menu canvas if the user presses the "M" key (Desktop Version) or the menu button at the VR controllers (VR Version).
+It is assigned to the player (Desktop Version) and the VR player's hands (VR Version) in the editor.
+Its structure is similar to the script [VRControllerInputProxy](#VRControllerInputProxy).
 
 ##### 4.1.2 Attributes
 - a public game object, the menu canvas
+- a specific boolean from SteamVR, indicating the click of the menu button at the VR controllers
+- a specific input source from SteamVR
 
 ##### 4.1.3 Methods
 - Update()
   - if "M" is pressed, menu canvas is activated
+
+- OnEnable()
+  - adds listener for pressing to the input source (s. Press() below)
+  - adds listener for releasing to the input source (s. Release() below)
+
+- OnDisable()
+  - removes listener for pressing to the input source (s. Press() below)
+  - removes listener for releasing to the input source (s. Release() below)
+
+- Press(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+  - if the button is pressed
+    - the menu canvas is activated
+    - a log message is printed for debugging purposes
+
+- Release(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+  - if the button is released, a log message is printed for debugging purposes
 
 ################################################################################
 
