@@ -8,13 +8,19 @@ using UnityEngine.UI;
 
 public class OnEnableScript : MonoBehaviour
 {
-    // an image and a header, assigned in the editor
-	public GameObject image;
+    // an image and a German and English header, assigned in the editor
+    public GameObject image;
+    public GameObject headerDE;
     public GameObject header;
 
     // image and header are activated
     public void OnEnable()
     {
+        // if the English header is destroyed, use the German one
+        if (this.header == null)
+        {
+            this.header = headerDE;
+        }
         image.SetActive(true);
         header.SetActive(true);
     }
@@ -22,6 +28,11 @@ public class OnEnableScript : MonoBehaviour
     // image and header are deactivated
     public void OnDisable()
     {
+        // if the English header is destroyed, use the German one
+        if (this.header == null)
+        {
+            this.header = headerDE;
+        }
         image.SetActive(false);
         header.SetActive(false);
     }

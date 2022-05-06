@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-// This script manages the menu canvas with the buttons Quit, Explore and Select Language.
-// It is assigned to the Menu canvas in the editor.
+// This script manages the menu canvas in the entry scene "Menu" and in the scene "Museum" with the buttons Select Language and Quit and Explore, respectively.
+// It is assigned to the Menu canvas in both scenes in the editor.
 
 public class MenuManager : MonoBehaviour
 {
@@ -12,31 +13,22 @@ public class MenuManager : MonoBehaviour
     public Button EnglishButton;
     public Button DeutschButton;
 
-    // If Explore button is clicked, the menu is closed so the user is back in the museum.
+    // If Explore button is clicked (in scene Museum), the menu is closed so the user comes back into the museum.
     public void ExploreMuseum()
     {
         this.gameObject.SetActive(false);
     }
 
-    // If English button is clicked, the button is selected (colour change) and the English version of the museum is loaded (TODO).
-    public void SelectEnglishLanguage()
+    // If English/German button is clicked (in scene Menu), the Museum is loaded in the selected language.
+    public void LoadGame(string language)
     {
-        EnglishButton.Select();
-        // TODO:
-        // load English Version ...
-        // set URL in simulator to "en" ...
+        // save selected language 
+        LanguageController.language = language;
+        // load scene with selected language
+        SceneManager.LoadScene("Museum");
     }
 
-    // If German button is clicked, the button is selected (colour change) and the German version of the museum is loaded (TODO).
-    public void SelectGermanLanguage()
-    {
-        DeutschButton.Select();
-        // TODO:
-        // load German Version ...
-        // set URL in simulator to "de" ...
-    }
-
-    // If quit button is clicked, a log message about the quit museum is printed and the whole museum is quit
+    // If quit button is clicked (in scene Museum), a log message about the quit museum is printed and the whole museum is quit.
     public void QuitMuseum()
     {
         Debug.Log("Museum has quit");

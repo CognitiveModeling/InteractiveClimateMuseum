@@ -11,7 +11,7 @@ public class HideOnClick : MonoBehaviour
     public GameObject TabPanel;
 
     // if user clicks onto the start screen, start screen is deactivated and tab panel is activated
-    void OnMouseDown ()
+    void OnMouseDown()
     {
     	gameObject.SetActive(false);
 	    TabPanel.SetActive(true);

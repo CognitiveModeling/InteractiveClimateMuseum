@@ -50,7 +50,8 @@ public class SimulationRenderer : MonoBehaviour
     public void Start()
     {
         // load En-ROADS simulator into Browser object
-        browser.LoadURL("https://en-roads.climateinteractive.org/", true);
+        //browser.LoadURL("https://en-roads.climateinteractive.org/", true);
+        browser.LoadURL("https://en-roads.climateinteractive.org/scenario.html?v=22.4.0&lang=" + LanguageController.language, true);
 
         // Javascript (JS) function to deactive all listeners on selected element 
         browser.EvalJS("function deactivateListeners(elem) {" +
@@ -360,8 +361,8 @@ public class SimulationRenderer : MonoBehaviour
         // hides logo in upper left corner (needs hard-coded, dynamic name to hide)
         browser.EvalJS(hideElement(getFirstByClassName("logo svelte-1ytle68")));
 
-        // hides tab "language" in toolbar at the top (for debugging purposes)
-        //browser.EvalJS(hideElement(getFirstByClassName("top-menu")));
+        // hides tab "language" in toolbar at the top (language can only be selected in the scene Menu before the museum is loaded)
+        browser.EvalJS(hideElement(getFirstByClassName("top-menu")));
 
         // hides button "share your scenario" in top right corner
         browser.EvalJS(hideElement(getFirstByClassName("scenario-button")));
