@@ -24,9 +24,11 @@ The section [Additional scripts for the VR version](#VRScripts) in the documenta
 
 This is not a complete list...
 
-* only English at the moment
-	* the option to change language in the browser panels has been disabled, as it interferes with our custom DOM changes
-	* the option to change language in the menu (for the whole museum) is not possible yet
+* only English and German at the moment
+* the scaling of the initial menu and its background image does not work properly
+* scrollbars in the German version does not work correctly in every panel
+* some of the new scripts regarding the language selection have not been added to the documentation below yet
+
 
 ## Documentation
 
