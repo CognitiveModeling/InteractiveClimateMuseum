@@ -9,9 +9,40 @@ public class MouseClickRobot : MonoBehaviour
     {
         NONE,
         INITIAL,
-        COAL
-    }
 
+        CENTER_IMAGE_EXPAND,
+        CENTER_IMAGE_EXTRACT,
+
+        COAL,
+        RENEWABLES,
+        OIL,
+        NUCLEAR,
+        NATURAL_GAS,
+        ZERO_CARBON,
+        BIOENERGY,
+        CARBON_PRICE,
+        TRANSPORT_ENERGY_EFFICIENCY,
+        TRANSPORT_ELECTRIFICATION,
+        BUILDINGS_ENERGY_EFFICIENCY,
+        BUILDINGS_ELECTRIFICATION,
+        GROWTH_POPULATION,
+        GROWTH_ECONOMY,
+        DEFORESTATION,
+        METHANE,
+        AFFORESTATION,
+        TECHNOLOGICAL,
+
+        GRAPH,
+        IMPACT_GRAPH,
+        TEMP_GRAPH,
+        CO2_GRAPH,
+        GREENHOUSE_GRAPH,
+        SEA_LEVEL_GRAPH,
+        OCEAN_ACIDIFICATION_GRAPH,
+        AIR_POLLUTION_GRAPH,
+        CROP_GRAPH
+    }
+    
     public PROXY_TYPE proxyType;
 
     public float MinX = -1.0f;
@@ -23,40 +54,10 @@ public class MouseClickRobot : MonoBehaviour
     void Start()
     {
         this.initialX = this.transform.localPosition.x;
+        SliderEventSystem.aSimulatorSliderEvent += this.setPercentageExternal;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            if (this.MaxX != -1.0f && this.MinX != -1.0f)
-            {
-                this.transform.localPosition += new Vector3((this.MaxX - this.MinX) / 100.0f, 0f, 0f);
-                if (this.transform.localPosition.x > this.MaxX)
-                {
-                    this.transform.localPosition = new Vector3(this.MaxX, this.transform.localPosition.y, this.transform.localPosition.z);
-                }
-            }
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            if (this.MaxX != -1.0f && this.MinX != -1.0f)
-            {
-                this.transform.localPosition += new Vector3(-(this.MaxX - this.MinX) / 100.0f, 0f, 0f);
-                if (this.transform.localPosition.x < this.MinX)
-                {
-                    this.transform.localPosition = new Vector3(this.MinX, this.transform.localPosition.y, this.transform.localPosition.z);
-                }
-            }
-        }
-
-        if (Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            this.setPercentage(Random.value);
-        }
-    }
-
+   
     public void setPercentage(float percentage)
     {
         if (this.MaxX != -1.0f && this.MinX != -1.0f)
@@ -70,6 +71,15 @@ public class MouseClickRobot : MonoBehaviour
             {
                 this.transform.localPosition = new Vector3(this.MaxX, this.transform.localPosition.y, this.transform.localPosition.z);
             }
+            Debug.LogWarning(this.proxyType + ":" + percentage);
+        }
+    }
+
+    public void setPercentageExternal(float percentage, MouseClickRobot.PROXY_TYPE type)
+    {
+        if (this.proxyType == type)
+        {
+            this.setPercentage(percentage);
         }
     }
 }

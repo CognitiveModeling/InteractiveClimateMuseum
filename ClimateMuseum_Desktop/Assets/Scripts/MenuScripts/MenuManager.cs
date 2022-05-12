@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public BrowserSync browserSync;
+
     // two buttons for selecting languages
     public Button EnglishButton;
     public Button DeutschButton;
@@ -31,6 +33,16 @@ public class MenuManager : MonoBehaviour
     // If quit button is clicked (in scene Museum), a log message about the quit museum is printed and the whole museum is quit.
     public void QuitMuseum()
     {
+        browserSync.setQuit();
+        // If the simulator has been activated and the environment keeps refreshing:
+        // Reset materials to baseline values when quitting the museum
+        if (browserSync.getBusy())
+        {
+            browserSync.setNotBusy();
+            StopAllCoroutines();
+            browserSync.doResetMaterials();
+        }
+
         Debug.Log("Museum has quit");
         Application.Quit();
     }

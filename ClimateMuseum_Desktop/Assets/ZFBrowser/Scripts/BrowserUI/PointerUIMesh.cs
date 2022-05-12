@@ -34,7 +34,7 @@ public class PointerUIMesh : PointerUIBase {
 
 	protected override Vector2 MapRayToBrowser(Ray worldRay, int pointerId) {
 		RaycastHit hit;
-		var rayHit = Physics.Raycast(worldRay, out hit, maxDistance, layerMask);
+            var rayHit = Physics.Raycast(worldRay, out hit, maxDistance, layerMask);
 
 		//store hit data for GetCurrentHitLocation
 		rayHits[pointerId] = hit;
