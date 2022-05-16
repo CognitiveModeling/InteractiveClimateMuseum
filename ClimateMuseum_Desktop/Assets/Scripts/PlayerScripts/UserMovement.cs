@@ -60,7 +60,19 @@ public class UserMovement : MonoBehaviour
             // player rotates vertically ("looks up and down")
             float verticalRotation = rotateSpeed * Input.GetAxis("Mouse Y");
             playerCamera.transform.Rotate(-verticalRotation, 0, 0);
+            
+            /*Vector3 EulerRot = playerCamera.transform.localRotation.eulerAngles;
+            
+            Debug.Log(EulerRot.x);
+        
+            playerCamera.transform.localRotation = Quaternion.Euler(
+                                                    Mathf.Clamp(EulerRot.x - verticalRotation, -60, 60),
+                                                    0,
+                                                   0);
+            */
         }
+
+//Quaternion(0,0,0,1) euler: Vector3(0,0,0)
 
         // if user scrolls, player position changes with the current mouse scroll delta and 2.5 times the normal scroll speed forwards
         if (Mouse.current.scroll != null)
