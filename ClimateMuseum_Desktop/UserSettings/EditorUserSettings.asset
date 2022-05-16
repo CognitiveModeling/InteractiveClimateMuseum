@@ -15,9 +15,12 @@ EditorUserSettings:
       value: 07020d5000510d0a540d0e2143700749474f40797c2e23347c7c4b35b3e16268
       flags: 0
     RecentlyUsedSceneGuid-3:
-      value: 5202055004010b0c5a080d2711275b4444151b2c297d7f32287f4f37b1b5636c
+      value: 5a040d525c0d0c0b0b0c5f74477a0744174e407d7a2c7e357b7d1f63e4e46569
       flags: 0
     RecentlyUsedSceneGuid-4:
+      value: 5202055004010b0c5a080d2711275b4444151b2c297d7f32287f4f37b1b5636c
+      flags: 0
+    RecentlyUsedSceneGuid-5:
       value: 01530303530450035a5a54764170094447154d7e7b7124612e7f186ab4e26568
       flags: 0
     RecentlyUsedScenePath-0:
@@ -58,9 +61,13 @@ EditorUserSettings:
   m_VCDebugCmd: 0
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
+  m_DesiredImportWorkerCount: 2
+  m_StandbyImportWorkerCount: 2
+  m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
   m_VCOverwriteFailedCheckoutAssets: 1
   m_VCProjectOverlayIcons: 1
   m_VCHierarchyOverlayIcons: 1
   m_VCOtherOverlayIcons: 1
   m_VCAllowAsyncUpdate: 0
+  m_ArtifactGarbageCollection: 1
