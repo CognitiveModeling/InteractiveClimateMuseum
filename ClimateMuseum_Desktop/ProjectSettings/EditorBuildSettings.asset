@@ -15,5 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Museum.unity
     guid: bb7e6198748413641b5479b1c6e96b10
   m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: 61dda259ba57b0c409f7a1d25f883dc8,
+    com.unity.input.settings: {fileID: 11400000, guid: 04c7e786ca9c9724abc6bf5f8f3ea963,
       type: 2}
