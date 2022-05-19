@@ -81,10 +81,10 @@ This is not a complete list...
  	4\.1 ShowMenu
 	
 	4\.2 MenuManager
-
-  4\.3 LanguageManager
-
-  4\.4 LanguageController
+	
+	4\.3 LanguageManager
+	
+	4\.4 LanguageController
 
 5. [Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor)](#EditorScripts)
 	
@@ -357,25 +357,6 @@ Dynamics", except for the full-version simulator).
                   full-screen button and help button in toolbar at the top as
                   well as logos in right lower corner
 		- adds padding at the bottom of the simulator
-
-##### 1.6.4 Open issues
-- 15.12.21: Tab "Language" can be used now. However, sliders that are deactivated
-	    when the simulator is initially rendered do not change their name to the 
-	    chosen language, but are still displayed in English.
-- 11/21: Tab "Language" in the top toolbar (currently hidden)
-	This tab allows switching between languages. However, if the language is
-	changed in the tabs "Key Dynamics", none of the sliders can be used anymore. In the
-	RenderingCoroutine()'s switch-case, also the relevant sliders' listeners are
-	deactivated incorrectly by the JS function deactivateListeners(elem)
-	defined in Start(). This happens because the sliders' names have changed
-	(they are not in English anymore) which are requested in the if-statement
-	of each case for deactivating and graying out the nonrelevant sliders.
-	Because the JS function destroys the listeners irrecoverably, all of the
-	sliders can not be used in the following, not even when changing the
-	language back to English again.
-	This could be fixed with rewriting the JS function
-	deactivateListeners(elem) in such a way that the listeners will not be
-	destroyed irrecoverably.
 
 ################################################################################
 
@@ -831,9 +812,6 @@ It is assigned to the Menu canvas in the editor in both scenes (Menu and Museum)
 ##### 4.3.1 Description
 When loading the scene Museum, this script destroys the texts in the language that was not selected by the user in the scene Menu.
 It is assigned to the object Panels and Table in the editor.
-
-##### 4.3.2 Attributes
--
 
 ##### 4.3.3 Methods
 - Awake()
