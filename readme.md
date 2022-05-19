@@ -25,8 +25,6 @@ The section [Additional scripts for the VR version](#VRScripts) in the documenta
 This is not a complete list...
 
 * only English and German at the moment
-* the scaling of the initial menu and its background image does not work properly
-* scrollbars in the German version does not work correctly in every panel
 * some of the new scripts regarding the language selection have not been added to the documentation below yet
 
 
@@ -83,6 +81,10 @@ This is not a complete list...
  	4\.1 ShowMenu
 	
 	4\.2 MenuManager
+
+  4\.3 LanguageManager
+
+  4\.4 LanguageController
 
 5. [Scripts managing the extraction of texts from the simulator website and the import of images, materials and textures (in Assets - Editor)](#EditorScripts)
 	
@@ -471,7 +473,7 @@ Player in the editor.
     right
   - specifies user's commands to rotate the player with given rotation speed:
     hold right mouse button and move mouse to let the player
-    "look" left / right / up / down
+    "look" left / right and up / down (is limited)
   - specifies user's command to move player slightly forward with given
     scrolling speed: scroll mouse wheel
 
@@ -800,29 +802,55 @@ Its structure is similar to the script [VRControllerInputProxy](#VRControllerInp
 
 ##### 4.1.1 Description
 This script manages the menu canvas with the buttons Quit, Explore and Select Language.
-It is assigned to the Menu canvas in the editor.
+It is assigned to the Menu canvas in the editor in both scenes (Menu and Museum).
 
 ##### 4.1.2 Attributes
-- two Buttons for selecting languages, EnglishButton, GermanButton (s. also in the editor)
+- a public BrowserSync
 
 ##### 4.1.3 Methods
 - ExploreMuseum()
   - if Explore button is clicked, the menu is closed so the user is back in the museum
 
-- SelectEnglishLanguage()
-  - if English button is clicked:
-    - the button is selected (colour change)
-    - the English version of the museum is loaded (TODO)
-
-- SelectGermanLanguage()
-  - if German button is clicked:
-    - the button is selected (colour change)
-    - the German version of the museum is loaded (TODO)
+- LoadGame()
+  - If English/German button is clicked (in scene Menu):
+    - selected language is saved as a static variable (s. script LanguageController)
+    - the Museum is loaded in the selected language
 
 - QuitMuseum()
   - if quit button is clicked
+    - browsers are quit
+    - if the simulator has been activated and the environment keeps refreshing:
+        - resets materials to baseline values when quitting the museum
     - a log message about the quit museum is printed
     - the whole museum is quit
+
+################################################################################
+
+#### 4.3 Script LanguageManager
+
+##### 4.3.1 Description
+When loading the scene Museum, this script destroys the texts in the language that was not selected by the user in the scene Menu.
+It is assigned to the object Panels and Table in the editor.
+
+##### 4.3.2 Attributes
+-
+
+##### 4.3.3 Methods
+- Awake()
+  - look for each component in Panels or Table and its children:
+    - if the component has the tag "DE" and English was selected or if the component has the tag "EN" and German was selected:
+      - destroy the component's game object
+
+################################################################################
+
+#### 4.4 Script LanguageController
+
+##### 4.4.1 Description
+This class holds the language selected in the scene Menu so it can also be used in the scene Museum.
+It is not assigned in the editor.
+
+##### 4.4.2 Attributes
+- a public and *static* string called language
 
 ################################################################################
 ################################################################################

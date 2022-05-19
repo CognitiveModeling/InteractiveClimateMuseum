@@ -20,7 +20,7 @@ public class MenuManager : MonoBehaviour
     // If English/German button is clicked (in scene Menu), the Museum is loaded in the selected language.
     public void LoadGame(string language)
     {
-        // save selected language 
+        // save selected language as a static variable
         LanguageController.language = language;
         // load scene with selected language
         SceneManager.LoadScene("Museum");
