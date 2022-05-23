@@ -53,6 +53,8 @@ This is not a complete list...
 	1\.8 LoadingCircle
 	
 	1\.9 DestroyScriptsAndResetPanel (only for debugging)
+	
+	1\.10 MoveOnClick
 
 2. [Scripts managing the player (in Assets - Scripts - PlayerScripts)](#PlayerScripts)
 	
@@ -149,7 +151,8 @@ Particularly important are:
 
 ##### 1.1.1 Description
 This script hides the start screen of a panel if the user clicks on it.
-It is assigned to the StartScreen of each panel in the editor.
+It is assigned to the StartScreen of each panel (except from the simulator 
+panel) in the editor.
 
 ##### 1.1.2 Attributes
 - a public GameObject TabPanel, the corresponding panel with different tabs that
@@ -429,6 +432,25 @@ because it was only used for debugging purposes during the implementation.
       - for general/chapter tabs: only General Information toggle is on
       - for sub/child tabs: only first active tab toggle (left-most) is on
     - destroys itself (script DestroyScriptsAndResetPanel) at last
+
+################################################################################
+
+#### 1.10 Script MoveOnClick
+
+##### 1.10.1 Description
+This script moves the previously hidden simulator in place if the user
+clicks on it. This allows the BrowserSync Script to run all of the initial 
+commands in the background to decrease loading times.
+It is assigned to the StartScreen of the simulator panel in the editor.
+
+##### 1.10.2 Attributes
+- a public array GameObject[] Content, that contains the Tab Panel and SimulatorToEnvironment
+
+##### 1.10.3 Methods
+
+- OnMouseDown()
+  - if user clicks onto the start screen, panel's start screen is deactivated
+    and the objects of Content are moved into the desired position.
 
 ################################################################################
 ################################################################################
