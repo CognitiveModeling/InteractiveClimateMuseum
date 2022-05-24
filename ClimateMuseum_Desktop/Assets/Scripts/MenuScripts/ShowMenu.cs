@@ -10,13 +10,20 @@ public class ShowMenu : MonoBehaviour
 {
     // the menu canvas
     public GameObject menu;
-
+    
     void Update()
     {
         // if "M" is pressed, menu canvas is activated
         if (Keyboard.current.mKey.wasPressedThisFrame)
-        {
-            menu.SetActive(true);
-        }
+            
+            // if menu is not active, activate it
+            if (!menu.activeSelf) {
+                menu.SetActive(true);
+            }
+            
+            // if menu is already active, close it
+            else {
+                menu.SetActive(false);
+            }
     }
 }

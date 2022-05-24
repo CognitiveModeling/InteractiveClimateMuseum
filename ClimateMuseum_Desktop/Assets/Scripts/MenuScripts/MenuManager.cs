@@ -34,8 +34,7 @@ public class MenuManager : MonoBehaviour
             browserSync.setQuit();
             // If the simulator has been activated and the environment keeps refreshing:
             // Reset materials to baseline values when quitting the museum
-            if (browserSync.getBusy())
-            {
+            if (browserSync.getBusy()) {
                 browserSync.setNotBusy();
                 StopAllCoroutines();
                 browserSync.doResetMaterials();
