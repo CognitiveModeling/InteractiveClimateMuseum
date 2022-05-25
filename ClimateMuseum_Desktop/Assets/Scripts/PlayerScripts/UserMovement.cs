@@ -20,7 +20,7 @@ public class UserMovement : MonoBehaviour
     {
         // player movement forwards and backwards:
         // if user presses "Shift" and arrow key up, player position changes with 2.5 times the normal movement speed forwards
-        if (Keyboard.current.leftShiftKey.isPressed && Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed && Keyboard.current.upArrowKey.isPressed)
+        if ((Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed) && Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed && (Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed))
         {
             transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
         }
