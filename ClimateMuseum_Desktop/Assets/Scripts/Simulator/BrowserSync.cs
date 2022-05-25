@@ -29,7 +29,7 @@ public class BrowserSync : MonoBehaviour
     private bool firstTime = true; // set to false once the initialisation is over)
     private bool hasChanged = false; // set to true if value in sliderValues is different from respective value in prevSliderValues
 
-    public GameObject loadingCircle; // will be activated whilst the environment doesn´t match the slider values yet
+    public GameObject loadingCircles; // will be activated whilst the environment doesn´t match the slider values yet
 
     // baseline values for each graph type are stored in order to restore the initial state when exiting the museum
     private String baselineTemperature;
@@ -508,6 +508,103 @@ public class BrowserSync : MonoBehaviour
                     sliderValue = sliderValue.Split(new string[] { "%;\">" },
                         StringSplitOptions.RemoveEmptyEntries)[0];
                     //Debug.Log(title + " : " + sliderTitle + " : " + sliderValue);
+                    
+                    if (title.Equals("Energieversorgung"))
+                    {
+                        title = "Energy Supply";
+                    } else if (title.Equals("Transport &amp; Verkehr"))
+                    {
+                        title = "Transport";
+                    } else if (title.Equals("Gebäude und Industrie"))
+                    {
+                        title = "Buildings and Industry";
+                    }
+                    else if (title.Equals("Wachstum"))
+                    {
+                        title = "Growth";
+                    }
+                    else if (title.Equals("Landnutzungs- und Industrieemissionen"))
+                    {
+                        title = "Land and Industry Emissions";
+                    }
+                    else if (title.Equals("CO2-Abbau"))
+                    {
+                        title = "Carbon Removal";
+                    }
+
+                    if (sliderTitle.Equals("Kohle"))
+                    {
+                        sliderTitle = "Coal";
+                    } else if (sliderTitle.Equals("Erneuerbare Energien"))
+                    {
+                        sliderTitle = "Renewables";
+                    }
+                    else if (sliderTitle.Equals("Öl"))
+                    {
+                        sliderTitle = "Oil";
+                    }
+                    else if (sliderTitle.Equals("Kernkraft"))
+                    {
+                        sliderTitle = "Nuclear";
+                    }
+                    else if (sliderTitle.Equals("Erdgas"))
+                    {
+                        sliderTitle = "Natural Gas";
+                    }
+                    else if (sliderTitle.Equals("New Zero-Carbon"))
+                    {
+                        sliderTitle = "New Zero-Carbon";
+                    }
+                    else if (sliderTitle.Equals("Bioenergie"))
+                    {
+                        sliderTitle = "Bioenergy";
+                    }
+                    else if (sliderTitle.Equals("CO2-Preis"))
+                    {
+                        sliderTitle = "Carbon Price";
+                    }
+                    else if (sliderTitle.Equals("Energieeffizienz"))
+                    {
+                        sliderTitle = "Energy Efficiency";
+                    }
+                    else if (sliderTitle.Equals("Elektrifizierung"))
+                    {
+                        sliderTitle = "Electrification";
+                    }
+                    else if (sliderTitle.Equals("Energieeffizienz"))
+                    {
+                        sliderTitle = "Energy Efficiency";
+                    }
+                    else if (sliderTitle.Equals("Elektrifizierung"))
+                    {
+                        sliderTitle = "Electrification";
+                    }
+                    else if (sliderTitle.Equals("Bevölkerungswachstum"))
+                    {
+                        sliderTitle = "Population";
+                    }
+                    else if (sliderTitle.Equals("Wirtschaftswachstum"))
+                    {
+                        sliderTitle = "Economic Growth";
+                    }
+                    else if (sliderTitle.Equals("Entwaldung"))
+                    {
+                        sliderTitle = "Deforestation";
+                    }
+                    else if (sliderTitle.Equals("Methan &amp; andere"))
+                    {
+                        sliderTitle = "Methane &amp; Other";
+                    }
+                    else if (sliderTitle.Equals("Aufforstung"))
+                    {
+                        sliderTitle = "Afforestation";
+                    }
+                    else if (sliderTitle.Equals("Technologisch"))
+                    {
+                        sliderTitle = "Technological";
+                    }
+
+
                     // update the dictionary
                     this.sliderValues[title + " : " + sliderTitle] = float.Parse(sliderValue, CultureInfo.InvariantCulture);
                     //Debug.LogWarning(this.sliderValues[title + " : " + sliderTitle]);
@@ -531,7 +628,7 @@ public class BrowserSync : MonoBehaviour
             if (value >= 0f && value != prevValue) // if proper value is accessed and value is different to the previous one..
             {
                 hasChanged = true;
-                loadingCircle.SetActive(true); // makes loading circle and message "Adapting Environment" visible
+                loadingCircles.SetActive(true); // makes loading circle and message "Adapting Environment" visible
                 prevSliderValues[key] = value; // update prevSliderValues for the next run
                 //Debug.LogWarning("New prev for " + key + " is: " + value);
                 value = value * 0.01f;
@@ -645,6 +742,13 @@ public class BrowserSync : MonoBehaviour
             string controlSea = "Sea Level Rise (Meters (m))";
             string controlAcid = "Ocean Acidification (pH)";
             string controlAir = "Air Pollution from Energy — PM2.5 Emissions (Megatons PM2.5/year)";
+            string controlTempGerman = "Temperaturänderung (Grad Celsius)";
+            string controlCO2German = "CO2-Konzentration (CO2, parts per million (ppm))";
+            string controlGreenGerman = "Treibhausgas-Konzentration (CO2-Äquivalent, parts per million (ppm))";
+            string controlSeaGerman = "Anstieg des Meeresspiegels (Meter (m))";
+            string controlAcidGerman = "Versauerung der Ozeane (pH)";
+            string controlAirGerman = "Luftverschmutzung aus der Energieerzeugung – PM2,5-Emissionen (Megatonnen PM2,5/Jahr)";
+            
             foreach (PointerUIBase refBrowserUI in pointerUIBases)
             {
                 refBrowserUI.SetRelevantProxyType(MouseClickRobot.PROXY_TYPE.CENTER_IMAGE_EXTRACT); // use the extract robot to save data to copyBuffer
@@ -660,12 +764,12 @@ public class BrowserSync : MonoBehaviour
                 tempData = tempData.Remove(tempData.Length - 1); // remove last element, otherwise they don´t match
                 int whileCounter = 0; // counts how often the process has been repeated
                 // while the first line of the extracted data doesn´t match the expected data type, repeat extraction process
-                while (!(counter == 0 && tempData.Equals(controlTemp) ||
-                         counter == 1 && tempData.Equals(controlCO2) ||
-                         counter == 2 && tempData.Equals(controlGreen) ||
-                         counter == 3 && tempData.Equals(controlSea) ||
-                         counter == 4 && tempData.Equals(controlAcid) ||
-                         counter == 5 && tempData.Equals(controlAir)))
+                while (!(counter == 0 && (tempData.Equals(controlTemp)  || tempData.Equals(controlTempGerman)  ) ||
+                         counter == 1 && (tempData.Equals(controlCO2)   || tempData.Equals(controlCO2German)   ) ||
+                         counter == 2 && (tempData.Equals(controlGreen) || tempData.Equals(controlGreenGerman) ) ||
+                         counter == 3 && (tempData.Equals(controlSea)   || tempData.Equals(controlSeaGerman)   ) ||
+                         counter == 4 && (tempData.Equals(controlAcid)  || tempData.Equals(controlAcidGerman)  ) ||
+                         counter == 5 && (tempData.Equals(controlAir)   || tempData.Equals(controlAirGerman)   )))
                 {
                     if (whileCounter > 2) // major error seems to have happened -> stop trying and restart whole process
                     {
@@ -826,7 +930,7 @@ public class BrowserSync : MonoBehaviour
 
 
             }
-            loadingCircle.SetActive(false); // deactivates loading circle
+            loadingCircles.SetActive(false); // deactivates loading circle
         }
 
         this.busy = false;
