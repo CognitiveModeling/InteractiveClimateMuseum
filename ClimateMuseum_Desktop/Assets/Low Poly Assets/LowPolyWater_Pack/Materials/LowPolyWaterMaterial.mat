@@ -2,16 +2,14 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LowPolyWaterMaterial
   m_Shader: {fileID: 4800000, guid: 16516895e8a79bf49a6562c3c3b84cbf, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _EMISSION
+  m_ShaderKeywords: 
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -180,7 +178,7 @@ Material:
     - WaveSpeed: {r: 1.086165, g: 4.440575, b: 12.105146, a: -3.0206447}
     - _AnimationDirection: {r: 0, g: 0, b: 0, a: 0}
     - _AnimationTiling: {r: 0.04582553, g: 0.0182, b: 0.045714468, a: 0.027129691}
-    - _BaseColor: {r: 0.14499749, g: 0.20300967, b: 0.55200773, a: 1}
+    - _BaseColor: {r: 0.13416666, g: 0.22354598, b: 0.5280172, a: 1}
     - _BumpDirection: {r: 30, g: 30, b: 30, a: -50}
     - _BumpMap_ST: {r: 1, g: 1, b: 0, a: 0}
     - _BumpTiling: {r: 0.01, g: 0.01, b: 0.01, a: 0.01}
