@@ -112,7 +112,7 @@ public class Teleport : MonoBehaviour
     { 
         this.gameObject.transform.position = new Vector3(target.transform.position.x, 0.6f, target.transform.position.z);
         this.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
-        this.gameObject.transform.Find("Camera").transform.localRotation = Quaternion.Euler(0, 0, 0);
+        this.gameObject.transform.Find("Camera").transform.localRotation = Quaternion.Euler(5, 0, 0);
         teleported = true;
     }
 
@@ -121,6 +121,7 @@ public class Teleport : MonoBehaviour
     {
         this.gameObject.transform.position = oldPos;
         this.gameObject.transform.rotation = Quaternion.Euler(oldRot);
+        this.gameObject.transform.Find("Camera").transform.localRotation = Quaternion.Euler(0, 0, 0);
         teleported = false;
     }
 }
