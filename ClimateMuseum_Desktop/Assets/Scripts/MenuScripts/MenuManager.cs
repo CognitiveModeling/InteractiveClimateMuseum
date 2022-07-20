@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public BrowserSync browserSync;
+    public GameObject quitCanvas;
 
     // If Explore button is clicked (in scene Museum), the menu is closed so the user comes back into the museum.
     public void ExploreMuseum()
@@ -44,5 +45,22 @@ public class MenuManager : MonoBehaviour
         // in both scenes
         Debug.Log("Museum has quit");
         Application.Quit();
+    }
+
+    public void ShowQuitCanvas()
+    {
+        // quit canvas is shown
+        // if canvas is not active, activate it
+        if (!quitCanvas.activeSelf)
+        {
+            this.gameObject.SetActive(false);
+            quitCanvas.SetActive(true);
+        }
+
+        // if canvas is already active, close it
+        else
+        {
+            quitCanvas.SetActive(false);
+        }
     }
 }

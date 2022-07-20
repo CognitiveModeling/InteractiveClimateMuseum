@@ -5,14 +5,34 @@ using UnityEngine.InputSystem;
 
 public class QuitMuseum : MonoBehaviour
 {
+    // the quit canvas
+    public GameObject quitCanvas;
 
     void Update()
     {
-        // if "Esc" is pressed, museum is quit
+        // if "Esc" is pressed, quit canvas is shown
         if (Keyboard.current.escapeKey.wasPressedThisFrame) {
-            Debug.Log("Museum has quit");
-            Application.Quit();
+
+            ShowQuitCanvas();
         }
+    }
+
+    public void ShowQuitCanvas()
+    {
+        // quit canvas is shown
+        // if menu is not active, activate it
+        if (!quitCanvas.activeSelf)
+        {
+            this.gameObject.SetActive(false);
+            quitCanvas.SetActive(true);
+        }
+
+        // if menu is already active, close it
+        else
+        {
+            quitCanvas.SetActive(false);
+        }
+        
     }
 
 

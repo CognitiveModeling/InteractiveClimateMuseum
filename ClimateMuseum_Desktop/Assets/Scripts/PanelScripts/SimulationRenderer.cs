@@ -370,6 +370,9 @@ public class SimulationRenderer : MonoBehaviour
         // hides tab "help" in toolbar at the top
         browser.EvalJS(hideElement(getFirstByClassName("top-menu hide-offline")));
 
+        // hides replay button in toolbar at the top
+        browser.EvalJS(hideElement("document.getElementsByClassName('icon-button')[4]"));
+
         // hides full-screen button in toolbar at the top
         browser.EvalJS(hideElement("document.getElementsByClassName('icon-button')[5]"));
 

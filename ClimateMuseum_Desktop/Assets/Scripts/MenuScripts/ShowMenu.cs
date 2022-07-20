@@ -10,9 +10,14 @@ public class ShowMenu : MonoBehaviour
 {
     // the menu canvas
     public GameObject menu;
-    
+    // the quit canvas
+    public GameObject quitCanvas;
+    // the info canvas
+    public GameObject infoCanvas;
+
     void Update()
     {
+        /*
         // if "M" is pressed, menu canvas is activated
         if (Keyboard.current.mKey.wasPressedThisFrame)
             
@@ -24,6 +29,41 @@ public class ShowMenu : MonoBehaviour
             // if menu is already active, close it
             else {
                 menu.SetActive(false);
+            }
+        */
+
+        // if "Esc" is pressed, quit canvas is activated
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+
+            // if quit canvas is not active, activate it
+            if (!quitCanvas.activeSelf)
+            {
+                menu.SetActive(false);
+                infoCanvas.SetActive(false);
+                quitCanvas.SetActive(true);
+            }
+
+            // if quit canvas is already active, close it
+            else
+            {
+                quitCanvas.SetActive(false);
+            }
+        
+        // if "I" is pressed, info canvas is activated
+        if (Keyboard.current.iKey.wasPressedThisFrame)
+
+            // if info canvas is not active, activate it
+            if (!infoCanvas.activeSelf)
+            {
+                menu.SetActive(false);
+                quitCanvas.SetActive(false);
+                infoCanvas.SetActive(true);
+            }
+
+            // if quit canvas is already active, close it
+            else
+            {
+                infoCanvas.SetActive(false);
             }
     }
 }
