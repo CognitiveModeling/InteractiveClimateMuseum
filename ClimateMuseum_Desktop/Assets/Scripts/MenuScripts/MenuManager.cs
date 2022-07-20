@@ -37,7 +37,7 @@ public class MenuManager : MonoBehaviour
             if (browserSync.getBusy()) {
                 browserSync.setNotBusy();
                 StopAllCoroutines();
-                browserSync.doResetMaterials();
+                //browserSync.doResetMaterials();
             }
         }        
 

@@ -18,6 +18,8 @@ public class Teleport : MonoBehaviour
     public bool teleported = false;
     // the camera attached to the player
     public GameObject playerCamera;
+    // the player's original rotation before the teleportation to the simulator takes place
+    public Vector3 oldRot;
 
     // variables needed for fade-in and -out:
     // a canvas, object can also be found in editor as "Fader Canvas"
@@ -48,7 +50,8 @@ public class Teleport : MonoBehaviour
             {
                 // player's original position is saved
                 oldPos = this.gameObject.transform.position;
-                
+                oldRot = this.gameObject.transform.localRotation.eulerAngles;
+
                 // scene fades out
                 FadeOut();
                 
@@ -117,6 +120,7 @@ public class Teleport : MonoBehaviour
     void GoToOldPos()
     {
         this.gameObject.transform.position = oldPos;
+        this.gameObject.transform.rotation = Quaternion.Euler(oldRot);
         teleported = false;
     }
 }

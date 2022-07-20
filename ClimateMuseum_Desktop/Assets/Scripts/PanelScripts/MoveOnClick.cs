@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MoveOnClick : MonoBehaviour
 {
+
+    public Set2100 set2100;
+
     public GameObject[] Content;
     void OnMouseDown()
     {
@@ -16,6 +19,6 @@ public class MoveOnClick : MonoBehaviour
             pos.y = y;
             obj.transform.position = pos;
         }
-
+        set2100.set2100();
     }
 }

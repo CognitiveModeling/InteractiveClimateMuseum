@@ -28,6 +28,7 @@ public class BrowserSync : MonoBehaviour
     private bool quit = false; // set to true once the museum is exited (via the escape button or the "Quit Museum" Button)
     private bool firstTime = true; // set to false once the initialisation is over)
     private bool hasChanged = false; // set to true if value in sliderValues is different from respective value in prevSliderValues
+    public bool active2100 = false;
 
     public GameObject loadingCircles; // will be activated whilst the environment doesn´t match the slider values yet
 
@@ -111,9 +112,6 @@ public class BrowserSync : MonoBehaviour
         SEA_LEVEL,
         OCEAN_ACIDIFICATION,
         AIR_POLLUTION
-        //, CROP 
-        // can be used once the simulator makes not only the baseline data accessible for copying
-        // once uncommented: change in checkGraphProxyTypeMatch, 
     }
 
     /* 
@@ -234,6 +232,7 @@ public class BrowserSync : MonoBehaviour
         {
             Debug.LogError("proxy with type " + MouseClickRobot.PROXY_TYPE.CENTER_IMAGE_EXTRACT + " is missing...");
         }
+        set2022();
     }
 
     // Checks if correct graph type was clicked
@@ -317,7 +316,7 @@ public class BrowserSync : MonoBehaviour
                 StopAllCoroutines();
                 this.quit = true;
                 this.busy = false;
-                resetMaterials();
+                //resetMaterials();
                 //Debug.Log("Muesum has quit");
                 Application.Quit();
             }
@@ -372,7 +371,8 @@ public class BrowserSync : MonoBehaviour
     }
 
     // resets the material colors to the colors they have at baseline values
-    private void resetMaterials()
+    
+    /* private void resetMaterials()
     {
         var ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
         ci.NumberFormat.NumberDecimalSeparator = ".";
@@ -457,6 +457,7 @@ public class BrowserSync : MonoBehaviour
         smogMain.maxParticles = (int)(valToPerc(lower, upper, float.Parse(baselineAirPollution, ci)) * 140);
         smog.color = gradients.gradientSmog.Evaluate(valToPerc(lower, upper, float.Parse(baselineCO2, ci)));
     }
+    */
 
     // reads out the slider values, applies them to the hidden SyncBrowser, copies the predictions and applies them to the environment
     private IEnumerator readOutAndApplyValues()
@@ -799,28 +800,42 @@ public class BrowserSync : MonoBehaviour
             }
 
             // filters data for relevant values and applies them
-            foreach (BrowserSync.GraphTypes type in this.graphData.Keys)
+            apply();
+            loadingCircles.SetActive(false); // deactivates loading circle
+        }
+
+        this.busy = false;
+        float ROAAduration = Time.time - ROAAstartTime;
+        //Debug.Log("Duration of readOutAndApply: " + ROAAduration);
+
+        yield return null;
+    }
+
+    public void apply()
+    {
+        foreach (BrowserSync.GraphTypes type in this.graphData.Keys)
+        {
+            // prevents confusion with the separators
+            var ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            ci.NumberFormat.NumberDecimalSeparator = ".";
+            string data = this.graphData[type]; // extracts currently relevant data from graphData dictionary
+                                                //Debug.LogWarning("DATA of " + type + ": " + data);
+            var splittedData = data.Split('\n'); // split at new lines
+            var data2100 = splittedData[splittedData.Length - 2]; // save last line (contains relevant data of year 2100)
+            var splittedData2100 = data2100.Split('\t'); // split at tab
+            var baseline = splittedData2100[splittedData2100.Length - 2]; // save second last value (baseline value)
+            var prognosis = splittedData2100[splittedData2100.Length - 1]; // save last value (current prognosis)
+                                                                           //Debug.LogWarning(type + "Baseline: " + baseline + ", prognosis: " + prognosis);
+
+
+            // -------------- Applies the prognosis to the environment -------------- 
+            if (active2100)
             {
-                // prevents confusion with the separators
-                var ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
-                ci.NumberFormat.NumberDecimalSeparator = ".";
-                string data = this.graphData[type]; // extracts currently relevant data from graphData dictionary
-                //Debug.LogWarning("DATA of " + type + ": " + data);
-                var splittedData = data.Split('\n'); // split at new lines
-                var data2100 = splittedData[splittedData.Length - 2]; // save last line (contains relevant data of year 2100)
-                var splittedData2100 = data2100.Split('\t'); // split at tab
-                var baseline = splittedData2100[splittedData2100.Length - 2]; // save second last value (baseline value)
-                var prognosis = splittedData2100[splittedData2100.Length - 1]; // save last value (current prognosis)
-                //Debug.LogWarning(type + "Baseline: " + baseline + ", prognosis: " + prognosis);
-
-
-                // -------------- Applies the prognosis to the environment -------------- 
-
                 // TEMPERATURE affects tree color, ground color, mountain color and lake height
                 if (type == GraphTypes.TEMPERATURE)
                 {
                     baselineTemperature = baseline; // saves baseline values for resetting
-                    // meaning of lower and upper for all the following cases already explained in resetMaterials()
+                                                    // meaning of lower and upper for all the following cases already explained in resetMaterials()
                     lower = 0.9f;
                     upper = 5.8f;
 
@@ -837,8 +852,8 @@ public class BrowserSync : MonoBehaviour
                         tree2.color = new Color(tree2.color.r, tree2.color.g, tree2.color.b, 0f);
                     }
                     tree3.color = gradients.gradientTree3.Evaluate(valToPerc(lower, upper, float.Parse(prognosis, ci)));
-                    // make leaves disappear if prognosis >= 75% of worst case value:
-                    if (valToPerc(lower, upper, float.Parse(prognosis, ci)) >= 0.75)
+                    // make leaves disappear if prognosis >= 70% of worst case value:
+                    if (valToPerc(lower, upper, float.Parse(prognosis, ci)) >= 0.70)
                     {
                         tree3.color = new Color(tree3.color.r, tree3.color.g, tree3.color.b, 0f);
                     }
@@ -930,14 +945,7 @@ public class BrowserSync : MonoBehaviour
 
 
             }
-            loadingCircles.SetActive(false); // deactivates loading circle
         }
-
-        this.busy = false;
-        float ROAAduration = Time.time - ROAAstartTime;
-        //Debug.Log("Duration of readOutAndApply: " + ROAAduration);
-
-        yield return null;
     }
 
 
@@ -959,9 +967,49 @@ public class BrowserSync : MonoBehaviour
         return this.busy;
     }
     // calls resetMaterials() (for script QuitMuseum)
-    public void doResetMaterials()
+    /*public void doResetMaterials()
     {
         resetMaterials();
+    }
+    */
+
+    public void set2022()
+    {
+        tree1.color = new Color(0.364f, 0.925f, 0.160f, 1f);
+        tree2.color = new Color(0.231f, 0.639f, 0.082f, 1f);
+        tree3.color = new Color(0.027f, 0.380f, 0.015f, 1f);
+
+        ground.color = new Color(0.2f, 0.603f, 0f, 1f);
+        mountain.color = new Color(0.294f, 0.188f, 0f, 1f);
+
+        posLake = objLake.transform.position;
+        yLake = -5.293135f;
+        posLake.y = yLake;
+        objLake.transform.position = posLake;
+        
+        ParticleSystem.MainModule cloudsMain = psClouds.main;
+        cloudsMain.maxParticles = 3;
+        clouds.color = new Color(1f, 1f, 1f, 1f);
+
+        Color skyboxColor = new Color(0f, 0.6698113f, 0.6501371f, 1f);
+        RenderSettings.skybox.SetColor("_SkyTint", skyboxColor);
+
+        posOcean = objOcean.transform.position;
+        yOcean = -20f;
+        posOcean.y = yOcean;
+        objOcean.transform.position = posOcean;
+        
+        posIceberg = objIceberg.transform.position;
+        yIceberg = -27.63549f;
+        posIceberg.y = yIceberg;
+        objIceberg.transform.position = posIceberg;
+
+        Color oceanColor = new Color(0.07029124f, 0.4899847f, 0.7828243f, 1f);
+        ocean.SetColor("_BaseColor", oceanColor);
+        
+        ParticleSystem.MainModule smogMain = psSmog.main;
+        smogMain.maxParticles = 0;
+        smog.color = new Color(1f, 1f, 1f, 1f);
     }
 
 }

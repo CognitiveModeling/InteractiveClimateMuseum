@@ -20,7 +20,7 @@ public class CameraSwitch : MonoBehaviour
         else if (Input.GetButtonDown("Cam2"))
         {
             player.SetActive(false);
-            mainCamera.SetActive(false);
+            //mainCamera.SetActive(false);
             topDownCamera.SetActive(true);
         }
     }

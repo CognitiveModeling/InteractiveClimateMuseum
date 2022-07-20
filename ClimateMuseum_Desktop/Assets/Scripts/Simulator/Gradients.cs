@@ -57,9 +57,9 @@ public class Gradients : MonoBehaviour
         colorKeyTree1[0].color = new Color(0.364f, 0.925f, 0.160f, 1f);
         colorKeyTree1[0].time = 0.0f;
         colorKeyTree1[1].color = new Color(0.172f, 0.560f, 0.078f, 1f);
-        colorKeyTree1[1].time = 0.4f;
-        colorKeyTree1[2].color = new Color(0.7169f, 0.4171f, 0.186f, 1f);
-        colorKeyTree1[2].time = 1.0f;
+        colorKeyTree1[1].time = 0.25f;
+        colorKeyTree1[2].color = new Color(0.294759f, 0.3113208f, 0.02202741f, 1f);
+        colorKeyTree1[2].time = 0.65f;
 
         // Populate the alpha keys at relative time 0 and 1  (0 and 100%)
         alphaKeyTree1 = new GradientAlphaKey[2];
@@ -103,7 +103,7 @@ public class Gradients : MonoBehaviour
         colorKeyTree3[0].color = new Color(0.027f, 0.380f, 0.015f, 1f);
         colorKeyTree3[0].time = 0.0f;
         colorKeyTree3[1].color = new Color(0.0921f, 0.4339f, 0.123f, 1f);
-        colorKeyTree3[1].time = 0.5f;
+        colorKeyTree3[1].time = 0.23f;
         colorKeyTree3[2].color = new Color(0.2078f, 0.1615f, 0.0823f, 1f);
         colorKeyTree3[2].time = 0.68f;
 
@@ -121,15 +121,13 @@ public class Gradients : MonoBehaviour
         gradientGround = new Gradient();
 
         // Populate the color keys at the relative time 0 and 1 (0 and 100%)
-        colorKeyGround = new GradientColorKey[4];
-        colorKeyGround[0].color = new Color(0.054f, 1f, 0f, 1f);
-        colorKeyGround[0].time = 0.1f;
-        colorKeyGround[1].color = new Color(0.2f, 0.603f, 0f, 1f);
-        colorKeyGround[1].time = 0.41f;
-        colorKeyGround[2].color = new Color(0.396f, 0.298f, 0f, 1f);
-        colorKeyGround[2].time = 0.69f;
-        colorKeyGround[3].color = new Color(1f, 0.905f, 0f, 1f);
-        colorKeyGround[3].time = 0.88f;
+        colorKeyGround = new GradientColorKey[3];
+        colorKeyGround[0].color = new Color(0.2f, 0.603f, 0f, 1f);
+        colorKeyGround[0].time = 0.25f;
+        colorKeyGround[1].color = new Color(0.396f, 0.298f, 0f, 1f);
+        colorKeyGround[1].time = 0.62f;
+        colorKeyGround[2].color = new Color(1f, 0.905f, 0f, 1f);
+        colorKeyGround[2].time = 0.98f;
 
         // Populate the alpha keys at relative time 0 and 1  (0 and 100%)
         alphaKeyGround = new GradientAlphaKey[2];
@@ -149,9 +147,9 @@ public class Gradients : MonoBehaviour
         colorKeyMountain[0].color = new Color(0.294f, 0.188f, 0f, 1f);
         colorKeyMountain[0].time = 0.15f;
         colorKeyMountain[1].color = new Color(0.294f, 0.188f, 0f, 1f);
-        colorKeyMountain[1].time = 0.55f;
+        colorKeyMountain[1].time = 0.38f;
         colorKeyMountain[2].color = new Color(1f, 0.619f, 0.117f, 1f);
-        colorKeyMountain[2].time = 0.95f;
+        colorKeyMountain[2].time = 0.80f;
 
         // Populate the alpha keys at relative time 0 and 1  (0 and 100%)
         alphaKeyMountain = new GradientAlphaKey[2];
@@ -166,15 +164,13 @@ public class Gradients : MonoBehaviour
         // gradient from green to blue
         gradientOcean = new Gradient();
 
-        colorKeyOcean = new GradientColorKey[4];
+        colorKeyOcean = new GradientColorKey[3];
         colorKeyOcean[0].color = new Color(0f, 0.760f, 1f, 1f);
-        colorKeyOcean[0].time = 0.13f;
+        colorKeyOcean[0].time = 0f;
         colorKeyOcean[1].color = new Color(0.145f, 0.203f, 0.552f, 1f);
-        colorKeyOcean[1].time = 0.42f;
-        colorKeyOcean[2].color = new Color(0f, 0.478f, 0.231f, 1f);
-        colorKeyOcean[2].time = 0.77f;
-        colorKeyOcean[3].color = new Color(0.007f, 0.564f, 0f, 1f);
-        colorKeyOcean[3].time = 1f;
+        colorKeyOcean[1].time = 0.27f;
+        colorKeyOcean[2].color = new Color(0.007f, 0.564f, 0f, 1f);
+        colorKeyOcean[2].time = 1f;
 
         // Populate the alpha keys at relative time 0 and 1  (0 and 100%)
         alphaKeyOcean = new GradientAlphaKey[2];
@@ -193,9 +189,9 @@ public class Gradients : MonoBehaviour
         // Populate the color keys at the relative time 0 and 1 (0 and 100%)
         colorKeyClouds = new GradientColorKey[2];
         colorKeyClouds[0].color = new Color(1f, 1f, 1f, 1f);
-        colorKeyClouds[0].time = 0.21f;
-        colorKeyClouds[1].color = new Color(0.305f, 0.305f, 0.305f, 1f);
-        colorKeyClouds[1].time = 1f;
+        colorKeyClouds[0].time = 0.0f;
+        colorKeyClouds[1].color = new Color(0.245283f, 0.245283f, 0.245283f, 1f);
+        colorKeyClouds[1].time = 0.7f;
 
         // Populate the alpha keys at relative time 0 and 1  (0 and 100%)
         alphaKeyClouds = new GradientAlphaKey[2];
@@ -232,9 +228,9 @@ public class Gradients : MonoBehaviour
 
         // Populate the color keys at the relative time 0 and 1 (0 and 100%)
         colorKeySkybox = new GradientColorKey[2];
-        colorKeySkybox[0].color = new Color(0.501f, 0.937f, 1f, 1f);
+        colorKeySkybox[0].color = new Color(0f, 0.6698113f, 0.6501371f, 1f);
         colorKeySkybox[0].time = 0.15f;
-        colorKeySkybox[1].color = new Color(0.137f, 0.243f, 0.270f, 1f);
+        colorKeySkybox[1].color = new Color(0.501f, 0.937f, 1f, 1f);
         colorKeySkybox[1].time = 1f;
 
         // Populate the alpha keys at relative time 0 and 1  (0 and 100%)
