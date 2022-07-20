@@ -42,12 +42,6 @@ public class ShowMenu : MonoBehaviour
                 infoCanvas.SetActive(false);
                 quitCanvas.SetActive(true);
             }
-
-            // if quit canvas is already active, close it
-            else
-            {
-                quitCanvas.SetActive(false);
-            }
         
         // if "I" is pressed, info canvas is activated
         if (Keyboard.current.iKey.wasPressedThisFrame)
