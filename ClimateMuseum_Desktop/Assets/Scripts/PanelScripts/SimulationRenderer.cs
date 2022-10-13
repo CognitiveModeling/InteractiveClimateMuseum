@@ -51,7 +51,7 @@ public class SimulationRenderer : MonoBehaviour
     {
         // load En-ROADS simulator into Browser object
         //browser.LoadURL("https://en-roads.climateinteractive.org/", true);
-        browser.LoadURL("https://en-roads.climateinteractive.org/scenario.html?v=22.4.0&lang=" + LanguageController.language, true);
+        browser.LoadURL("https://en-roads.climateinteractive.org/scenario.html?v=22.10.0&lang=" + LanguageController.language, true);
 
         // Javascript (JS) function to deactive all listeners on selected element 
         browser.EvalJS("function deactivateListeners(elem) {" +
