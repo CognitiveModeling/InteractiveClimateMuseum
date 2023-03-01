@@ -552,7 +552,8 @@ public class BrowserSyncTemperatureOnly : MonoBehaviour
             //int counter = 0;
             //keeps track of which graphType is relevant in each run
             string tempData;
-            string controlTemp = "Temperature Change (Degrees Celsius)";
+           
+            /*string controlTemp = "Temperature Change (Degrees Celsius)";
             string controlCO2 = "CO2 Concentration (CO2 parts per million (ppm))";
             string controlGreen = "Greenhouse Gas Concentration (CO2 equivalent parts per million (ppm))";
             string controlSea = "Sea Level Rise (Meters (m))";
@@ -564,7 +565,8 @@ public class BrowserSyncTemperatureOnly : MonoBehaviour
             string controlSeaGerman = "Anstieg des Meeresspiegels (Meter (m))";
             string controlAcidGerman = "Versauerung der Ozeane (pH)";
             string controlAirGerman = "Luftverschmutzung aus der Energieerzeugung – PM2,5-Emissionen (Megatonnen PM2,5/Jahr)";
-            
+            */
+
             pointerUIBase.SetRelevantProxyType(MouseClickRobot.PROXY_TYPE.CENTER_IMAGE_EXTRACT); // use the extract robot to save data to copyBuffer
             yield return new WaitForSeconds(0.3f);
             this.graphData = GUIUtility.systemCopyBuffer; // save data from copyBuffer to graphData dictionnary
