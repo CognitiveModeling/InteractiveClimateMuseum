@@ -17,6 +17,7 @@ public class EvironmentUpdate : MonoBehaviour
 
     public Gradients gradients;
     public GetSliderValues getSliderValues;
+    public CMDInterface cmdInterface;
 
     private bool busy = false; // set to true while the changes of the sliders are applied to hidden browsers and the environment is changed
     public bool active2100 = false;
@@ -97,11 +98,11 @@ public class EvironmentUpdate : MonoBehaviour
         sliderValues = getSliderValues.getter(currURL); //TODO: return them as one string that complies to the format required by the API
 
         //TODO: feed sliderValues to API, retreive temp(2100) prognosis, apply this value to the environment
-        this.temp2100 = 1f ; // TODO (see above)
+        this.temp2100 = cmdInterface.getTemp2100(sliderValues); // TODO (see above)
 
         apply();
         loadingCircles.SetActive(false); // deactivates loading circle
-        
+
         this.busy = false;
         //float ROAAduration = Time.time - ROAAstartTime;
         //Debug.Log("Duration of readOutAndApply: " + ROAAduration);

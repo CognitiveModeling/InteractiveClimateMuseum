@@ -15,11 +15,11 @@ C:/Users/Paulina/Documents/GitHub/InteractiveClimateMuseum/InteractiveClimateMus
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54900
+60003
 Successfully changed project path to: C:/Users/Paulina/Documents/GitHub/InteractiveClimateMuseum/InteractiveClimateMuseum/ClimateMuseum_Desktop
 C:/Users/Paulina/Documents/GitHub/InteractiveClimateMuseum/InteractiveClimateMuseum/ClimateMuseum_Desktop
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 189.32 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 141.14 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.14f1 (51d2f824827f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Resources/UnitySubsystems
@@ -35,89 +35,89 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56312
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56668
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004151 seconds.
+Registered in 0.004284 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 128.43 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 124.91 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.537 seconds
+- Completed reload, in  2.427 seconds
 Domain Reload Profiling:
-	ReloadAssembly (5538ms)
+	ReloadAssembly (2428ms)
 		BeginReloadAssembly (114ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (857ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (815ms)
 			LoadAssemblies (107ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (356ms)
+			SetupTypeCache (342ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (50ms)
-			SetupLoadedEditorAssemblies (370ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (345ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (129ms)
+				RefreshPlugins (125ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (171ms)
-				ProcessInitializeOnLoadMethodAttributes (57ms)
+				ProcessInitializeOnLoadAttributes (161ms)
+				ProcessInitializeOnLoadMethodAttributes (46ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008754 seconds.
+Registered in 0.009886 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 127.71 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 143.77 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.181 seconds
+- Completed reload, in  2.123 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2182ms)
+	ReloadAssembly (2124ms)
 		BeginReloadAssembly (282ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
+			DisableScriptedObjects (10ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (1769ms)
-			LoadAssemblies (155ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (1729ms)
+			LoadAssemblies (164ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (633ms)
+			SetupTypeCache (604ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (98ms)
-			SetupLoadedEditorAssemblies (710ms)
+			RebuildScriptCaches (82ms)
+			SetupLoadedEditorAssemblies (716ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (128ms)
+				RefreshPlugins (144ms)
 				BeforeProcessingInitializeOnLoad (115ms)
-				ProcessInitializeOnLoadAttributes (432ms)
+				ProcessInitializeOnLoadAttributes (421ms)
 				ProcessInitializeOnLoadMethodAttributes (16ms)
-				AfterProcessingInitializeOnLoad (13ms)
+				AfterProcessingInitializeOnLoad (14ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 1.22 ms, found 8 plugins.
+Refreshing native plugins compatible for Editor in 1.84 ms, found 8 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2446 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 114.0 MB.
-System memory in use after: 114.2 MB.
+Unloading 2447 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.9 MB.
+System memory in use after: 114.1 MB.
 
-Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2889.
-Total: 5.581400 ms (FindLiveObjects: 0.424200 ms CreateObjectMapping: 0.147300 ms MarkObjects: 4.829000 ms  DeleteObjects: 0.179100 ms)
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2890.
+Total: 5.998100 ms (FindLiveObjects: 0.512500 ms CreateObjectMapping: 0.164400 ms MarkObjects: 5.087200 ms  DeleteObjects: 0.231000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -131,37 +131,85 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/Simulator/EvironmentUpdate.cs
-  artifactKey: Guid(b9c83e769031b314aa5c60c285371ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Simulator/EvironmentUpdate.cs using Guid(b9c83e769031b314aa5c60c285371ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '363d6dad548cbcd6cac1ab3210532b03') in 0.049830 seconds 
+  path: Assets/Scripts/Simulator/CMDinterface.cs
+  artifactKey: Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/CMDinterface.cs using Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4b0e79034a9242637af19802c3c438b') in 0.060676 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 868.123566 seconds.
-  path: Assets/Scripts/PlayerScripts/QuitMuseum.cs
-  artifactKey: Guid(56d398a4e161179308837b99f7b55649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerScripts/QuitMuseum.cs using Guid(56d398a4e161179308837b99f7b55649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd493a1ec1d2347d5e54430cc270e2f7') in 0.006470 seconds 
+  Time since last request: 160.705840 seconds.
+  path: Assets/Scripts/Simulator/CMDinterface.cs
+  artifactKey: Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/CMDinterface.cs using Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0b03fae2fc08529c4b04d055c9046c7') in 0.005008 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2018.139792 seconds.
-  path: Assets/Scripts/Simulator/GetSliderValues.cs
-  artifactKey: Guid(4bfc3fa7693b23848adcb800b7974e87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Simulator/GetSliderValues.cs using Guid(4bfc3fa7693b23848adcb800b7974e87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b41c3d034527509d2a590875ca5905b6') in 0.007045 seconds 
+  Time since last request: 2.475724 seconds.
+  path: Assets/Scripts/Simulator/CMDInterface.cs
+  artifactKey: Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/CMDInterface.cs using Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ce8380b30b23bd593d776db40415893') in 0.006614 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 90.900170 seconds.
-  path: Assets/Scripts/Simulator/EvironmentUpdate.cs
-  artifactKey: Guid(b9c83e769031b314aa5c60c285371ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Simulator/EvironmentUpdate.cs using Guid(b9c83e769031b314aa5c60c285371ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63731811b10351ad71826a2ae3da165d') in 0.005525 seconds 
+  Time since last request: 1429.855849 seconds.
+  path: Assets/Scripts/Simulator/CMDinterface.cs
+  artifactKey: Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/CMDinterface.cs using Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44719368e604e0bc30c37e2356cc94d4') in 0.008772 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 204.222511 seconds.
-  path: Assets/Scripts/Simulator/EvironmentUpdate.cs
-  artifactKey: Guid(b9c83e769031b314aa5c60c285371ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Simulator/EvironmentUpdate.cs using Guid(b9c83e769031b314aa5c60c285371ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8da8a8dd56ae2f1a6ab57c8ac4931bd0') in 0.005132 seconds 
+  Time since last request: 24.483266 seconds.
+  path: Assets/Scripts/Simulator/CMDInterface.cs
+  artifactKey: Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/CMDInterface.cs using Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5f5e8a0d1fdc23623344cb2605407f7') in 0.005379 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 9386.420431 seconds.
-  path: Assets/Scripts/Simulator/EvironmentUpdate.cs
-  artifactKey: Guid(b9c83e769031b314aa5c60c285371ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Simulator/EvironmentUpdate.cs using Guid(b9c83e769031b314aa5c60c285371ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b99f6249c91f97ca4bdb17bfc00748e1') in 0.007544 seconds 
+  Time since last request: 233.699986 seconds.
+  path: Assets/Scripts/Simulator/CMDInterface.cs
+  artifactKey: Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/CMDInterface.cs using Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '714958ee6896b37428460c5be190099e') in 0.006427 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15941.814268 seconds.
+  path: Assets/Scripts/Simulator/CMDInterface.cs
+  artifactKey: Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/CMDInterface.cs using Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6b161923b4faa6e32810611a9d6eafb') in 0.007910 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1513.829055 seconds.
+  path: Assets/Scripts/Simulator/CMDInterface.cs
+  artifactKey: Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/CMDInterface.cs using Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd582d99c1a093e8ca64150da41f4441f') in 0.006686 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 905.292951 seconds.
+  path: Assets/Scripts/Simulator/Tester.cs
+  artifactKey: Guid(6f8b076a15b86dc4ba8b981135944a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/Tester.cs using Guid(6f8b076a15b86dc4ba8b981135944a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6f58b3e180ed5a95e1eca55e5229b11') in 0.006022 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 102.610944 seconds.
+  path: Assets/Scripts/Simulator/Tester.cs
+  artifactKey: Guid(6f8b076a15b86dc4ba8b981135944a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/Tester.cs using Guid(6f8b076a15b86dc4ba8b981135944a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cddb0c6c99e2a4522a50331a44de0d7') in 0.005057 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.951510 seconds.
+  path: Assets/Scripts/Simulator/Tester.cs
+  artifactKey: Guid(6f8b076a15b86dc4ba8b981135944a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/Tester.cs using Guid(6f8b076a15b86dc4ba8b981135944a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '182e1fc7304b668f7844d4f6c0c21772') in 0.004427 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 109.402578 seconds.
+  path: Assets/Scripts/Simulator/Tester.cs
+  artifactKey: Guid(6f8b076a15b86dc4ba8b981135944a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/Tester.cs using Guid(6f8b076a15b86dc4ba8b981135944a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b0639eb22c2a0e3e63f3c3a28c451f9') in 0.004842 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 83.468840 seconds.
+  path: Assets/Scripts/Simulator/Tester.cs
+  artifactKey: Guid(6f8b076a15b86dc4ba8b981135944a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/Tester.cs using Guid(6f8b076a15b86dc4ba8b981135944a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f5b5ff215e13968e22bb827a6359114') in 0.004782 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 690.718057 seconds.
+  path: Assets/Scripts/Simulator/CMDInterface.cs
+  artifactKey: Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simulator/CMDInterface.cs using Guid(27e42bb1cf6611d47a2ae82faccbe70d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7ad662a2584decada7f98cb5c2fdd2b') in 0.004352 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
