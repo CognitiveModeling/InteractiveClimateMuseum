@@ -8,7 +8,7 @@ using UnityEngine;
 using ZenFulcrum.EmbeddedBrowser;
 using System.Linq;
 using System.Diagnostics;
-using System.Security.Policy;
+//using System.Security.Policy;
 
 public class EvironmentUpdate : MonoBehaviour
 {
@@ -29,7 +29,7 @@ public class EvironmentUpdate : MonoBehaviour
     private String lastURL = "foo"; // TODO: Insert Link browser is set to at the beginning
     private String currURL = "bar"; // TODO: Insert Link browser is set to at the beginning (muss evtl public sein?? glaub aber nicht)
     private String sliderValues;
-    private float temp2100;
+    private float prognosis;
 
     // upper and lower will be used as boundaries of several different value ranges
     private float upper;
@@ -87,8 +87,8 @@ public class EvironmentUpdate : MonoBehaviour
     {
         if (lastURL == null || currURL == null)
         {
+            UnityEngine.Debug.LogWarning("URL is null.");
             return false;
-            Debug.LogWarning("URL is null.");
         }
 
         this.lastURL = this.currURL;
@@ -99,13 +99,12 @@ public class EvironmentUpdate : MonoBehaviour
     private IEnumerator readOutAndApplyValues()
     {
         sliderValues = getSliderValues.getter(currURL); //turn URL to one string that complies to the format required by the API
-
-        this.temp2100 = cmdInterface.getTemp2100(sliderValues); // //feed sliderValues to API, retreive temp(2100) prognosis, apply this value to the environment
+        cmdInterface.getTemp2100(sliderValues); // //feed sliderValues to API, retreive temp(2100) prognosis, apply this value to the environment
 
         yield return null;
     }
 
-    public void apply()
+    public void apply(float temp2100)
     {
         // prevents confusion with the separators
         var ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
@@ -118,7 +117,7 @@ public class EvironmentUpdate : MonoBehaviour
             //baselineTemperature = baseline; 
             // saves baseline values for resetting
             // meaning of lower and upper for all the following cases already explained in resetMaterials()
-
+            prognosis = temp2100;
             lower = 0.9f;
             upper = 5.8f;
 

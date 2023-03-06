@@ -32,7 +32,7 @@ public class CMDInterface : MonoBehaviour
     }
 
     // initiates the model calculation, this creates a thread that runs the binary and collects the results
-    public float getTemp2100(String sliderValues)
+    public void getTemp2100(String sliderValues)
     {
         CMDArgs = sliderValues;
         if (!this.running)
@@ -44,18 +44,13 @@ public class CMDInterface : MonoBehaviour
                     this.running = true;
                     StartCoroutine(ThreadMonitor());
                     UnityEngine.Debug.LogWarning("output is:" + modelOutput);
-                    //while ()
-                    return temp2100;
                 }
                 else
                 {
                     UnityEngine.Debug.LogError("file at " + this.AbsolutePath + " does not exist...");
-                    return 0f;
                 }
             }
-            else return 0f;
         }
-        else return 0f;
     }
 
     // this method performs the actual call to the binary, it will run in a thread, that is controlled through a coroutine
@@ -126,7 +121,7 @@ public class CMDInterface : MonoBehaviour
 
         this.running = false;
         // see the docu or the header_indices file for the indices
-        int yearIndex = 0;
+        //int yearIndex = 0;
         int temperatureIndex = 2;
         bool parseData = false;
         List<float> temperatures = new List<float>();
@@ -168,10 +163,14 @@ public class CMDInterface : MonoBehaviour
         }
         if (temperatures.Count > 0)
         {
-            temp2100 = temperatures[temperatures.Count - 1];
+            // Using float.Parse()
+
+            string numberStr = temperatures[temperatures.Count - 1];
+
+            temp2100 = float.Parse(numberStr);
+            evironmentUpdate.apply(temp2100);
             // Do something with lastTemperature
         }
-        tester.correctTemperature = true;
-        UnityEngine.Debug.Log("temp2100: " + temp2100);
+        //UnityEngine.Debug.Log("temp2100: " + temp2100);
     }
         }
