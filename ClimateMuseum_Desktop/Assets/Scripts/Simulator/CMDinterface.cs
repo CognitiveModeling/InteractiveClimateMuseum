@@ -11,6 +11,17 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class CMDInterface : MonoBehaviour
 {
+    public EvironmentUpdate evironmentUpdate;
+    
+    public string CMDArgs; // the arguments we want to pass, they will be written to a file and the file path is then the actual argument for the c binary
+
+    public string AbsolutePath; // the location of the c binary as an absolute path
+    
+    // thread control variables
+    private bool running = false;
+    private Thread currentThread;
+    private string modelOutput = "empty";
+    private float temp2100 = 10f;
 
     public void Start()
     {
@@ -18,29 +29,6 @@ public class CMDInterface : MonoBehaviour
         string relativePath = "Scripts/Simulator/en_roads.exe";
         string absolutePath = Path.Combine(UnityEngine.Application.dataPath, relativePath);
         
-    }
-    // the location of the c binary as an absolute path
-    public string AbsolutePath;
-    
-    // the arguments we want to pass, they will be written to a file and the
-    // file path is then the actual argument for the c binary
-    public string CMDArgs;
-
-    public Tester tester;
-
-    // thread control variables
-    private bool running = false;
-    private Thread currentThread;
-    private string modelOutput = "empty";
-    private float temp2100 = 10f;
-
-    // event listener for the slider value change, if the value changes we adapt the command line parameter accordingly
-    public void CoalTaxSliderValueChange()
-    {
-        // we map the slider percentage to the actual value range of -20 to 110, which is hardcoded here
-        //float coalTaxValue = -20.0f + (110.0f - -20.0f) * CoalTaxSlider.value;
-        // the respective index of the variable is 6, see the docu or the variable_index_mapping file
-        //this.CMDArgs = "6:" + (coalTaxValue).ToString(System.Globalization.CultureInfo.InvariantCulture); // to avoid the fucking comma
     }
 
     // initiates the model calculation, this creates a thread that runs the binary and collects the results
@@ -70,8 +58,7 @@ public class CMDInterface : MonoBehaviour
         else return 0f;
     }
 
-    // this method performs the actual call to the binary, it will run in a thread, that is controlled
-    // through a coroutine
+    // this method performs the actual call to the binary, it will run in a thread, that is controlled through a coroutine
     private void RunProcess()
     {
         try
