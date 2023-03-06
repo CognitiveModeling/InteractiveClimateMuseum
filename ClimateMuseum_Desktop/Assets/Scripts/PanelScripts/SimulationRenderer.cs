@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 using ZenFulcrum.EmbeddedBrowser;
@@ -40,11 +41,14 @@ public class SimulationRenderer : MonoBehaviour
     // specifies the type of simulator (full or downscaled version)
     public SimulationRenderer.SIMULATOR_TYPE Type;
 
+    public string url;
 
     public void Awake()
     {
         // initializes the browser object
         browser = GetComponent<Browser>();
+        url = browser.Url;
+        //Debug.Log("Current url: " + url);
     }
 
     public void Start()
@@ -69,6 +73,8 @@ public class SimulationRenderer : MonoBehaviour
         if (browser.IsLoaded)
         {
             StartCoroutine(RenderingCoroutine());
+            url = browser.Url;
+            //Debug.Log("Current url: " + url);
         }
     }
 
@@ -286,7 +292,7 @@ public class SimulationRenderer : MonoBehaviour
                         "sections[0].parentNode.style.border = 'thick solid #FFD700';");
                     break;
                 default:
-                    Debug.LogError("name not found");
+                    UnityEngine.Debug.LogError("name not found");
                     break;
             }
         }
