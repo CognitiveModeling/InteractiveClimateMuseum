@@ -1,41 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
-using System.Linq;
+using System.Collections.Generic;
 
 public class GetSliderValues : MonoBehaviour
 {
-    [SerializeField] private double[] p = new double[181];
-
-    private string apiUrl = "https://en-roads.climateinteractive.org/scenario.html?v=23.2.1";
-    string valuesForAPI = "";
-
-    void Start()
-    {
-        getter(apiUrl);
-    }
-
     public string getter(string url)
     {
-        // Get the values of the parameters from the URL
-        var parameters = System.Web.HttpUtility.ParseQueryString(new Uri(url).Query);
-
-        // Loop through the parameters and build the valuesForAPI string
-        foreach (var parameterName in parameters.AllKeys.Where(k => k.StartsWith("p")))
+        string valuesForAPI = "";
+        Dictionary<string, string> query = GetQueryParameters(url);
+        for (int i = 1; i <= 180; i++)
         {
-            double value;
-            if (double.TryParse(parameters[parameterName], out value))
+            if (query.ContainsKey("p" + i))
             {
-                int index;
-                if (int.TryParse(parameterName.Substring(1), out index))
+                valuesForAPI += i + ":" + query["p" + i] + " ";
+            }
+        }
+        return valuesForAPI.Trim();
+    }
+
+    private Dictionary<string, string> GetQueryParameters(string url)
+    {
+        Dictionary<string, string> query = new Dictionary<string, string>();
+        int questionMarkIndex = url.IndexOf('?');
+        if (questionMarkIndex >= 0)
+        {
+            string queryString = url.Substring(questionMarkIndex + 1);
+            string[] parameters = queryString.Split('&');
+            foreach (string parameter in parameters)
+            {
+                string[] parts = parameter.Split('=');
+                if (parts.Length == 2)
                 {
-                    valuesForAPI += $"{index}:{value} ";
+                    string key = parts[0];
+                    string value = parts[1];
+                    query.Add(key, value);
                 }
             }
         }
-
-        // Remove the trailing space and return the string
-        return valuesForAPI.TrimEnd();
+        return query;
     }
 }

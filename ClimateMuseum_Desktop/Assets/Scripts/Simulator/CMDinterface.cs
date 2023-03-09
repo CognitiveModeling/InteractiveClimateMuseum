@@ -165,9 +165,10 @@ public class CMDInterface : MonoBehaviour
         {
             // Using float.Parse()
 
-            string numberStr = temperatures[temperatures.Count - 1];
+            //string numberStr = temperatures[temperatures.Count - 1];
 
-            temp2100 = float.Parse(numberStr);
+            //temp2100 = float.Parse(numberStr);
+            temp2100 = temperatures[temperatures.Count - 1];
             evironmentUpdate.apply(temp2100);
             // Do something with lastTemperature
         }

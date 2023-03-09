@@ -8,7 +8,8 @@ using UnityEngine;
 using ZenFulcrum.EmbeddedBrowser;
 using System.Linq;
 using System.Diagnostics;
-//using System.Security.Policy;
+using System.Security.Policy;
+
 
 public class EvironmentUpdate : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class EvironmentUpdate : MonoBehaviour
     public CMDInterface cmdInterface;
     public SimulationRenderer simulationRenderer;
 
-    private bool busy = false; // set to true while the changes of the sliders are applied to hidden browsers and the environment is changed
+    public bool busy = false; // set to true while the changes of the sliders are applied to hidden browsers and the environment is changed
     public bool active2100 = false;
 
     public GameObject loadingCircles; // will be activated whilst the environment doesn´t match the slider values yet
@@ -121,53 +122,53 @@ public class EvironmentUpdate : MonoBehaviour
             lower = 0.9f;
             upper = 5.8f;
 
-            tree1.color = gradients.gradientTree1.Evaluate(valToPerc(lower, upper, float.Parse(prognosis, ci)));
+            tree1.color = gradients.gradientTree1.Evaluate(valToPerc(lower, upper, prognosis));
             // make leaves disappear if prognosis >= 85% of worst case value:
-            if (valToPerc(lower, upper, float.Parse(prognosis, ci)) >= 0.85)
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
             {
                 tree1.color = new Color(tree1.color.r, tree1.color.g, tree1.color.b, 0f);
             }
-            tree2.color = gradients.gradientTree2.Evaluate(valToPerc(lower, upper, float.Parse(prognosis, ci)));
+            tree2.color = gradients.gradientTree2.Evaluate(valToPerc(lower, upper, prognosis));
             // make leaves disappear if prognosis >= 80% of worst case value:
-            if (valToPerc(lower, upper, float.Parse(prognosis, ci)) >= 0.80)
+            if (valToPerc(lower, upper, prognosis) >= 0.80)
             {
                 tree2.color = new Color(tree2.color.r, tree2.color.g, tree2.color.b, 0f);
             }
-            tree3.color = gradients.gradientTree3.Evaluate(valToPerc(lower, upper, float.Parse(prognosis, ci)));
+            tree3.color = gradients.gradientTree3.Evaluate(valToPerc(lower, upper, prognosis));
             // make leaves disappear if prognosis >= 70% of worst case value:
-            if (valToPerc(lower, upper, float.Parse(prognosis, ci)) >= 0.70)
+            if (valToPerc(lower, upper, prognosis) >= 0.70)
             {
                 tree3.color = new Color(tree3.color.r, tree3.color.g, tree3.color.b, 0f);
             }
 
-            ground.color = gradients.gradientGround.Evaluate(valToPerc(lower, upper, float.Parse(prognosis, ci)));
-            mountain.color = gradients.gradientMountain.Evaluate(valToPerc(lower, upper, float.Parse(prognosis, ci)));
+            ground.color = gradients.gradientGround.Evaluate(valToPerc(lower, upper, prognosis));
+            mountain.color = gradients.gradientMountain.Evaluate(valToPerc(lower, upper, prognosis));
             posLake = objLake.transform.position;
 
             float lakeMax = -5.01f;
             float lakeMin = -8f;
 
-            yLake = lakeMax - ((-1f) * valToPerc(lower, upper, float.Parse(prognosis, ci)) * (lakeMin - lakeMax));
+            yLake = lakeMax - ((-1f) * valToPerc(lower, upper, prognosis) * (lakeMin - lakeMax));
             posLake.y = yLake;
             objLake.transform.position = posLake;
-            //Debug.Log(type + ": Baseline value is " + float.Parse(baseline, ci) + ", prognosis for year 2100 is " + float.Parse(prognosis, ci));
+            //Debug.Log(type + ": Baseline value is " + float.Parse(baseline, ci) + ", prognosis for year 2100 is " + prognosis);
 
             // CO2-CONCENTRATION affects cloud color and concentration
 
             //baselineCO2 = baseline;
             ParticleSystem.MainModule cloudsMain = psClouds.main;
-            cloudsMain.maxParticles = (int)(valToPerc(lower, upper, float.Parse(prognosis, ci)) * 140);
-            clouds.color = gradients.gradientClouds.Evaluate(valToPerc(lower, upper, float.Parse(prognosis, ci)));
-            //Debug.Log(type + ": Baseline value is " + float.Parse(baseline, ci) + ", prognosis for year 2100 is " + float.Parse(prognosis, ci));
+            cloudsMain.maxParticles = (int)(valToPerc(lower, upper, prognosis) * 140);
+            clouds.color = gradients.gradientClouds.Evaluate(valToPerc(lower, upper, prognosis));
+            //Debug.Log(type + ": Baseline value is " + float.Parse(baseline, ci) + ", prognosis for year 2100 is " + prognosis);
 
-            RenderSettings.skybox.SetColor("_SkyTint", gradients.gradientSkybox.Evaluate(valToPerc(lower, upper, float.Parse(prognosis, ci))));
-            //Debug.Log(type + ": Baseline value is " + float.Parse(baseline, ci) + ", prognosis for year 2100 is " + float.Parse(prognosis, ci));
+            RenderSettings.skybox.SetColor("_SkyTint", gradients.gradientSkybox.Evaluate(valToPerc(lower, upper, prognosis)));
+            //Debug.Log(type + ": Baseline value is " + float.Parse(baseline, ci) + ", prognosis for year 2100 is " + prognosis);
 
             posOcean = objOcean.transform.position;
 
             float oceanMax = -2f;
             float oceanMin = -15.5f;
-            yOcean = oceanMin + ((-1f) * valToPerc(lower, upper, float.Parse(prognosis, ci)) * (oceanMin - oceanMax));
+            yOcean = oceanMin + ((-1f) * valToPerc(lower, upper, prognosis) * (oceanMin - oceanMax));
             posOcean.y = yOcean;
             objOcean.transform.position = posOcean;
 
@@ -175,17 +176,17 @@ public class EvironmentUpdate : MonoBehaviour
 
             float icebergMax = -15f;
             float icebergMin = -125f;
-            yIceberg = icebergMax - ((-1f) * valToPerc(lower, upper, float.Parse(prognosis, ci)) * (icebergMin - icebergMax));
+            yIceberg = icebergMax - ((-1f) * valToPerc(lower, upper, prognosis) * (icebergMin - icebergMax));
             posIceberg.y = yIceberg;
             objIceberg.transform.position = posIceberg;
 
-            //Debug.Log(type + ": Baseline value is " + float.Parse(baseline, ci) + ", prognosis for year 2100 is " + float.Parse(prognosis, ci));
+            //Debug.Log(type + ": Baseline value is " + float.Parse(baseline, ci) + ", prognosis for year 2100 is " + prognosis);
 
-            ocean.SetColor("_BaseColor", gradients.gradientOcean.Evaluate(valToPerc(lower, upper, float.Parse(prognosis, ci))));
+            ocean.SetColor("_BaseColor", gradients.gradientOcean.Evaluate(valToPerc(lower, upper, prognosis)));
 
             ParticleSystem.MainModule smogMain = psSmog.main;
-            smogMain.maxParticles = (int)(valToPerc(lower, upper, float.Parse(prognosis, ci)) * 140);
-            smog.color = gradients.gradientSmog.Evaluate(valToPerc(lower, upper, float.Parse(prognosis, ci)));
+            smogMain.maxParticles = (int)(valToPerc(lower, upper, prognosis) * 140);
+            smog.color = gradients.gradientSmog.Evaluate(valToPerc(lower, upper, prognosis));
 
         }
         

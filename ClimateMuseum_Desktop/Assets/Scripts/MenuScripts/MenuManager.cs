@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public BrowserSync browserSync;
+    public EvironmentUpdate evironmentUpdate;
+    //public BrowserSync browserSync;
     public GameObject quitCanvas;
 
     // If Explore button is clicked (in scene Museum), the menu is closed so the user comes back into the museum.
@@ -31,12 +32,12 @@ public class MenuManager : MonoBehaviour
     public void QuitMuseum()
     {
         // in scene "Museum"
-        if (browserSync != null) {
-            browserSync.setQuit();
+        if (evironmentUpdate != null) {
+            //evironmentUpdate.setQuit();
             // If the simulator has been activated and the environment keeps refreshing:
             // Reset materials to baseline values when quitting the museum
-            if (browserSync.getBusy()) {
-                browserSync.setNotBusy();
+            if (evironmentUpdate.busy) {
+                //evironmentUpdate.setNotBusy();
                 StopAllCoroutines();
                 //browserSync.doResetMaterials();
             }

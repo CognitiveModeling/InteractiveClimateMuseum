@@ -7,15 +7,15 @@ public class Set2022 : MonoBehaviour
 {
     public GameObject thisBackground;
     public GameObject otherBackground;
-    public BrowserSyncTemperatureOnly browserSyncTemperatureOnly;
+    public EvironmentUpdate evironmentUpdate;
 
     void OnMouseDown()
     {
         thisBackground.GetComponent<Image>().color = Color.green;
         otherBackground.GetComponent<Image>().color = Color.grey;
 
-        browserSyncTemperatureOnly.active2100 = false;
+        evironmentUpdate.active2100 = false;
 
-        browserSyncTemperatureOnly.set2022();
+        evironmentUpdate.set2022();
     }
 }
