@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,14 +8,14 @@ public class Set2100 : MonoBehaviour
 {
     public GameObject thisBackground;
     public GameObject otherBackground;
-    public EvironmentUpdate evironmentUpdate;
+    public EnvironmentUpdate environmentUpdate;
 
     public void set2100()
     {
         thisBackground.GetComponent<Image>().color = Color.green;
         otherBackground.GetComponent<Image>().color = Color.grey;
-
-        evironmentUpdate.active2100 = true;
+        environmentUpdate.active2100 = true;
+        environmentUpdate.startReadOutAndApplyValues();
     }
 
 

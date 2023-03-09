@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public EvironmentUpdate evironmentUpdate;
+    public EnvironmentUpdate environmentUpdate;
     //public BrowserSync browserSync;
     public GameObject quitCanvas;
 
@@ -32,12 +32,12 @@ public class MenuManager : MonoBehaviour
     public void QuitMuseum()
     {
         // in scene "Museum"
-        if (evironmentUpdate != null) {
-            //evironmentUpdate.setQuit();
+        if (environmentUpdate != null) {
+            //environmentUpdate.setQuit();
             // If the simulator has been activated and the environment keeps refreshing:
             // Reset materials to baseline values when quitting the museum
-            if (evironmentUpdate.busy) {
-                //evironmentUpdate.setNotBusy();
+            if (environmentUpdate.busy) {
+                //environmentUpdate.setNotBusy();
                 StopAllCoroutines();
                 //browserSync.doResetMaterials();
             }

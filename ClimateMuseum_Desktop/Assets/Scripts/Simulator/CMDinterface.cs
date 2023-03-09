@@ -11,12 +11,14 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class CMDInterface : MonoBehaviour
 {
-    public EvironmentUpdate evironmentUpdate;
-    
+    public EnvironmentUpdate environmentUpdate;
+
     public string CMDArgs; // the arguments we want to pass, they will be written to a file and the file path is then the actual argument for the c binary
 
-    public string AbsolutePath; // the location of the c binary as an absolute path
-    
+    //public string absolutePath; // the location of the c binary as an absolute path
+    private string relativePath;
+    private string absolutePath;
+
     // thread control variables
     private bool running = false;
     private Thread currentThread;
@@ -25,10 +27,9 @@ public class CMDInterface : MonoBehaviour
 
     public void Start()
     {
-        UnityEngine.Debug.Log(UnityEngine.Application.dataPath);
-        string relativePath = "Scripts/Simulator/en_roads.exe";
-        string absolutePath = Path.Combine(UnityEngine.Application.dataPath, relativePath);
-        
+        //UnityEngine.Debug.Log(UnityEngine.Application.dataPath);
+        relativePath = "Scripts/Simulator/en_roads.exe";
+        absolutePath = Path.Combine(UnityEngine.Application.dataPath, relativePath);
     }
 
     // initiates the model calculation, this creates a thread that runs the binary and collects the results
@@ -37,17 +38,17 @@ public class CMDInterface : MonoBehaviour
         CMDArgs = sliderValues;
         if (!this.running)
         {
-            if (this.AbsolutePath.Length > 0)
+            if (this.absolutePath.Length > 0)
             {
-                if (System.IO.File.Exists(this.AbsolutePath))
+                if (System.IO.File.Exists(this.absolutePath))
                 {
                     this.running = true;
                     StartCoroutine(ThreadMonitor());
-                    UnityEngine.Debug.LogWarning("output is:" + modelOutput);
+                    //UnityEngine.Debug.LogWarning("output is:" + modelOutput);
                 }
                 else
                 {
-                    UnityEngine.Debug.LogError("file at " + this.AbsolutePath + " does not exist...");
+                    UnityEngine.Debug.LogError("file at " + this.absolutePath + " does not exist...");
                 }
             }
         }
@@ -64,10 +65,10 @@ public class CMDInterface : MonoBehaviour
             // to the c binary as the actual command line parameter
             if (this.CMDArgs.Length > 0)
             {
-                System.IO.DirectoryInfo directoryInfo = System.IO.Directory.GetParent(this.AbsolutePath);
+                System.IO.DirectoryInfo directoryInfo = System.IO.Directory.GetParent(this.absolutePath);
                 string[] paths = { directoryInfo.FullName, "input_args.txt" };
                 string fullCMDArgsPath = Path.Combine(paths);
-                UnityEngine.Debug.Log(fullCMDArgsPath);
+                //UnityEngine.Debug.Log(fullCMDArgsPath);
 
                 using (var writer = new StreamWriter(fullCMDArgsPath)) // we overwrite
                 {
@@ -79,7 +80,7 @@ public class CMDInterface : MonoBehaviour
 
             ProcessStartInfo startInfo = new ProcessStartInfo()
             {
-                FileName = this.AbsolutePath,
+                FileName = this.absolutePath,
                 UseShellExecute = false,
                 RedirectStandardError = true,
                 RedirectStandardInput = true,
@@ -94,7 +95,7 @@ public class CMDInterface : MonoBehaviour
             enroadsProcess.Start();
             string output = enroadsProcess.StandardOutput.ReadToEnd();
             enroadsProcess.WaitForExit();
-            UnityEngine.Debug.Log("process finished...");
+            //UnityEngine.Debug.Log("process finished...");
             this.running = false;
             this.modelOutput = output;
             //UnityEngine.Debug.Log("actual output: " + modelOutput);
@@ -169,7 +170,8 @@ public class CMDInterface : MonoBehaviour
 
             //temp2100 = float.Parse(numberStr);
             temp2100 = temperatures[temperatures.Count - 1];
-            evironmentUpdate.apply(temp2100);
+            UnityEngine.Debug.LogWarning("Temp2100: " + temp2100);
+            environmentUpdate.apply(temp2100);
             // Do something with lastTemperature
         }
         //UnityEngine.Debug.Log("temp2100: " + temp2100);

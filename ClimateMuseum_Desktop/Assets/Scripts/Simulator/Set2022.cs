@@ -7,15 +7,14 @@ public class Set2022 : MonoBehaviour
 {
     public GameObject thisBackground;
     public GameObject otherBackground;
-    public EvironmentUpdate evironmentUpdate;
+    public EnvironmentUpdate environmentUpdate;
 
     void OnMouseDown()
     {
         thisBackground.GetComponent<Image>().color = Color.green;
         otherBackground.GetComponent<Image>().color = Color.grey;
 
-        evironmentUpdate.active2100 = false;
-
-        evironmentUpdate.set2022();
+        environmentUpdate.active2100 = false;
+        environmentUpdate.set2022();
     }
 }
