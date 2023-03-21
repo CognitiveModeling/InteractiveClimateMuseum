@@ -7,14 +7,38 @@ public class GetSliderValues : MonoBehaviour
     {
         string valuesForAPI = "";
         Dictionary<string, string> query = GetQueryParameters(url);
-        for (int i = 1; i <= 180; i++)
+        Dictionary<int, int> mapping = LoadIndexMapping();
+
+        for (int i = 1; i <= 284; i++)
         {
             if (query.ContainsKey("p" + i))
             {
-                valuesForAPI += i + ":" + query["p" + i] + " ";
+                string value = query["p" + i];
+                if (mapping.ContainsKey(i))
+                {
+                    valuesForAPI += "p" + mapping[i] + ":" + value + " ";
+                }
             }
         }
         return valuesForAPI.Trim();
+    }
+
+    private Dictionary<int, int> LoadIndexMapping()
+    {
+        Dictionary<int, int> mapping = new Dictionary<int, int>();
+        TextAsset csvFile = Resources.Load<TextAsset>("index_mapping");
+        string[] lines = csvFile.text.Split('\n');
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] fields = lines[i].Split(';');
+            if (fields.Length == 2)
+            {
+                int index = int.Parse(fields[1]);
+                int value = int.Parse(fields[0]);
+                mapping.Add(index, value);
+            }
+        }
+        return mapping;
     }
 
     private Dictionary<string, string> GetQueryParameters(string url)
