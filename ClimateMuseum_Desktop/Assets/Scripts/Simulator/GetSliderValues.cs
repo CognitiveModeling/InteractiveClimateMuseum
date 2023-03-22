@@ -16,7 +16,7 @@ public class GetSliderValues : MonoBehaviour
                 string value = query["p" + i];
                 if (mapping.ContainsKey(i))
                 {
-                    valuesForAPI += "p" + mapping[i] + ":" + value + " ";
+                    valuesForAPI += mapping[i] + ":" + value + " ";
                 }
             }
         }

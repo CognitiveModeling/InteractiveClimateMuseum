@@ -100,8 +100,8 @@ public class EnvironmentUpdate : MonoBehaviour
     private IEnumerator readOutAndApplyValues()
     {
         sliderValues = getSliderValues.getter(currURL); //turn URL to one string that complies to the format required by the API
-        UnityEngine.Debug.LogWarning("Curr URL: " + currURL);
-        UnityEngine.Debug.LogWarning("sliderValues: " + sliderValues);
+        //UnityEngine.Debug.LogWarning("Curr URL: " + currURL);
+        //UnityEngine.Debug.LogWarning("sliderValues: " + sliderValues);
 
         if (sliderValues.Length > 0)
         {

@@ -170,7 +170,7 @@ public class CMDInterface : MonoBehaviour
 
             //temp2100 = float.Parse(numberStr);
             temp2100 = temperatures[temperatures.Count - 1];
-            UnityEngine.Debug.LogWarning("Temp2100: " + temp2100);
+            //UnityEngine.Debug.LogWarning("Temp2100: " + temp2100);
             environmentUpdate.apply(temp2100);
             // Do something with lastTemperature
         }
