@@ -13,7 +13,7 @@ using System.Security.Policy;
 
 public class EnvironmentUpdate : MonoBehaviour
 {
-    // All Debug.Log/LogWarning messages are placed in comments, so they don´t affect the running time, for programming it´s best to uncomment them (selectively)
+    // All Debug.Log/LogWarning messages are placed in comments, so they donï¿½t affect the running time, for programming itï¿½s best to uncomment them (selectively)
 
     //public Browser browser;
 
@@ -25,7 +25,7 @@ public class EnvironmentUpdate : MonoBehaviour
     public bool busy = false; // set to true while the changes of the sliders are applied to hidden browsers and the environment is changed
     public bool active2100 = false;
 
-    public GameObject loadingCircles; // will be activated whilst the environment doesn´t match the slider values yet
+    public GameObject loadingCircles; // will be activated whilst the environment doesnï¿½t match the slider values yet
 
     private String lastURL; 
     private String currURL;
