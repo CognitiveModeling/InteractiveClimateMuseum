@@ -19,7 +19,7 @@ public class EnvironmentUpdate : MonoBehaviour
 
     public Gradients gradients;
     public GetSliderValues getSliderValues;
-    public CMDInterface cmdInterface;
+    public CMDinterface cmdInterface;
     public SimulationRenderer simulationRenderer;
 
     public bool busy = false; // set to true while the changes of the sliders are applied to hidden browsers and the environment is changed

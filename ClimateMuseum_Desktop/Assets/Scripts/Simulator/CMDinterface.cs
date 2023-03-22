@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static System.Net.Mime.MediaTypeNames;
 
-public class CMDInterface : MonoBehaviour
+public class CMDinterface : MonoBehaviour
 {
     public EnvironmentUpdate environmentUpdate;
 
