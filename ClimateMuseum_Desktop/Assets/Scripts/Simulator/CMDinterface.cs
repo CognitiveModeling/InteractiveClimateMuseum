@@ -27,9 +27,11 @@ public class CMDinterface : MonoBehaviour
 
     public void Start()
     {
-        //UnityEngine.Debug.Log(UnityEngine.Application.dataPath);
-        relativePath = "Scripts/Simulator/en_roads.exe";
-        absolutePath = Path.Combine(UnityEngine.Application.dataPath, relativePath);
+        // UnityEngine.Debug.Log(UnityEngine.Application.streamingAssetsPath);
+        relativePath = "en_roads.exe";
+        //absolutePath = Path.Combine(UnityEngine.Application.dataPath, relativePath); // produces slash/backslash chaos
+        absolutePath = UnityEngine.Application.streamingAssetsPath + "/" + relativePath;
+        // UnityEngine.Debug.Log("absolute path: " + absolutePath);
     }
 
     // initiates the model calculation, this creates a thread that runs the binary and collects the results
