@@ -95,7 +95,7 @@ public class SimulationRenderer : MonoBehaviour
         {
             // define items and sections for designing the sliders individually for each panel:
             // Javascript function to save sub sections (Coal, Oil, ...), needs hard-coded, dynamic title for rendering the graphs
-            browser.EvalJS("var items = document.getElementsByClassName('slider-component-container svelte-1espllb');");
+            browser.EvalJS("var items = document.getElementsByClassName('slider-component-container svelte-1r7xmym');");
 
             // Javascript function to save titles of the six panel sections (Energy Supply, Transport, ...)
             browser.EvalJS("var sections = document.getElementsByClassName('section-title');");
