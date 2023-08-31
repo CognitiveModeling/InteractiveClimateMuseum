@@ -9,12 +9,14 @@ This project provides an interactive museum to learn about the [En-ROADS Simulat
 
 ## Installation Guide
 
-We are currently working on new binaries. Download links for the desktop and the VR version will be available here soon. Just download and extract the zip archive.
+We are currently working on new binaries. Download links for the desktop and the VR version will be available here soon.
 
-Additionally, you have to install *node.js*. You can download it here:
+1. Just download and extract the zip archive.
+
+2. Additionally, you have to install *node.js*. You can download it here:
 https://nodejs.org/en/download
 
-After the installation, open the *node.js* command prompt and install the package *yawn*:
+3. After the installation, open the *node.js* command prompt and install the package *yawn*:
 ```
 npm install --global yarn
 yarn install
