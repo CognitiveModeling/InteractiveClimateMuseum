@@ -16,7 +16,7 @@ We are currently working on new binaries. Download links for the desktop and the
 2. Additionally, you have to install *node.js*. You can download it here:
 https://nodejs.org/en/download
 
-3. After the installation, open the *node.js* command prompt and install the package *yawn*:
+3. After the installation, open the *node.js* command prompt and install the package *yarn*:
 ```
 npm install --global yarn
 yarn install
