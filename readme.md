@@ -7,7 +7,35 @@ This project provides an interactive museum to learn about the [En-ROADS Simulat
 
 [We host the binaries in the microsoft cloud of the university of Tübingen. They come in zip archives, just download and extract them and run the executable file (ClimateMuseum.exe).]: # 
 
-We are currently working on new binaries. Download links for the desktop version and the VR version will be available here soon.
+## Installation Guide
+
+We are currently working on new binaries. Download links for the desktop and the VR version will be available here soon. Just download and extract the zip archive.
+
+Additionally, you have to install *node.js*. You can download it here:
+https://nodejs.org/en/download
+
+After the installation, open the *node.js* command prompt and install the package *yawn*:
+```
+npm install --global yarn
+yarn install
+```
+With *yarn* the node.js server can be started and the En-ROADS API can be reached.
+
+## Running the Museum
+
+Each time before the museum is run, the connection with the En-ROADS API has to be established.
+
+1. Open the node js command prompt.
+
+2. Navigate to the folder *node-rest-api* in the downloaded zip-archive and start the server via:
+```
+cd [Your path to folder node-rest-api]
+yarn start
+```
+3. Run the ClimateMuseum.exe in the zip archive.
+
+Enjoy the museum!
+
 
 ## Desktop Version
 
