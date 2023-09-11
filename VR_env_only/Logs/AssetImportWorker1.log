@@ -1,0 +1,481 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.25f1 (68ef2c4f8861) revision 6876972'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'de' Physical Memory: 8148 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+F:\Program Files (x86)\Unity\Hub\Editor\2021.3.25f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/Paulina/Documents/GitHub/InteractiveClimateMuseum/InteractiveClimateMuseum/VR_env_only
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+50146
+Successfully changed project path to: C:/Users/Paulina/Documents/GitHub/InteractiveClimateMuseum/InteractiveClimateMuseum/VR_env_only
+C:/Users/Paulina/Documents/GitHub/InteractiveClimateMuseum/InteractiveClimateMuseum/VR_env_only
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [4484] Host "[IP] 192.168.178.25 [Port] 0 [Flags] 2 [Guid] 3690922735 [EditorId] 3690922735 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-8OJ3KS7) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [4484] Host "[IP] 192.168.178.25 [Port] 0 [Flags] 2 [Guid] 3690922735 [EditorId] 3690922735 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-8OJ3KS7) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 128.08 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.25f1 (68ef2c4f8861)
+[Subsystems] Discovering subsystems at path F:/Program Files (x86)/Unity/Hub/Editor/2021.3.25f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Paulina/Documents/GitHub/InteractiveClimateMuseum/InteractiveClimateMuseum/VR_env_only/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     6043 MB
+    Driver:   31.0.15.3623
+Initialize mono
+Mono path[0] = 'F:/Program Files (x86)/Unity/Hub/Editor/2021.3.25f1/Editor/Data/Managed'
+Mono path[1] = 'F:/Program Files (x86)/Unity/Hub/Editor/2021.3.25f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'F:/Program Files (x86)/Unity/Hub/Editor/2021.3.25f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56896
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: F:/Program Files (x86)/Unity/Hub/Editor/2021.3.25f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: F:/Program Files (x86)/Unity/Hub/Editor/2021.3.25f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.012311 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 132.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.268 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1268ms)
+		BeginReloadAssembly (184ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (869ms)
+			LoadAssemblies (182ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (230ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (497ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (133ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (260ms)
+				ProcessInitializeOnLoadMethodAttributes (88ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.011222 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Paulina\Documents\GitHub\InteractiveClimateMuseum\InteractiveClimateMuseum\VR_env_only\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Paulina\Documents\GitHub\InteractiveClimateMuseum\InteractiveClimateMuseum\VR_env_only\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.00 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.965 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1966ms)
+		BeginReloadAssembly (218ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (1535ms)
+			LoadAssemblies (274ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (542ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (95ms)
+			SetupLoadedEditorAssemblies (585ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (142ms)
+				ProcessInitializeOnLoadAttributes (387ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 1.25 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3049 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 unused Assets / (113.8 KB). Loaded Objects now: 3509.
+Memory consumption went from 108.6 MB to 108.5 MB.
+Total: 5.447100 ms (FindLiveObjects: 0.403100 ms CreateObjectMapping: 0.185700 ms MarkObjects: 4.673600 ms  DeleteObjects: 0.183300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 8635.322249 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_1.prefab
+  artifactKey: Guid(2bcf53d24179fa5409ec6abcbd32b880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_1.prefab using Guid(2bcf53d24179fa5409ec6abcbd32b880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcc21d2929b77c55c41b450c9464fa50') in 0.220704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_4.prefab
+  artifactKey: Guid(47116cf244694f0409a77b4f8d60db35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_4.prefab using Guid(47116cf244694f0409a77b4f8d60db35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3db3e1af1d9fc4a3a297bd981a058d6a') in 0.024817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_10.prefab
+  artifactKey: Guid(5c5ea9b4ba34f784da61491f5019b9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_10.prefab using Guid(5c5ea9b4ba34f784da61491f5019b9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e61ba8cfd8c3f0a656fe65b95b8e412') in 0.027996 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_18.prefab
+  artifactKey: Guid(cb1d73923864f4447952ee2f1aa3e6e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_18.prefab using Guid(cb1d73923864f4447952ee2f1aa3e6e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cace9fcfdc3204ce8c5f6c2fd1aa0ce5') in 0.024563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_6.prefab
+  artifactKey: Guid(d728cf9bece6447439340dcacc9a8d7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_6.prefab using Guid(d728cf9bece6447439340dcacc9a8d7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25b29549471ba36ce659629bcd2b6179') in 0.022013 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_9.prefab
+  artifactKey: Guid(0e7a970374d4d1a48ae34cddfa95d7be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_9.prefab using Guid(0e7a970374d4d1a48ae34cddfa95d7be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81ba0ee0363ef305d5cccb379af0287b') in 0.025094 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_5.prefab
+  artifactKey: Guid(99ae1c51474514944863dde895daeea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_5.prefab using Guid(99ae1c51474514944863dde895daeea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8576f951b2f1f2ecf02e1cd7ab23bc00') in 0.024342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_10.prefab
+  artifactKey: Guid(03e5da9d16441404c8ca4a89931b89af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_10.prefab using Guid(03e5da9d16441404c8ca4a89931b89af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '880a7f785bb68288fe587cb3dfb49803') in 0.027752 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments
+  artifactKey: Guid(79032e343aa0fc44e9b0b45b017c3c58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments using Guid(79032e343aa0fc44e9b0b45b017c3c58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44e8aa3fb53df5097e59b7cd2ceb92f6') in 0.013502 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_17.prefab
+  artifactKey: Guid(52107b2272c662f448c4a5271185d170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_17.prefab using Guid(52107b2272c662f448c4a5271185d170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bc85225810442e4c03d219945dbb582') in 0.027313 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_7.prefab
+  artifactKey: Guid(37b6d42c72d24bf40b54953440a2d8fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_7.prefab using Guid(37b6d42c72d24bf40b54953440a2d8fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa6106df3d2c82b1899cc1b682f25471') in 0.023401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP
+  artifactKey: Guid(ea7d09efcbeafdd4690e2b2b3236d043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP using Guid(ea7d09efcbeafdd4690e2b2b3236d043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04cd2afdf99ef1ba39bf503c6a78bb1f') in 0.015281 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_5.prefab
+  artifactKey: Guid(aa68a8a508c6ced439b05e1c464a7272) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_5.prefab using Guid(aa68a8a508c6ced439b05e1c464a7272) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c24f03af432163cacfd93079df928308') in 0.024219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_13.prefab
+  artifactKey: Guid(d774498a91a1e494685777acbc8a3563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_13.prefab using Guid(d774498a91a1e494685777acbc8a3563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93a6b5149d74e8ff60c060f4849a85e0') in 0.021876 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_1.prefab
+  artifactKey: Guid(b8d0fc9068ba7b04693a2494de26f19c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_1.prefab using Guid(b8d0fc9068ba7b04693a2494de26f19c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a8e73b6f769524ec5ff25a882a0ae5c') in 0.021626 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_11.prefab
+  artifactKey: Guid(91e669c4923002649b9c9abe81edb866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_11.prefab using Guid(91e669c4923002649b9c9abe81edb866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a5cedfd680901b8cdb2d5bf3e6a7c00') in 0.020297 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_6.prefab
+  artifactKey: Guid(d381b6e1b7ff18a408b24fe9e56356b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_6.prefab using Guid(d381b6e1b7ff18a408b24fe9e56356b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '009979a08a3b888ba4734c106d65d9c4') in 0.020332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_7.prefab
+  artifactKey: Guid(44297fd06bdc6fd4fb936efba41ba649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_7.prefab using Guid(44297fd06bdc6fd4fb936efba41ba649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '066082a291130226576d81762200e0fa') in 0.026919 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2
+  artifactKey: Guid(449899e0638334a43b009c91b6a7118b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2 using Guid(449899e0638334a43b009c91b6a7118b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '011e69ae5305deb5e139c2aa50683fff') in 0.012387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_1.prefab
+  artifactKey: Guid(124aed40b13c6bc47ad8263965fad555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_1.prefab using Guid(124aed40b13c6bc47ad8263965fad555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b15da62129f63b362d10fca34e2091f1') in 0.027225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Stone_2.prefab
+  artifactKey: Guid(c887ec34e8e7921418ad4553cddda9eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Stone_2.prefab using Guid(c887ec34e8e7921418ad4553cddda9eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6721ddb888f51ec76319bd949d56c318') in 0.033428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Stone_1.prefab
+  artifactKey: Guid(bcb10245bb4ddb7418832f3d0ed06c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Stone_1.prefab using Guid(bcb10245bb4ddb7418832f3d0ed06c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bffb0fbc528d22caada1a8ecf7714883') in 0.028081 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_9.prefab
+  artifactKey: Guid(fe4b3d10fd2c1a44fa02cc1a3eb2cfc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_9.prefab using Guid(fe4b3d10fd2c1a44fa02cc1a3eb2cfc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae196b8f71e6027a916eb2d56efeb9b3') in 0.027039 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_16.prefab
+  artifactKey: Guid(0d86c6b112ce5bc4abec07d3f3ee371e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_16.prefab using Guid(0d86c6b112ce5bc4abec07d3f3ee371e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '058a775486b71b24de25e4041c1b00cf') in 0.026511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_8.prefab
+  artifactKey: Guid(0d74bd0c804f8634ba40bcf8c5b66cbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_8.prefab using Guid(0d74bd0c804f8634ba40bcf8c5b66cbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06440b97fdc1f4532bad502a227083dd') in 0.025149 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_3.prefab
+  artifactKey: Guid(5071f353ce208ee4ca495bde38f2d514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_3.prefab using Guid(5071f353ce208ee4ca495bde38f2d514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cb4eab31c67953aff91c2adaaae519c') in 0.024452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_11.prefab
+  artifactKey: Guid(e6286608d5204994c98d6faabe2e47fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_11.prefab using Guid(e6286608d5204994c98d6faabe2e47fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '623d23220b1a89ef88619544248b6cdc') in 0.023605 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.755069 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Art/Textures/Hill_B.png
+  artifactKey: Guid(667b3e44958426b4992321defd449d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Art/Textures/Hill_B.png using Guid(667b3e44958426b4992321defd449d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2585ee105e61e824abea63c2a0fe882') in 0.099103 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.012023 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Paulina\Documents\GitHub\InteractiveClimateMuseum\InteractiveClimateMuseum\VR_env_only\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Paulina\Documents\GitHub\InteractiveClimateMuseum\InteractiveClimateMuseum\VR_env_only\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.82 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.189 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2190ms)
+		BeginReloadAssembly (280ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (66ms)
+		EndReloadAssembly (1714ms)
+			LoadAssemblies (212ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (804ms)
+			ReleaseScriptCaches (5ms)
+			RebuildScriptCaches (125ms)
+			SetupLoadedEditorAssemblies (531ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (127ms)
+				ProcessInitializeOnLoadAttributes (347ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.04 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3045 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (80.3 KB). Loaded Objects now: 3523.
+Memory consumption went from 113.0 MB to 112.9 MB.
+Total: 4.294800 ms (FindLiveObjects: 0.347400 ms CreateObjectMapping: 0.215700 ms MarkObjects: 3.586600 ms  DeleteObjects: 0.143700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 97.861610 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Buildings_2.prefab
+  artifactKey: Guid(2fded295719142b46ad0809cbd4865ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Buildings_2.prefab using Guid(2fded295719142b46ad0809cbd4865ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e3c5cc7846bc37dc4b16099c3f8df61') in 0.561625 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_6.prefab
+  artifactKey: Guid(55bd09bad9c8e38438dba50799c18fbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_6.prefab using Guid(55bd09bad9c8e38438dba50799c18fbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bf1821b99b412b896b9b4dddffefcf7') in 0.024019 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_4.prefab
+  artifactKey: Guid(005f7a7a1c9040a4299d4f83a4106fda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_4.prefab using Guid(005f7a7a1c9040a4299d4f83a4106fda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2cced5869cb9281351565ad6605bcee') in 0.029017 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_7.prefab
+  artifactKey: Guid(33eeda1a3c74bf749b677e82b9f213a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_7.prefab using Guid(33eeda1a3c74bf749b677e82b9f213a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '118ead59334fbe6f0312022abcf8e135') in 0.025436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Stone_3.prefab
+  artifactKey: Guid(891481f8b0f1ead4b8e31e9a411101ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Stone_3.prefab using Guid(891481f8b0f1ead4b8e31e9a411101ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86013cf39e61b66bd99888a831672b03') in 0.027883 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_3.prefab
+  artifactKey: Guid(418d67cad99ba2d43a7df9bd9a507962) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_3.prefab using Guid(418d67cad99ba2d43a7df9bd9a507962) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67f97bb85f3d420787159f97a754b7ef') in 0.027178 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_2.prefab
+  artifactKey: Guid(6216755f104216b4eba5b40b244a02b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_2.prefab using Guid(6216755f104216b4eba5b40b244a02b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '637a6211b76d4bf3b8a2adba77637cac') in 0.030797 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Buildings_3.prefab
+  artifactKey: Guid(5787eaaedacd5dc44a386aa475222edc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Buildings_3.prefab using Guid(5787eaaedacd5dc44a386aa475222edc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c4ca988d2e0dcb9d5c0f7c1da11ed09') in 0.226182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_12.prefab
+  artifactKey: Guid(d34dc08a82158464f8a2a4525c1acf07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_12.prefab using Guid(d34dc08a82158464f8a2a4525c1acf07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3df3796671a041c3572c973a55deee68') in 0.035897 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_9.prefab
+  artifactKey: Guid(83ddfec44b457204ba1d75f4510c14c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_9.prefab using Guid(83ddfec44b457204ba1d75f4510c14c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ba5b38f210f6695d1ff53ff74117b4a') in 0.025334 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_18.prefab
+  artifactKey: Guid(936030e4afc581542b79d929405457e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Environment_18.prefab using Guid(936030e4afc581542b79d929405457e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eacae17a0961c01eb723ae13696596fb') in 0.025482 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_5.prefab
+  artifactKey: Guid(eed457956934f9b478e22fd703913c16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_5.prefab using Guid(eed457956934f9b478e22fd703913c16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2af9376cc29885c43830d783e34fae7') in 0.025454 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_8.prefab
+  artifactKey: Guid(ee0fc7707766a6a4193d44a1fbf98643) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Grass_8.prefab using Guid(ee0fc7707766a6a4193d44a1fbf98643) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5081621cbfd3bc35ad5515e8e7c1b7f8') in 0.026226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_8.prefab
+  artifactKey: Guid(0ba63870cd760a64caa9f34e28c31af3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_8.prefab using Guid(0ba63870cd760a64caa9f34e28c31af3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc8368bd11467c98829738c6894543a9') in 0.029366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_10.prefab
+  artifactKey: Guid(65a882c9351986642b8fa7a8030de3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/POLY STYLE - Vegetation Pack 2/Vegetation Pack 2_URP/Prefabs/Environments/Hill_10.prefab using Guid(65a882c9351986642b8fa7a8030de3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62aa415634a29515049a58c9fcaff16e') in 0.022455 seconds 
