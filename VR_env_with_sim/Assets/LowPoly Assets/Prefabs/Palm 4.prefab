@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4495763495263287653
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1956745477404126990, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_Name
+      value: Environment_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -405.81693
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3213406
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -169.60432
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166464919271819455, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297172259244202222, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc0841390bb769d43ba49fc1e0429270, type: 2}
+    - target: {fileID: 7297172259244202222, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3966318642a3e8343923aa0c794c1386, type: 2}
+    - target: {fileID: 7297172259244202222, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: e45df0a8bb7a9a24faadfb69c11f86c3, type: 2}
+    - target: {fileID: 7297172259244202222, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a884f51f8219f345b536b9abe4fcb46, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c25475f1a6133f458161a3d8da1d8cc, type: 3}
