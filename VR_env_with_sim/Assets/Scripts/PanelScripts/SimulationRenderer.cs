@@ -47,14 +47,14 @@ public class SimulationRenderer : MonoBehaviour
     {
         // initializes the browser object
         browser = GetComponent<Browser>();
-        url = browser.Url;
+        url = "https://en-roads.climateinteractive.org/scenario.html"; //browser.Url;
         //Debug.Log("Current url: " + url);
     }
 
     public void Start()
     {
         // load En-ROADS simulator into Browser object with language chosen in menu scene
-        browser.LoadURL("https://en-roads.climateinteractive.org/scenario.html?lang=" + LanguageController.language, true);
+        browser.LoadURL("https://en-roads.climateinteractive.org/scenario.html", true); //?lang=" + LanguageController.language, true);
 
         // Javascript (JS) function to deactive all listeners on selected element 
         browser.EvalJS("function deactivateListeners(elem) {" +
