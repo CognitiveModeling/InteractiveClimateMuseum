@@ -175,8 +175,8 @@ public class EnvironmentUpdate : MonoBehaviour
 
             posOcean = objOcean.transform.position;
 
-            float oceanMax = -2f;
-            float oceanMin = -15.5f;
+            float oceanMax = -9.16f;
+            float oceanMin = -30f;
             yOcean = oceanMin + ((-1f) * valToPerc(lower, upper, prognosis) * (oceanMin - oceanMax));
             posOcean.y = yOcean;
             objOcean.transform.position = posOcean;
@@ -253,7 +253,7 @@ public class EnvironmentUpdate : MonoBehaviour
         RenderSettings.skybox.SetColor("_SkyTint", skyboxColor);
 
         posOcean = objOcean.transform.position;
-        yOcean = -20f;
+        yOcean = -27f;
         posOcean.y = yOcean;
         objOcean.transform.position = posOcean;
 
