@@ -154,8 +154,8 @@ public class EnvironmentUpdate : MonoBehaviour
             mountain.color = gradients.gradientMountain.Evaluate(valToPerc(lower, upper, prognosis));
             posLake = objLake.transform.position;
 
-            float lakeMax = -5.01f;
-            float lakeMin = -8f;
+            float lakeMax = -4f;
+            float lakeMin = -23f;
 
             yLake = lakeMax - ((-1f) * valToPerc(lower, upper, prognosis) * (lakeMin - lakeMax));
             posLake.y = yLake;
@@ -241,7 +241,7 @@ public class EnvironmentUpdate : MonoBehaviour
         mountain.color = new Color(0.294f, 0.188f, 0f, 1f);
 
         posLake = objLake.transform.position;
-        yLake = -5.293135f;
+        yLake = -7f;
         posLake.y = yLake;
         objLake.transform.position = posLake;
 
