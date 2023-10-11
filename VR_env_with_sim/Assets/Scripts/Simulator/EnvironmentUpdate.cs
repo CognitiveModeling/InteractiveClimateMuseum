@@ -218,8 +218,8 @@ public class EnvironmentUpdate : MonoBehaviour
 
             posIceberg = objIceberg.transform.position;
 
-            float icebergMax = -15f;
-            float icebergMin = -125f;
+            float icebergMax = -40.0f;
+            float icebergMin = -100.0f;
             yIceberg = icebergMax - ((-1f) * valToPerc(lower, upper, prognosis) * (icebergMin - icebergMax));
             posIceberg.y = yIceberg;
             objIceberg.transform.position = posIceberg;
@@ -303,7 +303,7 @@ public class EnvironmentUpdate : MonoBehaviour
         objIceberg.transform.position = posIceberg;
 
         //Color oceanColor = new Color(0.07029124f, 0.4899847f, 0.7828243f, 1f);
-        ocean.color = new Color(0.07029124f, 0.4899847f, 0.7828243f, 1f);
+        ocean.color = new Color(0.25098039f, 0.82352941f, 1.0f, 1f);
 
         ParticleSystem.MainModule smogMain = psSmog.main;
         smogMain.maxParticles = 0;
