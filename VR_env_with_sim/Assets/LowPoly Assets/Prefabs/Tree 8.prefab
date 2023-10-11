@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1400461039152700, guid: c7821bc923171f24094e69062402d005, type: 3}
       propertyPath: m_Name
-      value: Tree_1
+      value: Tree 8
       objectReference: {fileID: 0}
     - target: {fileID: 4949955557972128, guid: c7821bc923171f24094e69062402d005, type: 3}
       propertyPath: m_RootOrder
@@ -55,13 +55,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 23518617130621118, guid: c7821bc923171f24094e69062402d005, type: 3}
+    - target: {fileID: 23146695305503030, guid: c7821bc923171f24094e69062402d005,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 659ff395a98f3cb44b0ce46931aedf23, type: 2}
+    - target: {fileID: 23518617130621118, guid: c7821bc923171f24094e69062402d005,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 46b3c1d9313dc554a93328518594a3b9, type: 2}
-    - target: {fileID: 23518617130621118, guid: c7821bc923171f24094e69062402d005, type: 3}
+    - target: {fileID: 23518617130621118, guid: c7821bc923171f24094e69062402d005,
+        type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: b61ed7efa73c547408511721400b5cc1, type: 2}
+    - target: {fileID: 23885246353490692, guid: c7821bc923171f24094e69062402d005,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 659ff395a98f3cb44b0ce46931aedf23, type: 2}
+    - target: {fileID: 23947302332069680, guid: c7821bc923171f24094e69062402d005,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 659ff395a98f3cb44b0ce46931aedf23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7821bc923171f24094e69062402d005, type: 3}
