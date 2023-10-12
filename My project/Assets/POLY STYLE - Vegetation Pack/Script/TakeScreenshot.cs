@@ -20,7 +20,7 @@ public class TakeScreenshot : MonoBehaviour
 				
 			} while (System.IO.File.Exists(screenshotFilename));
 			
-			Application.CaptureScreenshot(screenshotFilename);
+			ScreenCapture.CaptureScreenshot(screenshotFilename);
 			if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
 				
 				imagePath = Application.persistentDataPath;
