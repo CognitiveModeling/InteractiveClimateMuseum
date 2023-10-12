@@ -10,7 +10,6 @@ using System.Linq;
 using System.Diagnostics;
 using System.Security;
 
-
 public class EnvironmentUpdate : MonoBehaviour
 {
     // All Debug.Log/LogWarning messages are placed in comments, so they don�t affect the running time, for programming it�s best to uncomment them (selectively)
@@ -21,6 +20,7 @@ public class EnvironmentUpdate : MonoBehaviour
     public GetSliderValues getSliderValues;
     public CMDinterface cmdInterface;
     public SimulationRenderer simulationRenderer;
+    public Set2100 set2100;
 
     public bool busy = false; // set to true while the changes of the sliders are applied to hidden browsers and the environment is changed
     public bool active2100 = false;
@@ -71,7 +71,7 @@ public class EnvironmentUpdate : MonoBehaviour
     //Start is called before the first frame update
     void Start()
     {
-        set2022();
+        set2100.set2100();
         this.lastURL = simulationRenderer.url;
         this.currURL = simulationRenderer.url;
     }
