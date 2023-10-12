@@ -12,8 +12,8 @@ partial class OpenVRInput {
 	/// False: we are looking at controller buttons directly
 	/// True: we are using the remappable action input system (SteamVR 2.x)
 	/// </summary>
-	    private InputMode mode = InputMode.Direct;//may need to restart Unity and/or SteamVR if you switch to this mode after using the new system
-      //private InputMode mode = InputMode.MappedActions;
+	  //  private InputMode mode = InputMode.Direct;//may need to restart Unity and/or SteamVR if you switch to this mode after using the new system
+      private InputMode mode = InputMode.MappedActions;
 
 	/*
 	 * If you're using SteamVR 2.x with the new input mapping system change 
