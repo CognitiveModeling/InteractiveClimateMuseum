@@ -9,9 +9,13 @@ This project provides an interactive museum to learn about the [En-ROADS Simulat
 
 ## Installation Guide
 
-We are currently working on new binaries. Download links for the desktop and the VR version will be available here soon.
+**VR Version**:
 
-1. Just download and extract the zip archive. *... coming soon ...*
+We are currently working on binaries for the new VR version. The download link will be available here soon.
+
+**Desktop version**:
+
+1. Download and extract the zip archive [here](https://drive.google.com/file/d/1wP0D52_qGu3qFmjXaJ44jYgRdrx7buu0/view?usp=sharing).
 
 2. Additionally, you have to install *node.js*. You can download it here:
 https://nodejs.org/en/download
