@@ -8,8 +8,7 @@ using UnityEngine;
 using ZenFulcrum.EmbeddedBrowser;
 using System.Linq;
 using System.Diagnostics;
-using System.Security.Policy;
-
+using System.Security;
 
 public class EnvironmentUpdate : MonoBehaviour
 {
@@ -21,6 +20,7 @@ public class EnvironmentUpdate : MonoBehaviour
     public GetSliderValues getSliderValues;
     public CMDinterface cmdInterface;
     public SimulationRenderer simulationRenderer;
+    public Set2100 set2100;
 
     public bool busy = false; // set to true while the changes of the sliders are applied to hidden browsers and the environment is changed
     public bool active2100 = false;
@@ -40,6 +40,11 @@ public class EnvironmentUpdate : MonoBehaviour
     [SerializeField] private Material tree1;
     [SerializeField] private Material tree2;
     [SerializeField] private Material tree3;
+    [SerializeField] private Material tree4;
+    [SerializeField] private Material tree5;
+    [SerializeField] private Material tree6;
+    [SerializeField] private Material tree7;
+    [SerializeField] private Material tree0;
     [SerializeField] private Material ocean;
     [SerializeField] private Material lake;
     [SerializeField] private Material ground;
@@ -66,7 +71,7 @@ public class EnvironmentUpdate : MonoBehaviour
     //Start is called before the first frame update
     void Start()
     {
-        set2022();
+        set2100.set2100();
         this.lastURL = simulationRenderer.url;
         this.currURL = simulationRenderer.url;
     }
@@ -129,11 +134,11 @@ public class EnvironmentUpdate : MonoBehaviour
             // meaning of lower and upper for all the following cases already explained in resetMaterials()
             prognosis = temp2100;
             lower = 0.9f;
-            upper = 5.8f;
+            upper = 4.5f;
 
             tree1.color = gradients.gradientTree1.Evaluate(valToPerc(lower, upper, prognosis));
             // make leaves disappear if prognosis >= 85% of worst case value:
-            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            if (valToPerc(lower, upper, prognosis) >= 0.7)
             {
                 tree1.color = new Color(tree1.color.r, tree1.color.g, tree1.color.b, 0f);
             }
@@ -145,17 +150,47 @@ public class EnvironmentUpdate : MonoBehaviour
             }
             tree3.color = gradients.gradientTree3.Evaluate(valToPerc(lower, upper, prognosis));
             // make leaves disappear if prognosis >= 70% of worst case value:
-            if (valToPerc(lower, upper, prognosis) >= 0.70)
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
             {
                 tree3.color = new Color(tree3.color.r, tree3.color.g, tree3.color.b, 0f);
+            }
+            tree4.color = gradients.gradientTree4.Evaluate(valToPerc(lower, upper, prognosis));
+            // make leaves disappear if prognosis >= 85% of worst case value:
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            {
+                tree4.color = new Color(tree4.color.r, tree4.color.g, tree4.color.b, 0f);
+            }
+            tree5.color = gradients.gradientTree5.Evaluate(valToPerc(lower, upper, prognosis));
+            // make leaves disappear if prognosis >= 85% of worst case value:
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            {
+                tree5.color = new Color(tree5.color.r, tree5.color.g, tree5.color.b, 0f);
+            }
+            tree6.color = gradients.gradientTree6.Evaluate(valToPerc(lower, upper, prognosis));
+            // make leaves disappear if prognosis >= 85% of worst case value:
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            {
+                tree6.color = new Color(tree6.color.r, tree6.color.g, tree6.color.b, 0f);
+            }
+            tree7.color = gradients.gradientTree7.Evaluate(valToPerc(lower, upper, prognosis));
+            // make leaves disappear if prognosis >= 85% of worst case value:
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            {
+                tree7.color = new Color(tree7.color.r, tree7.color.g, tree7.color.b, 0f);
+            }
+            tree0.color = gradients.gradientTree0.Evaluate(valToPerc(lower, upper, prognosis));
+            // make leaves disappear if prognosis >= 85% of worst case value:
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            {
+                tree0.color = new Color(tree0.color.r, tree0.color.g, tree0.color.b, 0f);
             }
 
             ground.color = gradients.gradientGround.Evaluate(valToPerc(lower, upper, prognosis));
             mountain.color = gradients.gradientMountain.Evaluate(valToPerc(lower, upper, prognosis));
             posLake = objLake.transform.position;
 
-            float lakeMax = -5.01f;
-            float lakeMin = -8f;
+            float lakeMax = -1f;
+            float lakeMin = -20f;
 
             yLake = lakeMax - ((-1f) * valToPerc(lower, upper, prognosis) * (lakeMin - lakeMax));
             posLake.y = yLake;
@@ -175,23 +210,23 @@ public class EnvironmentUpdate : MonoBehaviour
 
             posOcean = objOcean.transform.position;
 
-            float oceanMax = -2f;
-            float oceanMin = -15.5f;
+            float oceanMax = -1.0f;
+            float oceanMin = -22f;
             yOcean = oceanMin + ((-1f) * valToPerc(lower, upper, prognosis) * (oceanMin - oceanMax));
             posOcean.y = yOcean;
             objOcean.transform.position = posOcean;
 
             posIceberg = objIceberg.transform.position;
 
-            float icebergMax = -15f;
-            float icebergMin = -125f;
+            float icebergMax = -40.0f;
+            float icebergMin = -100.0f;
             yIceberg = icebergMax - ((-1f) * valToPerc(lower, upper, prognosis) * (icebergMin - icebergMax));
             posIceberg.y = yIceberg;
             objIceberg.transform.position = posIceberg;
 
             //Debug.Log(type + ": Baseline value is " + float.Parse(baseline, ci) + ", prognosis for year 2100 is " + prognosis);
 
-            ocean.SetColor("_BaseColor", gradients.gradientOcean.Evaluate(valToPerc(lower, upper, prognosis)));
+            ocean.color = gradients.gradientOcean.Evaluate(valToPerc(lower, upper, prognosis));
 
             ParticleSystem.MainModule smogMain = psSmog.main;
             smogMain.maxParticles = (int)(valToPerc(lower, upper, prognosis) * 140);
@@ -233,15 +268,20 @@ public class EnvironmentUpdate : MonoBehaviour
 
     public void set2022()
     {
-        tree1.color = new Color(0.364f, 0.925f, 0.160f, 1f);
-        tree2.color = new Color(0.231f, 0.639f, 0.082f, 1f);
-        tree3.color = new Color(0.027f, 0.380f, 0.015f, 1f);
+        tree1.color = new Color(0.46666667f, 0.72549020f, 0.23921569f, 1f);
+        tree2.color = new Color(0.45490196f, 0.85098039f, 0.20784314f, 1f);
+        tree3.color = new Color(0.23137255f, 0.68235294f, 0.48627451f, 1f);
+        tree4.color = new Color(0.36862745f, 0.56862745f, 0.42352941f, 1f);
+        tree5.color = new Color(0.24705882f, 0.67058824f, 0.40392157f, 1f);
+        tree6.color = new Color(0.10980392f, 0.70588235f, 0.10980392f, 1f);
+        tree7.color = new Color(0.41176471f, 0.76470588f, 0.28627451f, 1f);
+        tree0.color = new Color(0.21568627f, 0.55686275f, 0.21568627f, 1f);
 
-        ground.color = new Color(0.2f, 0.603f, 0f, 1f);
-        mountain.color = new Color(0.294f, 0.188f, 0f, 1f);
+        ground.color = new Color(0.433f, 0.6901961f, 0.2117647f, 1f);
+        mountain.color = new Color(0.29411765f, 0.18431373f, 0.00000000f, 1f);
 
         posLake = objLake.transform.position;
-        yLake = -5.293135f;
+        yLake = -2f;
         posLake.y = yLake;
         objLake.transform.position = posLake;
 
@@ -253,7 +293,7 @@ public class EnvironmentUpdate : MonoBehaviour
         RenderSettings.skybox.SetColor("_SkyTint", skyboxColor);
 
         posOcean = objOcean.transform.position;
-        yOcean = -20f;
+        yOcean = -27f;
         posOcean.y = yOcean;
         objOcean.transform.position = posOcean;
 
@@ -262,12 +302,12 @@ public class EnvironmentUpdate : MonoBehaviour
         posIceberg.y = yIceberg;
         objIceberg.transform.position = posIceberg;
 
-        Color oceanColor = new Color(0.07029124f, 0.4899847f, 0.7828243f, 1f);
-        ocean.SetColor("_BaseColor", oceanColor);
+        //Color oceanColor = new Color(0.07029124f, 0.4899847f, 0.7828243f, 1f);
+        ocean.color = new Color(0.08436738f, 0.565f, 0.7400573f, 1f);
 
         ParticleSystem.MainModule smogMain = psSmog.main;
         smogMain.maxParticles = 0;
-        smog.color = new Color(1f, 1f, 1f, 1f);
+        smog.color = new Color(1f, 1f, 1f, 0f);
     }
 
 }

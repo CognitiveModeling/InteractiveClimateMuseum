@@ -133,8 +133,8 @@ public class EnvironmentUpdate : MonoBehaviour
             // saves baseline values for resetting
             // meaning of lower and upper for all the following cases already explained in resetMaterials()
             prognosis = temp2100;
-            lower = 1.1f;
-            upper = 5.5f;
+            lower = 0.9f;
+            upper = 5.0f;
 
             tree1.color = gradients.gradientTree1.Evaluate(valToPerc(lower, upper, prognosis));
             // make leaves disappear if prognosis >= 85% of worst case value:
@@ -281,7 +281,7 @@ public class EnvironmentUpdate : MonoBehaviour
         mountain.color = new Color(0.29411765f, 0.18431373f, 0.00000000f, 1f);
 
         posLake = objLake.transform.position;
-        yLake = -4f;
+        yLake = -2f;
         posLake.y = yLake;
         objLake.transform.position = posLake;
 
