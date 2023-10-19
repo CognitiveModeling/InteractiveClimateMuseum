@@ -16,7 +16,7 @@ We are currently working on binaries for the new VR version. The download link w
 **Desktop version**:
 
 1. Download and extract the zip archive for the whole museum with simulator and environment [here](https://drive.google.com/file/d/1wP0D52_qGu3qFmjXaJ44jYgRdrx7buu0/view?usp=sharing). 
-If you just want to get an impression of the simulator and an adapting virtual environment, have a look at this project [here](https://drive.google.com/file/d/1Hn9sdvADur9VbPbZNbRXDW1x_4WUsi6O/view?usp=sharing). The following installation steps are the same for both versions.
+If you just want to get an impression of the simulator and an adapting virtual environment, have a look at this project [here](). The following installation steps are the same for both versions.
 
 2. Additionally, you have to install *node.js*. You can download it here:
 https://nodejs.org/en/download
