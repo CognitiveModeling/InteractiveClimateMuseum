@@ -15,7 +15,8 @@ We are currently working on binaries for the new VR version. The download link w
 
 **Desktop version**:
 
-1. Download and extract the zip archive [here](https://drive.google.com/file/d/1wP0D52_qGu3qFmjXaJ44jYgRdrx7buu0/view?usp=sharing).
+1. Download and extract the zip archive for the whole museum with simulator and environment [here](https://drive.google.com/file/d/1wP0D52_qGu3qFmjXaJ44jYgRdrx7buu0/view?usp=sharing). 
+If you just want to get an impression of the simulator and an adapting virtual environment, have a look at this project [here](https://drive.google.com/file/d/1Hn9sdvADur9VbPbZNbRXDW1x_4WUsi6O/view?usp=sharing). The following installation steps are the same for both versions.
 
 2. Additionally, you have to install *node.js*. You can download it here:
 https://nodejs.org/en/download
@@ -27,9 +28,9 @@ yarn install
 ```
 With *yarn* the *node.js* server can be started and the En-ROADS API can be reached.
 
-## Running the Museum
+## Running the Project
 
-Each time before the museum is run, the connection with the En-ROADS API has to be established.
+Each time before the project is run, the connection with the En-ROADS API has to be established.
 
 1. Open the *node.js command prompt*.
 
@@ -40,7 +41,7 @@ yarn start
 ```
 3. Run the *ClimateMuseum.exe* in the folder *Build* in the extracted zip archive.
 
-Enjoy the museum!
+Enjoy the museum and the environment!
 
 
 ## Desktop Version
