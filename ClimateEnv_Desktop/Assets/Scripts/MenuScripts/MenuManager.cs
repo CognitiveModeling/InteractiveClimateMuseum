@@ -19,15 +19,6 @@ public class MenuManager : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    // If English/German button is clicked (in scene Menu), the Museum is loaded in the selected language.
-    public void LoadGame(string language)
-    {
-        // save selected language as a static variable
-        LanguageController.language = language;
-        // load scene with selected language
-        SceneManager.LoadScene("Museum");
-    }
-
     // If quit button is clicked (in scene Museum), a log message about the quit museum is printed and the whole museum is quit.
     public void QuitMuseum()
     {
@@ -63,5 +54,15 @@ public class MenuManager : MonoBehaviour
         {
             quitCanvas.SetActive(false);
         }
+    }
+
+    // for museum version only
+    // If English/German button is clicked (in scene Menu), the Museum is loaded in the selected language.
+    public void LoadGame(string language)
+    {
+        // save selected language as a static variable
+        LanguageController.language = language;
+        // load scene with selected language
+        SceneManager.LoadScene("Museum");
     }
 }

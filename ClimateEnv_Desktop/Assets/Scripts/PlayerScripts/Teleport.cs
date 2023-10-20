@@ -12,14 +12,10 @@ public class Teleport : MonoBehaviour
     // variables needed for teleportation:
     // a teleportation target (position in front of the full-version simulator)
     public Transform target;
-    // the player's original position before the teleportation to the simulator takes place
-    public Vector3 oldPos;
     // a teleportation state (true if teleportation to target happened, false if teleportation back to original position happened)
     public bool teleported = false;
     // the camera attached to the player
     public GameObject playerCamera;
-    // the player's original rotation before the teleportation to the simulator takes place
-    public Vector3 oldRot;
 
     // variables needed for fade-in and -out:
     // a canvas, object can also be found in editor as "Fader Canvas"
@@ -33,47 +29,24 @@ public class Teleport : MonoBehaviour
     {
         // initializes the animator as a component of the Fader
         anim = Fader.GetComponent<Animator>();
+        //target = this.gameObject.transform;
     }
 
     void Update()
     {
         // if user presses "Return", scene fades out
-        // and player is teleported to full-version simulator or back to original position before teleportation
+        // and player is teleported to simulator
         if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
             // Fader Canvas is activated
             activateCanvas();
-
-            // if player has not been teleported to the simulator yet (teleportation state is false),
-            // it happens now
-            if (!teleported)
-            {
-                // player's original position is saved
-                oldPos = this.gameObject.transform.position;
-                oldRot = this.gameObject.transform.localRotation.eulerAngles;
-
-                // scene fades out
-                FadeOut();
-                
-                // performs teleportation to target and scene's fading-in with small temporal delay 
-                Invoke("GoToDestination", 0.9f);
-                Invoke("FadeIn", 0.7f);
-            }
-
-            // if player has already been teleported to the simulator (teleportation state is true),
-            // player is teleported back to original position
-            else
-            {
-                // scene fades out
-                FadeOut();
-                
-                // performs teleportation to original position and scene's fading-in with small temporal delay 
-                Invoke("GoToOldPos", 0.9f);
-                Invoke("FadeIn", 0.7f);
-            }
-
-            // Fader Canvas is deactivated with temporal delay
-            Invoke("deactivateCanvas", 1.0f);
+            
+            // scene fades out
+            FadeOut();
+            
+            // performs teleportation to target and scene's fading-in with small temporal delay 
+            Invoke("GoToDestination", 0.9f);
+            Invoke("FadeIn", 0.7f);
         }
     }
 
@@ -110,18 +83,9 @@ public class Teleport : MonoBehaviour
     // method for changing the player's position to the target position (full-version simulator) and facing player and its camera towards panel
     void GoToDestination()
     { 
-        this.gameObject.transform.position = new Vector3(target.transform.position.x, 0.6f, target.transform.position.z);
-        this.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
-        this.gameObject.transform.Find("Camera").transform.localRotation = Quaternion.Euler(5, 0, 0);
-        teleported = true;
-    }
-
-    // method for changing the player's position to the original position before player was teleported to the simulator
-    void GoToOldPos()
-    {
-        this.gameObject.transform.position = oldPos;
-        this.gameObject.transform.rotation = Quaternion.Euler(oldRot);
+        this.gameObject.transform.position = target.transform.position;
+        this.gameObject.transform.rotation = target.transform.rotation;
         this.gameObject.transform.Find("Camera").transform.localRotation = Quaternion.Euler(0, 0, 0);
-        teleported = false;
+        teleported = true;
     }
 }
