@@ -45,3 +45,7 @@ VR_env_with_sim/Assets/ZFBrowser/Plugins/**
 ClimateEnv_Desktop/Assets/ZFBrowser/Plugins/**
 ClimateEnv_Desktop_2/Assets/ZFBrowser/Plugins/**
 ClimateEnv_VR/Assets/ZFBrowser/Plugins/**
+ClimateMuseum_Desktop_RestAPI/Assets/ZFBrowser/Plugins/**
+
+# electron-app.exe
+ClimateMuseum_Desktop_RestAPI/Assets/StreamingAssets/electron-app-win32-x64/electron-app.exe

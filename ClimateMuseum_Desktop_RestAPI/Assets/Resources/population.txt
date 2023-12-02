@@ -1,0 +1,12 @@
+﻿ {"name":"population",
+"information":"Population is a key driver of increased greenhouse gases; however, this is also \ntied heavily to consumption habits. \n\nWomen’s education and access to family planning could accelerate shifts to \nsmaller families worldwide.",
+"examples":"A change in population growth is influenced by many aspects: \n\n\u2022<indent=1em>Future fertility rates and demographics.</indent> \n\n\u2022<indent=1em>Greater empowerment of women and girls, resulting in lower fertility rates.</indent> \n\n\u2022<indent=1em>Increased education on and access to reproductive health services.</indent>",
+"big messages":"Contrary to some people’s beliefs, population growth is not a silver bullet for \naddressing climate change. Decisions around population and family choice \nare very personal decisions and efforts to shift these decisions have ethical \nimplications in many cultures.",
+"key dynamics":"Watch all the sources of energy change as you change population growth.",
+"potential co-benefits":"A lower population growth has several co-benefits: \n\n\u2022<indent=1em>Reduced global consumption of resources.</indent> \n\n\u2022<indent=1em>Ensuring safe access to family planning, reproductive health services, and \nwomen’s education enhances quality of life and income for women.</indent>",
+"equity considerations":"Some impacts of a decreased population growth should be kept in mind: \n\n\u2022<indent=1em>Policies around population should be voluntary and empower women to make \nthe choices that are best for them.</indent> \n\n\u2022<indent=1em>A higher percentage of women of color live in countries with severe gender \ninequities in access to education, full economic and political \nparticipation, and adequate family planning. Reducing population growth \nnecessitates a large investment in that particular group.</indent> \n\n\u2022<indent=1em>There is a history of women of color in both high- and low-income countries \nbeing forcibly sterilized to prevent giving birth; this should never be \nencouraged.</indent>",
+"correlations":"
+[
+{"energy supply":"The smaller the population, the less energy has to be provided."}
+]"
+}
