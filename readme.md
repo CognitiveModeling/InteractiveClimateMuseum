@@ -17,6 +17,7 @@ There are two desktop versions available:
 
 - the smaller Climate Environment to get an impression of the En-ROADS Simulator and an adapting environment (without the museum)
 
+  You can find a short demo video here in the repository: *ClimateEnvironment_DemoVideo.mp4*
   You can download it [here](https://drive.google.com/file/d/1KC_3jGAOSvUJ29uXdMq5y878eNfi8BW6/view?usp=drive_link).
 
 The following installation steps are the same for both versions:
