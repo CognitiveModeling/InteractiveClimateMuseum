@@ -15,7 +15,7 @@ There are two desktop versions available:
 
   You can download it [here](https://drive.google.com/file/d/1d94BlhGrHG5kU86XQZ5U6M-5r9-A_FTJ/view?usp=drive_link).
 
-- the smaller Climate Environment to get an impression of the ENROADS Simulator and an adapting environment (without the museum)
+- the smaller Climate Environment to get an impression of the En-ROADS Simulator and an adapting environment (without the museum)
 
   You can download it [here](https://drive.google.com/file/d/1KC_3jGAOSvUJ29uXdMq5y878eNfi8BW6/view?usp=drive_link).
 
