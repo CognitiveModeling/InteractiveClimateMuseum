@@ -9,39 +9,25 @@ This project provides an interactive museum to learn about the [En-ROADS Simulat
 
 ## Installation Guide
 
-**VR Version**:
+There are two desktop versions available:
 
-We are currently working on binaries for the new VR version. The download link will be available here soon.
+- the large Climate Museum with a whole museum to learn about the En-ROADS Simulator sliders, the Simulator itself and a virtual environment which adapts to your changes in the Simulator.
 
-**Desktop version**:
+  You can download it [here](https://drive.google.com/file/d/1d94BlhGrHG5kU86XQZ5U6M-5r9-A_FTJ/view?usp=drive_link).
 
-1. Download and extract the zip archive for the whole museum with simulator and environment [here](https://drive.google.com/file/d/1wP0D52_qGu3qFmjXaJ44jYgRdrx7buu0/view?usp=sharing). 
-If you just want to get an impression of the simulator and an adapting virtual environment, have a look at this project [here](https://drive.google.com/file/d/1HRTO3Md7XR79_1JlI4jPIImLvvA2iJsI/view?usp=sharing). The following installation steps are the same for both versions.
+- the smaller Climate Environment to get an impression of the ENROADS Simulator and an adapting environment (without the museum)
 
-2. Additionally, you have to install *node.js*. You can download it here:
-https://nodejs.org/en/download
+  You can download it [here](https://drive.google.com/file/d/1KC_3jGAOSvUJ29uXdMq5y878eNfi8BW6/view?usp=drive_link).
 
-3. After the installation, open the *node.js command prompt* and install the package *yarn*:
-```
-npm install --global yarn
-yarn install
-```
-With *yarn* the *node.js* server can be started and the En-ROADS API can be reached.
+The following installation steps are the same for both versions:
 
-## Running the Project
+1. Just download and extract the zip archive.
+2. Run the *ClimateMuseum.exe* in the extracted zip archive to start the project.
+3. At the first start one or two windows will pop up: Please allow the execution of the program and the access for the *electron-app.exe*.
+   We need it to communicate with the Rest API of the En-ROADS Simulator so that the environment can adapt properly.
+4. Sometimes you have to start the museum for a second time before these settings are adopted and you can experience the Simulator's changes in the virtual environment.
 
-Each time before the project is run, the connection with the En-ROADS API has to be established.
-
-1. Open the *node.js command prompt*.
-
-2. Navigate to the folder *node-rest-api* in the extracted zip archive and start the server via:
-```
-cd [Your path to folder node-rest-api]
-yarn start
-```
-3. Run the *ClimateMuseum.exe* in the folder *Build* in the extracted zip archive.
-
-Enjoy the museum and the environment!
+**Enjoy the museum and the environment!**
 
 
 ## Desktop Version
