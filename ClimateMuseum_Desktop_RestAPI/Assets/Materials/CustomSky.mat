@@ -84,5 +84,5 @@ Material:
     - _Color: {r: 0.501, g: 0.937, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.369, g: 0.349, b: 0.341, a: 1}
-    - _SkyTint: {r: 0.29847476, g: 0.8289911, b: 0.85857075, a: 1}
+    - _SkyTint: {r: 0.30174327, g: 0.83073425, b: 0.86085325, a: 1}
   m_BuildTextureStacks: []
