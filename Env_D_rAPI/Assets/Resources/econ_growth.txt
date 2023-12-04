@@ -1,0 +1,12 @@
+﻿{"name":"econ_growth",
+"information":"Assume higher or lower growth in goods produced and services provided. \n\nEconomic Growth is measured in Gross Domestic Product (GDP) per person \nand is a key driver in energy consumption. \n\nAlternatives exist to meeting people’s needs through economic frameworks \nnot based on constant GDP growth.",
+"examples":"There are several approaches to reduce the economic growth: \n\n\u2022<indent=1em>Global efforts to reduce overconsumption and embrace voluntary simplicity.</indent> \n\n\u2022<indent=1em>Research and communication of possible impacts on economic growth from \nthe effects of climate change.</indent>",
+"big messages":"Slower economic growth would be a high leverage approach for avoiding \nfuture temperature increases, however, there are lots of questions about \nhow this might occur and be done in a way that is equitable.",
+"key dynamics":"Population gets multiplied with GDP per capita to equal total global GDP, \nor Gross World Product. Increases in this variable accelerate the exponential \ngrowth of GDP, arguably the most important driver of future carbon dioxide \nemissions. Watch all the sources of energy change as you change economic growth.",
+"potential co-benefits":"Some potential co-benefits of a lower economic growth are: \n\n\u2022<indent=1em>Focus may be shifted to alternative measures of prosperity that enhance \npeople’s wellbeing, such as gross national happiness.</indent> \n\n\u2022<indent=1em>Greater focus on resource conservation and less on material consumption \ncan lead to less waste.</indent>",
+"equity considerations":"Economic growth is tied to pulling people out of poverty worldwide. \nAlthough, in recent decades, many gains in economic growth have gone to the \nworld’s wealthiest. Regardless, policies must be tailored to specific local \nand regional circumstances. \n\nWhen GDP growth slows or contracts, governments can incur higher \nbudget deficits, often implementing austerity measures-cutting spending \nand raising taxes-to offset the difference. \nThese reforms can severely impact the poor and working class causing \njob losses and all the inequities that come with loss of livelihood.",
+"correlations":"
+[
+{"energy supply":"The smaller the economic growth, the less energy has to be provided."}
+]"
+}
