@@ -7,30 +7,32 @@ This project provides an interactive museum to learn about the [En-ROADS Simulat
 
 [We host the binaries in the microsoft cloud of the university of Tübingen. They come in zip archives, just download and extract them and run the executable file (ClimateMuseum.exe).]: # 
 
-## Installation Guide
+## Available Versions and Demo Videos
 
 There are two desktop versions available:
 
-- the large Climate Museum with a whole museum to learn about the En-ROADS Simulator sliders, the Simulator itself and a virtual environment which adapts to your changes in the Simulator.
+- the large *Climate Museum* with a whole museum to learn about the En-ROADS Simulator sliders, the Simulator itself and a virtual environment which adapts to your changes in the Simulator.
 
-  Have a look at short demo videos about the [museum](https://drive.google.com/file/d/1G5iDkGgJfVP3bNkqE3AWW1VhOS06vGlG/view?usp=drive_link) and the [Simulator room with adapting environment](https://drive.google.com/file/d/1eNtxPwi4r9J8UET-uvtCewdf0iJTIwQ-/view?usp=sharing).
+  Have a look at short demo videos about the [museum](https://drive.google.com/file/d/1G5iDkGgJfVP3bNkqE3AWW1VhOS06vGlG/view?usp=drive_link) and the [Simulator room with adapting environment](https://drive.google.com/file/d/1eNtxPwi4r9J8UET-uvtCewdf0iJTIwQ-/view?usp=sharing) (also available as mp4 here in the repository).
 
-  You can download the binaries [here](https://drive.google.com/file/d/1d94BlhGrHG5kU86XQZ5U6M-5r9-A_FTJ/view?usp=drive_link).
+- the smaller *Climate Environment* to get an impression of the En-ROADS Simulator and an adapting environment (without the museum).
 
-- the smaller Climate Environment to get an impression of the En-ROADS Simulator and an adapting environment (without the museum).
+  Have a look at [a short demo video](https://drive.google.com/file/d/1gNzx5i5Gtrbhewe6NS4NGnF3XlzA1XXY/view?usp=sharing) (also available as mp4 here in the repository).
 
-  Have a look at [a short demo video](https://drive.google.com/file/d/1gNzx5i5Gtrbhewe6NS4NGnF3XlzA1XXY/view?usp=sharing) or in the repository: *ClimateEnvironment_DemoVideo.mp4*
-  
-  You can download the binaries [here](https://drive.google.com/file/d/1KC_3jGAOSvUJ29uXdMq5y878eNfi8BW6/view?usp=drive_link).
-
+## Installation Guide
 
 The following installation steps are the same for both versions:
 
 1. Just download and extract the zip archive.
-2. Run the *ClimateMuseum.exe* in the extracted zip archive to start the project.
-3. At the first start one or two windows will pop up: Please allow the execution of the program and the access for the *electron-app.exe*.
+
+   You can download the *ClimateMuseum* binaries [here](https://drive.google.com/file/d/1d94BlhGrHG5kU86XQZ5U6M-5r9-A_FTJ/view?usp=drive_link).
+   
+   You can download the *ClimateEnvironment* binaries [here](https://drive.google.com/file/d/1KC_3jGAOSvUJ29uXdMq5y878eNfi8BW6/view?usp=drive_link).
+   
+3. Run the *ClimateMuseum.exe* in the extracted zip archive to start the project.
+4. At the first start one or two windows will pop up: Please allow the execution of the program and the access for the *electron-app.exe*.
    We need it to communicate with the Rest API of the En-ROADS Simulator so that the environment can adapt properly.
-4. Sometimes you have to start the museum for a second time before these settings are adopted and you can experience the Simulator's changes in the virtual environment.
+5. Sometimes you have to start the museum for a second time before these settings are adopted and you can experience the Simulator's changes in the virtual environment.
 
 **Enjoy the museum and the environment!**
 
