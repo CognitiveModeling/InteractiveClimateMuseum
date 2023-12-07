@@ -3,9 +3,12 @@
 # Exploring Climate Change Solutions in Unity
 > An Interactive Museum for the En-ROADS Simulator
 
-This project provides an interactive museum to learn about the [En-ROADS Simulator](https://www.climateinteractive.org/tools/en-roads/). The different topics featured in the simulator can be explored in different rooms, where the information is presented in terms of interactive panels. The simulator in terms of a browser window is integrated into the panels. In order to work with the code, you need the embedded browser provided by [zenfulcrum](https://assetstore.unity.com/packages/tools/gui/embedded-browser-55459) project. At the moment, the projects relies on this Unity plugin to integrate the En-ROADS simulator into the scene. Both projects were developed on Windows systems.
+This project provides an interactive museum and an adapting virtual environment to learn about the [En-ROADS Simulator](https://www.climateinteractive.org/tools/en-roads/). The different topics featured in the simulator can be explored in different rooms, where the information is presented in terms of interactive panels. The simulator in terms of a browser window is integrated into the panels. In one simulator, adjusting the sliders results in changes of the environment surrounding the museum (sea, lake, city, trees, ...).
 
-[We host the binaries in the microsoft cloud of the university of Tübingen. They come in zip archives, just download and extract them and run the executable file (ClimateMuseum.exe).]: # 
+In order to work with the code, you need the embedded browser provided by [zenfulcrum](https://assetstore.unity.com/packages/tools/gui/embedded-browser-55459) project. At the moment, the projects relies on this Unity plugin to integrate the En-ROADS simulator into the scene.
+To request the temperature values used for the environmental changes, a [REST-API](https://drive.google.com/file/d/1AkiMiauTpfZKjk5UCfSSLlkWKQ4CqcD9/view?usp=sharing) is used as an electron-app. To work with the code, you need the [built electron-app](https://drive.google.com/file/d/1fb9Moa3H0JLHRSI67X5-9IaIlz7EVNWy/view?usp=sharing) in the Unity project folder *Assets/StreamingAssets*.
+Both projects were developed on Windows systems.
+
 
 ## Available Versions and Demo Videos
 
@@ -31,7 +34,7 @@ The following installation steps are the same for both versions:
    
 3. Run the *ClimateMuseum.exe* in the extracted zip archive to start the project.
 4. At the first start one or two windows will pop up: Please allow the execution of the program and the access for the *electron-app.exe*.
-   We need it to communicate with the Rest API of the En-ROADS Simulator so that the environment can adapt properly.
+   We need it to communicate with the REST-API of the En-ROADS Simulator so that the environment can adapt properly.
 5. Sometimes you have to start the museum for a second time before these settings are adopted and you can experience the Simulator's changes in the virtual environment.
 
 **Enjoy the museum and the environment!**
