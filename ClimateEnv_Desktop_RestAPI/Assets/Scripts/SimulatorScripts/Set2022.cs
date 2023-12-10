@@ -14,7 +14,7 @@ public class Set2022 : MonoBehaviour
         set2022();
     }
 
-    void set2022()
+    public void set2022()
     {
         thisBackground.GetComponent<Image>().color = new Color(0.46666667f, 0.72549020f, 0.23921569f, 1f);
         otherBackground.GetComponent<Image>().color = new Color(0.7887148f, 0.7900782f, 0.7924528f, 1f);
