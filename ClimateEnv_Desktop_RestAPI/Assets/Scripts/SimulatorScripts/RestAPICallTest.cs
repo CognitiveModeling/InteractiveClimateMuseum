@@ -26,6 +26,9 @@ public class RestAPICallTest : MonoBehaviour
   private float temp2080 = 10f;
   private float temp2060 = 10f;
   private float temp2040 = 10f;
+  private float temp2020 = 10f;
+  public float[] yearPredictions = new float[5]; // Array to store 5 predictions (2020, 2040, 2060, 2080, 2100)
+
   //private float temp2100 = 10f;
 
   
@@ -321,7 +324,7 @@ public class RestAPICallTest : MonoBehaviour
 
         if (temperatures.Count > 0)
         {
-            public float[] yearPredictions = new float[5]; // Array to store 5 predictions (2020, 2040, 2060, 2080, 2100)
+            
             // get last temp (2100) out of list
             temp2100 = temperatures[temperatures.Count - 1];
             temp2080 = temperatures[temperatures.Count - 21];

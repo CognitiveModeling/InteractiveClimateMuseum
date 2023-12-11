@@ -8,6 +8,8 @@ TagManager:
   - Path
   - DE
   - EN
+  - ButtonA
+  - ButtonB
   layers:
   - Default
   - TransparentFX

@@ -134,26 +134,26 @@ public class EnvironmentUpdate : MonoBehaviour
         switch (yearSelector)
         {
             case 0:
-                yearPred = yearPredictions[0]; // 2020 prediction
+                tempProg = yearPredictions[0]; // 2020 prediction
                 break;
             case 1:
-                yearPred = yearPredictions[1]; // 2040 prediction
+                tempProg = yearPredictions[1]; // 2040 prediction
                 break;
             case 2:
-                yearPred = yearPredictions[2]; // 2060 prediction
+                tempProg = yearPredictions[2]; // 2060 prediction
                 break;
             case 3:
-                yearPred = yearPredictions[3]; // 2080 prediction
+                tempProg = yearPredictions[3]; // 2080 prediction
                 break;
             case 4:
-                yearPred = yearPredictions[4]; // 2100 prediction
+                tempProg = yearPredictions[4]; // 2100 prediction
                 break;
             default:
                 break;
         }
 
         // Return the selected year prediction value
-        apply(yearPred);
+        apply(tempProg);
     }
 
     public void apply(float temp2100)
