@@ -15,6 +15,10 @@ public class SliderPositions : MonoBehaviour
     public EnvironmentUpdate environmentUpdate; // Reference to the EnvironmentUpdate script
     private int currentIndex = 0; // Current index for snapPoints array
     private bool loopActive = false; // Flag to control loop activation
+    private bool isMoving = false; // Flag to check if object is in motion
+    private float delayDuration = 2.0f; // Duration to stay at each snap point
+    private Coroutine loopCoroutine; // Coroutine for looping through snap points
+
 
     private void Start()
     {
@@ -24,11 +28,16 @@ public class SliderPositions : MonoBehaviour
 
         // Calculate snap points based on the specified range
         CalculateSnapPoints();
+
+        // Start looping through states every 2 seconds
+        //loopActive = false;
+        //loopCoroutine = StartCoroutine(LoopThroughStates());
+        
     }
 
     private void Update()
     {
-        if (loopActive)
+        if (loopActive && !isMoving)
         {
             LoopThroughStates();
         }
@@ -49,22 +58,113 @@ public class SliderPositions : MonoBehaviour
         }
     }
 
+     // Public function to toggle loop on/off
     public void LoopThroughStates(bool onOff)
     {
         loopActive = onOff;
+
+        if (loopActive)
+        {
+            // Start or resume the coroutine based on the loopActive flag
+            if (loopCoroutine == null)
+            {
+                loopCoroutine = StartCoroutine(LoopThroughStatesCoroutine());
+            }
+            else
+            {
+                // If coroutine already running, resume it
+                StartCoroutine(LoopThroughStatesCoroutine());
+            }
+        }
+        else
+        {
+            // If loop is turned off, stop the coroutine
+            if (loopCoroutine != null)
+            {
+                StopCoroutine(loopCoroutine);
+                loopCoroutine = null;
+            }
+        }
     }
 
-    private void LoopThroughStates()
+    private IEnumerator LoopThroughStatesCoroutine()
     {
-        currentIndex = (currentIndex + 1) % snapPoints.Length;
-        float targetSnapPoint = snapPoints[currentIndex];
+        int targetIndex = 0; // Initialize the target index
 
-        // Move to the next snap point
-        StartCoroutine(MoveToSnapPoint(targetSnapPoint, 0.5f));
+        while (loopActive)
+        {
+            float targetSnapPoint = snapPoints[targetIndex]; // Set the target snap point
+
+            // Move to the next snap point if the object is not at the current snap point
+            while (!IsApproximately(transform.localPosition.x, targetSnapPoint))
+            {
+                // Move towards the next snap point
+                yield return StartCoroutine(MoveToSnapPoint(targetSnapPoint, 0.5f)); // Adjust the movement duration here
+            }
+
+            currentIndex = targetIndex; // Update currentIndex to the current target index
+            functionTrigger = currentIndex+1; // Update functionTrigger based on the current index
+
+            // Perform actions based on the current snap point
+            PerformFunction();
+
+            // Calculate the next target index for looping
+            targetIndex = (targetIndex + 1) % snapPoints.Length;
+
+            // Wait at the snap point for the specified delay duration
+            yield return new WaitForSeconds(delayDuration);
+        }
+    }
+
+    // Helper method to get the index of the nearest snap point based on the current position
+    private int GetNearestSnapPointIndex(float currentX)
+    {
+        int nearestIndex = 0;
+        float shortestDistance = Mathf.Abs(currentX - snapPoints[0]);
+
+        for (int i = 1; i < snapPoints.Length; i++)
+        {
+            float distance = Mathf.Abs(currentX - snapPoints[i]);
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                nearestIndex = i;
+            }
+        }
+
+        return nearestIndex;
+    }
+
+
+    private IEnumerator LoopThroughStates()
+    {
+        while (true)
+        {
+            currentIndex = (currentIndex + 1) % snapPoints.Length;
+            float targetSnapPoint = snapPoints[currentIndex];
+
+            // Move to the next snap point
+            yield return StartCoroutine(MoveToSnapPoint(targetSnapPoint, 0.5f)); // Adjust the movement duration here
+            
+            functionTrigger = currentIndex+1;
+            // Perform actions based on the current snap point
+            PerformFunction();
+
+            // Wait at the snap point for the specified delay duration
+            yield return new WaitForSeconds(delayDuration);
+            
+        }
+    }
+
+    // Helper method to check if two float values are approximately equal
+    private bool IsApproximately(float a, float b, float tolerance = 0.01f)
+    {
+        return Mathf.Abs(a - b) < tolerance;
     }
 
     private IEnumerator MoveToSnapPoint(float targetX, float duration)
     {
+        isMoving = true; // Set the flag to indicate object movement
         float initialX = transform.localPosition.x;
         float timer = 0f;
 
@@ -78,6 +178,7 @@ public class SliderPositions : MonoBehaviour
         }
 
         transform.localPosition = new Vector3(targetX, transform.localPosition.y, transform.localPosition.z);
+        isMoving = false; // Reset the flag after movement is complete
     }
 
     private void OnMouseDown()
