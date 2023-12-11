@@ -75,7 +75,7 @@ public class EnvironmentUpdate : MonoBehaviour
     //Start is called before the first frame update
     void Start()
     {
-        set2022();
+        //set2022();
         this.lastURL = simulationRenderer.url;
         this.currURL = simulationRenderer.url;
     }
