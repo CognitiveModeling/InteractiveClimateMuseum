@@ -5,6 +5,7 @@ public class ToggleButtons : MonoBehaviour
     public Color initialColor = Color.white; // Initial color of the buttons
     public GameObject[] buttonBParts; // Array of objects for Button B
     public GameObject otherButton; // Reference to the other button
+    public SliderPositions sliderPositions; // Reference to the SliderPositions script
 
     private Color originalColorA; // Store the original color of button A
     private Color[] originalColorsB; // Store the original colors of button B parts
@@ -33,6 +34,11 @@ public class ToggleButtons : MonoBehaviour
             {
                 part.GetComponent<Renderer>().material.color = originalColorA;
             }
+            if (sliderPositions != null)
+            {
+                // Call the public function loopThroughStates from SliderPositions
+                sliderPositions.LoopThroughStates(true);
+            }
         }
         else if (gameObject.CompareTag("ButtonB"))
         {
@@ -43,6 +49,7 @@ public class ToggleButtons : MonoBehaviour
             {
                 part.GetComponent<Renderer>().material.color = Color.red;
             }
+            sliderPositions.LoopThroughStates(false);
         }
     }
 }

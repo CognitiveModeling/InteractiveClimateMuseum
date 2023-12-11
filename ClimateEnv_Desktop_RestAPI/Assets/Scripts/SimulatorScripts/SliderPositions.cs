@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class SliderPositions : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class SliderPositions : MonoBehaviour
     private float initialLocalObjX; // Store the initial local X position of the object
     public float movementSpeed = 0.0014f; // Adjust this value to change the movement speed
     public EnvironmentUpdate environmentUpdate; // Reference to the EnvironmentUpdate script
-
+    private int currentIndex = 0; // Current index for snapPoints array
+    private bool loopActive = false; // Flag to control loop activation
 
     private void Start()
     {
@@ -22,6 +24,14 @@ public class SliderPositions : MonoBehaviour
 
         // Calculate snap points based on the specified range
         CalculateSnapPoints();
+    }
+
+    private void Update()
+    {
+        if (loopActive)
+        {
+            LoopThroughStates();
+        }
     }
 
     private void CalculateSnapPoints()
@@ -37,6 +47,37 @@ public class SliderPositions : MonoBehaviour
         {
             snapPoints[i] = minX + stepSize * i;
         }
+    }
+
+    public void LoopThroughStates(bool onOff)
+    {
+        loopActive = onOff;
+    }
+
+    private void LoopThroughStates()
+    {
+        currentIndex = (currentIndex + 1) % snapPoints.Length;
+        float targetSnapPoint = snapPoints[currentIndex];
+
+        // Move to the next snap point
+        StartCoroutine(MoveToSnapPoint(targetSnapPoint, 0.5f));
+    }
+
+    private IEnumerator MoveToSnapPoint(float targetX, float duration)
+    {
+        float initialX = transform.localPosition.x;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            float newX = Mathf.Lerp(initialX, targetX, timer / duration);
+            transform.localPosition = new Vector3(newX, transform.localPosition.y, transform.localPosition.z);
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localPosition = new Vector3(targetX, transform.localPosition.y, transform.localPosition.z);
     }
 
     private void OnMouseDown()
@@ -106,42 +147,41 @@ public class SliderPositions : MonoBehaviour
     }
 
     private void PerformFunction()
-{
-    // Perform actions based on the triggered function (functionTrigger)
-    switch (functionTrigger)
     {
-        case 1:
-            // Set yearSelector to 0 for function 1
-            SetEnvironmentUpdateYearSelector(0);
-            break;
-        case 2:
-            // Set yearSelector to 1 for function 2
-            SetEnvironmentUpdateYearSelector(1);
-            break;
-        case 3:
-            // Set yearSelector to 2 for function 3
-            SetEnvironmentUpdateYearSelector(2);
-            break;
-        case 4:
-            // Set yearSelector to 3 for function 4
-            SetEnvironmentUpdateYearSelector(3);
-            break;
-        case 5:
-            // Set yearSelector to 4 for function 5
-            SetEnvironmentUpdateYearSelector(4);
-            break;
-        default:
-            break;
+        // Perform actions based on the triggered function (functionTrigger)
+        switch (functionTrigger)
+        {
+            case 1:
+                // Set yearSelector to 0 for function 1
+                SetEnvironmentUpdateYearSelector(0);
+                break;
+            case 2:
+                // Set yearSelector to 1 for function 2
+                SetEnvironmentUpdateYearSelector(1);
+                break;
+            case 3:
+                // Set yearSelector to 2 for function 3
+                SetEnvironmentUpdateYearSelector(2);
+                break;
+            case 4:
+                // Set yearSelector to 3 for function 4
+                SetEnvironmentUpdateYearSelector(3);
+                break;
+            case 5:
+                // Set yearSelector to 4 for function 5
+                SetEnvironmentUpdateYearSelector(4);
+                break;
+            default:
+                break;
+        }
     }
-}
 
-private void SetEnvironmentUpdateYearSelector(int value)
-{
-    if (environmentUpdate != null)
+    private void SetEnvironmentUpdateYearSelector(int value)
     {
-        // Set the yearSelector variable in EnvironmentUpdate script
-        environmentUpdate.yearSelector = value;
+        if (environmentUpdate != null)
+        {
+            // Set the yearSelector variable in EnvironmentUpdate script
+            environmentUpdate.yearSelector = value;
+        }
     }
-}
-
 }
