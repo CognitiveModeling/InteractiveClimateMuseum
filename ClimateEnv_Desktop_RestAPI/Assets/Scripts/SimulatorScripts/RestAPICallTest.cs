@@ -314,10 +314,25 @@ public class RestAPICallTest : MonoBehaviour
           years.Add(year);
         }
 
+        //UnityEngine.Debug.Log("temperatures:" + temperatures);
+        foreach (float temperat in temperatures)
+        {
+            UnityEngine.Debug.Log("Temperature: " + temperat);
+        }
+
+        UnityEngine.Debug.Log("2100: " + years[temperatures.Count - 1]);
+        UnityEngine.Debug.Log("2080: " + years[temperatures.Count - 21]);
+        UnityEngine.Debug.Log("2060: " + years[temperatures.Count - 41]);
+        UnityEngine.Debug.Log("2040: " + years[temperatures.Count - 61]);
+
+
         if (temperatures.Count > 0)
         {
             // get last temp (2100) out of list
             temp2100 = temperatures[temperatures.Count - 1];
+            temp2080 = temperatures[temperatures.Count - 21];
+            temp2060 = temperatures[temperatures.Count - 41];
+            temp2040 = temperatures[temperatures.Count - 61];
             //UnityEngine.Debug.Log("temp2100: " + temp2100);
             
             // Do something with lastTemperature (change environment, ...)
