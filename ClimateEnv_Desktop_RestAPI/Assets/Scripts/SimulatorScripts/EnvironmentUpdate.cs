@@ -9,7 +9,7 @@ using ZenFulcrum.EmbeddedBrowser;
 using System.Linq;
 using System.Diagnostics;
 using System.Security.Policy;
-
+using TMPro;
 
 public class EnvironmentUpdate : MonoBehaviour
 {
@@ -67,6 +67,7 @@ public class EnvironmentUpdate : MonoBehaviour
     // Indicator for selected year, 0: 2020, 1: 2040, 2: 2060, 3: 2080, 4: 2100
     public int yearSelector = 0;
     private int prevYearSelector = 0;
+    public GameObject GlobalYearIndicator; // The GameObject containing the TextMeshPro object
 
     // particle systems for the clouds/smog
     [SerializeField] private ParticleSystem psClouds;
@@ -130,23 +131,30 @@ public class EnvironmentUpdate : MonoBehaviour
 
     public void chooseYear(float[] yearPredictions)
     {
+        TextMeshProUGUI textMeshPro = GlobalYearIndicator.GetComponent<TextMeshProUGUI>();
+
         // Access the corresponding year prediction based on the yearSelector value
         switch (yearSelector)
         {
             case 0:
                 tempProg = yearPredictions[0]; // 2020 prediction
+                textMeshPro.text = "2020";
                 break;
             case 1:
                 tempProg = yearPredictions[1]; // 2040 prediction
+                textMeshPro.text = "2040";
                 break;
             case 2:
                 tempProg = yearPredictions[2]; // 2060 prediction
+                textMeshPro.text = "2060";
                 break;
             case 3:
                 tempProg = yearPredictions[3]; // 2080 prediction
+                textMeshPro.text = "2080";
                 break;
             case 4:
                 tempProg = yearPredictions[4]; // 2100 prediction
+                textMeshPro.text = "2100";
                 break;
             default:
                 break;
