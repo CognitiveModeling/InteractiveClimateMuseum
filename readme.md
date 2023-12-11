@@ -20,7 +20,7 @@ There are two desktop versions available for Windows (unfortunately not for MacO
 
 - the smaller *Climate Environment* to get an impression of the En-ROADS Simulator and an adapting environment (without the museum).
 
-  Have a look at [a short demo video](https://drive.google.com/file/d/1gNzx5i5Gtrbhewe6NS4NGnF3XlzA1XXY/view?usp=sharing) (also available as mp4 here in the repository).
+  Have a look at [a short demo video](https://youtu.be/XbIpDda7VIk) (also available as mp4 here in the repository).
 
 ## Installation Guide
 
