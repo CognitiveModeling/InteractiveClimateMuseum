@@ -34,6 +34,7 @@ public class EnvironmentUpdate : MonoBehaviour
     public Dictionary<String, String> sliderValuesQuery;
     private float prognosis;
     private List<float> temperatures;
+    private float tempProg = 1.3f;
  
 
     // upper and lower will be used as boundaries of several different value ranges
@@ -63,6 +64,10 @@ public class EnvironmentUpdate : MonoBehaviour
     private float yLake;
     private float yIceberg;
 
+    // Indicator for selected year, 0: 2020, 1: 2040, 2: 2060, 3: 2080, 4: 2100
+    public int yearSelector = 0;
+    private int prevYearSelector = 0;
+
     // particle systems for the clouds/smog
     [SerializeField] private ParticleSystem psClouds;
     [SerializeField] private ParticleSystem psSmog;
@@ -88,6 +93,7 @@ public class EnvironmentUpdate : MonoBehaviour
         }
     }
 
+    
     public bool checkForChange(string lastURL, string currURL)
     {
         if (lastURL == null || currURL == null)
@@ -95,7 +101,10 @@ public class EnvironmentUpdate : MonoBehaviour
             UnityEngine.Debug.LogWarning("URL is null.");
             return false;
         }
-
+        if (yearSelector != prevYearSelector)
+        {
+            return true;
+        }
         this.lastURL = this.currURL;
         return !lastURL.Equals(currURL);
     }
@@ -117,6 +126,34 @@ public class EnvironmentUpdate : MonoBehaviour
             cmdInterface.getTemp2100("1:0");
         }
         yield return null;
+    }
+
+    public void chooseYear(float[] yearPredictions)
+    {
+        // Access the corresponding year prediction based on the yearSelector value
+        switch (yearSelector)
+        {
+            case 0:
+                yearPred = yearPredictions[0]; // 2020 prediction
+                break;
+            case 1:
+                yearPred = yearPredictions[1]; // 2040 prediction
+                break;
+            case 2:
+                yearPred = yearPredictions[2]; // 2060 prediction
+                break;
+            case 3:
+                yearPred = yearPredictions[3]; // 2080 prediction
+                break;
+            case 4:
+                yearPred = yearPredictions[4]; // 2100 prediction
+                break;
+            default:
+                break;
+        }
+
+        // Return the selected year prediction value
+        apply(yearPred);
     }
 
     public void apply(float temp2100)

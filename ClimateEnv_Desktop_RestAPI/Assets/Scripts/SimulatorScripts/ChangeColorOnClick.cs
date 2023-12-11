@@ -11,6 +11,7 @@ public class ChangeColorOnClick : MonoBehaviour
     private Vector3 initialMousePos;
     private float initialLocalObjX;
     public float movementSpeed = 0.0014f; // Adjust this value to change the movement speed
+    Set2022 set2022Script = FindObjectOfType<Set2022>();
 
     private void Start()
     {
@@ -104,44 +105,45 @@ public class ChangeColorOnClick : MonoBehaviour
     }
 
     private void PerformFunction()
-    {
-        // Perform actions based on the triggered function (functionTrigger)
-        switch (functionTrigger)
-        {
-            case 1:
-                // Function 1 action
-                Set2022Script();
-                break;
-            case 2:
-                // Function 2 action
-                Debug.Log("Function 2 triggered");
-                break;
-            case 3:
-                // Function 3 action
-                Debug.Log("Function 3 triggered");
-                break;
-            case 4:
-                // Function 4 action
-                Debug.Log("Function 4 triggered");
-                break;
-            case 5:
-                // Function 5 action
-                Debug.Log("Function 5 triggered");
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void Set2022Script()
 {
-    // Find the Set2022 script component attached to a GameObject
-    Set2022 set2022Script = FindObjectOfType<Set2022>();
-
-    if (set2022Script != null)
+    // Perform actions based on the triggered function (functionTrigger)
+    switch (functionTrigger)
     {
-        // Access the method from Set2022 script to perform actions
-        set2022Script.set2022();
+        case 1:
+            // Set yearSelector to 0 for function 1
+            SetEnvironmentUpdateYearSelector(0);
+            break;
+        case 2:
+            // Set yearSelector to 1 for function 2
+            SetEnvironmentUpdateYearSelector(1);
+            break;
+        case 3:
+            // Set yearSelector to 2 for function 3
+            SetEnvironmentUpdateYearSelector(2);
+            break;
+        case 4:
+            // Set yearSelector to 3 for function 4
+            SetEnvironmentUpdateYearSelector(3);
+            break;
+        case 5:
+            // Set yearSelector to 4 for function 5
+            SetEnvironmentUpdateYearSelector(4);
+            break;
+        default:
+            break;
     }
 }
+
+private void SetEnvironmentUpdateYearSelector(int value)
+{
+    // Find the EnvironmentUpdate script component attached to a GameObject
+    EnvironmentUpdate environmentUpdate = FindObjectOfType<EnvironmentUpdate>();
+
+    if (environmentUpdate != null)
+    {
+        // Set the yearSelector variable in EnvironmentUpdate script
+        environmentUpdate.yearSelector = value;
+    }
+}
+
 }

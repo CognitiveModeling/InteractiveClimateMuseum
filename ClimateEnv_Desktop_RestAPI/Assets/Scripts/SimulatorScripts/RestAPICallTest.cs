@@ -23,6 +23,11 @@ public class RestAPICallTest : MonoBehaviour
 
   public EnvironmentUpdate environmentUpdate;
   private float temp2100 = 10f;
+  private float temp2080 = 10f;
+  private float temp2060 = 10f;
+  private float temp2040 = 10f;
+  //private float temp2100 = 10f;
+
   
   // these are all available graphs that are part of the json response
   private List<string> _graph_ids = new List<string> {
@@ -314,29 +319,26 @@ public class RestAPICallTest : MonoBehaviour
           years.Add(year);
         }
 
-        //UnityEngine.Debug.Log("temperatures:" + temperatures);
-        foreach (float temperat in temperatures)
-        {
-            UnityEngine.Debug.Log("Temperature: " + temperat);
-        }
-
-        UnityEngine.Debug.Log("2100: " + years[temperatures.Count - 1]);
-        UnityEngine.Debug.Log("2080: " + years[temperatures.Count - 21]);
-        UnityEngine.Debug.Log("2060: " + years[temperatures.Count - 41]);
-        UnityEngine.Debug.Log("2040: " + years[temperatures.Count - 61]);
-
-
         if (temperatures.Count > 0)
         {
+            public float[] yearPredictions = new float[5]; // Array to store 5 predictions (2020, 2040, 2060, 2080, 2100)
             // get last temp (2100) out of list
             temp2100 = temperatures[temperatures.Count - 1];
             temp2080 = temperatures[temperatures.Count - 21];
             temp2060 = temperatures[temperatures.Count - 41];
             temp2040 = temperatures[temperatures.Count - 61];
+            temp2020 = temperatures[temperatures.Count - 81];
             //UnityEngine.Debug.Log("temp2100: " + temp2100);
             
+            yearPredictions[0] = temp2020;
+            yearPredictions[1] = temp2040;
+            yearPredictions[2] = temp2060;
+            yearPredictions[3] = temp2080;
+            yearPredictions[4] = temp2100;
+
+            environmentUpdate.chooseYear(yearPredictions);
             // Do something with lastTemperature (change environment, ...)
-            environmentUpdate.apply(temp2100);
+            //environmentUpdate.apply(temp2100);
         }
       }
                 
