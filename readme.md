@@ -12,7 +12,7 @@ Both projects were developed on Windows systems.
 
 ## Available Versions and Demo Videos
 
-There are two desktop versions available:
+There are two desktop versions available for Windows (unfortunately not for MacOS, but it should be possible to run both versions under Windows simulations like *Wine*):
 
 - the large *Climate Museum* with a whole museum to learn about the En-ROADS Simulator sliders, the Simulator itself and a virtual environment which adapts to your changes in the Simulator.
 
@@ -20,7 +20,7 @@ There are two desktop versions available:
 
 - the smaller *Climate Environment* to get an impression of the En-ROADS Simulator and an adapting environment (without the museum).
 
-  Have a look at [a short demo video](https://drive.google.com/file/d/1gNzx5i5Gtrbhewe6NS4NGnF3XlzA1XXY/view?usp=sharing) (also available as mp4 here in the repository).
+  Have a look at [a short demo video](https://youtu.be/XbIpDda7VIk) (also available as mp4 here in the repository).
 
 ## Installation Guide
 
