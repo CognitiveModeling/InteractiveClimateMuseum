@@ -1,4 +1,4 @@
-<img src="cm.png" align="right" />
+<img src="ReadMe_Img/cm.png" align="right" />
 
 # Exploring Climate Change Solutions in Unity
 > An Interactive Museum for the En-ROADS Simulator
@@ -1037,7 +1037,7 @@ This scripts changes the displayed text in the tab "Key Dynamics" in the panels 
 
 The image below gives an overview of the scripts, methods and variables that are important for the interaction between VR and browser.
 
-<img src="graphic_vr_browser_interaction.png" width="900" height="600" align="center" />
+<img src="ReadMe_Img/graphic_vr_browser_interaction.png" width="900" height="600" align="center" />
 
 [VRControllerInputProxy](#VRControllerInputProxy) communicates between the SteamVR and the script [VRBrowserHand](#VRBrowserHand) by changing the VRBrowserHand's amplitude if the button on the controller is clicked.
 If the VR input is enabled, FeedVRPointers() in the script [PointerUIBase](#PointerUIBase) collects all the currently tracked controllers (VRBrowserHands) and transforms them into PointerStates. 
