@@ -17,21 +17,23 @@ public class ShowBrowser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame) 
+        {
+            Renderer browserRenderer = browser.GetComponent<Renderer>();
+            Collider browserCollider = browser.GetComponent<Collider>();
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame) {
-
-            if (!browser.activeSelf)
+            if (!browserRenderer.enabled)
             {
-                browser.SetActive(true);
-                //Debug.Log(browser.activeSelf);
+                // Make browser visible and interactable
+                browserRenderer.enabled = true;
+                browserCollider.enabled = true;
             }
-                
             else
             {
-                browser.SetActive(false);
-                //Debug.Log(browser.activeSelf);
+                // Make browser invisible and not interactable
+                browserRenderer.enabled = false;
+                browserCollider.enabled = false;
             }
         }  
-        
     }
 }
