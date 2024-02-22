@@ -49,11 +49,13 @@ ClimateMuseum_Desktop_RestAPI/Assets/ZFBrowser/Plugins/**
 ClimateEnv_Desktop_RestAPI/Assets/ZFBrowser/Plugins/**
 Env_D_rAPI/Assets/ZFBrowser/Plugins/**
 Museum_D_rAPI/Assets/ZFBrowser/Plugins/**
+Versions_Desktop/ClimateEnv_Desktop_RestAPI/Assets/ZFBrowser/Plugins/**
 
 # electron-app.exe
 ClimateMuseum_Desktop_RestAPI/Assets/StreamingAssets/electron-app-win32-x64/electron-app.exe
 ClimateEnv_Desktop_RestAPI/Assets/StreamingAssets/electron-app-win32-x64/electron-app.exe
 Env_D_rAPI/Assets/StreamingAssets/electron-app-win32-x64/electron-app.exe
 Museum_D_rAPI/Assets/StreamingAssets/electron-app-win32-x64/electron-app.exe
+Versions_Desktop/ClimateEnv_Desktop_RestAPI/Assets/StreamingAssets/electron-app-win32-x64/electron-app.exe
 
 Versions_Desktop_Legacy/ClimateEnv_Desktop/Assets/Low Poly Assets/SimplePoly City - Low Poly Assets/Prefab/Vehicles/**

@@ -43,6 +43,9 @@ public class SimulationRenderer : MonoBehaviour
 
     public string url;
 
+    public GameObject sliderBar;
+
+
     public void Awake()
     {
         // initializes the browser object
@@ -65,6 +68,8 @@ public class SimulationRenderer : MonoBehaviour
 
         // Javascript function to set opacity of selected element to 0.3
         browser.EvalJS("function lowOpacity(elem) {return elem.style.opacity = '0.3';}");
+
+        Invoke("ActivateSliderBar", 3);
     }
 
     void Update()
@@ -76,6 +81,10 @@ public class SimulationRenderer : MonoBehaviour
             url = browser.Url;
             //Debug.Log("Current url: " + url);
         }
+    }
+
+    void ActivateSliderBar() {
+        sliderBar.SetActive(true);
     }
 
     // adjusts the simulator's appearance in the different panels
