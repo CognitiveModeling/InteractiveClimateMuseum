@@ -34,6 +34,7 @@ public class ShowBrowser : MonoBehaviour
                 browserRenderer.enabled = false;
                 browserCollider.enabled = false;
             }
-        }  
+        }
+  
     }
 }

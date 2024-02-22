@@ -12,6 +12,9 @@ public class QuitMuseumEnv : MonoBehaviour
     //public BrowserSync browserSync;
     public GameObject quitCanvas;
     public RestAPICallTest restAPICall;
+    
+    public GameObject information;
+    public GameObject general;
 
     void Update()
     {
@@ -20,6 +23,21 @@ public class QuitMuseumEnv : MonoBehaviour
 
             //ShowQuitCanvas();
             QuitMuseum();
+        }
+
+        if (Keyboard.current.iKey.wasPressedThisFrame) 
+        {
+             if (!information.activeSelf)
+            {
+                information.SetActive(true);
+                general.SetActive(false);
+            }
+                
+            else
+            {
+                information.SetActive(false);
+                general.SetActive(true);
+            }
         }
     }
 
