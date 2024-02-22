@@ -45,6 +45,11 @@ public class EnvironmentUpdate : MonoBehaviour
     [SerializeField] private Material tree1;
     [SerializeField] private Material tree2;
     [SerializeField] private Material tree3;
+    [SerializeField] private Material tree4;
+    [SerializeField] private Material tree5;
+    [SerializeField] private Material tree6;
+    [SerializeField] private Material tree7;
+    [SerializeField] private Material tree0;
     [SerializeField] private Material ocean;
     [SerializeField] private Material lake;
     [SerializeField] private Material ground;
@@ -199,6 +204,36 @@ public class EnvironmentUpdate : MonoBehaviour
             {
                 tree3.color = new Color(tree3.color.r, tree3.color.g, tree3.color.b, 0f);
             }
+            tree4.color = gradients.gradientTree4.Evaluate(valToPerc(lower, upper, prognosis));
+            // make leaves disappear if prognosis >= 85% of worst case value:
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            {
+                tree4.color = new Color(tree4.color.r, tree4.color.g, tree4.color.b, 0f);
+            }
+            tree5.color = gradients.gradientTree5.Evaluate(valToPerc(lower, upper, prognosis));
+            // make leaves disappear if prognosis >= 85% of worst case value:
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            {
+                tree5.color = new Color(tree5.color.r, tree5.color.g, tree5.color.b, 0f);
+            }
+            tree6.color = gradients.gradientTree6.Evaluate(valToPerc(lower, upper, prognosis));
+            // make leaves disappear if prognosis >= 85% of worst case value:
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            {
+                tree6.color = new Color(tree6.color.r, tree6.color.g, tree6.color.b, 0f);
+            }
+            tree7.color = gradients.gradientTree7.Evaluate(valToPerc(lower, upper, prognosis));
+            // make leaves disappear if prognosis >= 85% of worst case value:
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            {
+                tree7.color = new Color(tree7.color.r, tree7.color.g, tree7.color.b, 0f);
+            }
+            tree0.color = gradients.gradientTree0.Evaluate(valToPerc(lower, upper, prognosis));
+            // make leaves disappear if prognosis >= 85% of worst case value:
+            if (valToPerc(lower, upper, prognosis) >= 0.85)
+            {
+                tree0.color = new Color(tree0.color.r, tree0.color.g, tree0.color.b, 0f);
+            }
 
             ground.color = gradients.gradientGround.Evaluate(valToPerc(lower, upper, prognosis));
             mountain.color = gradients.gradientMountain.Evaluate(valToPerc(lower, upper, prognosis));
@@ -283,9 +318,14 @@ public class EnvironmentUpdate : MonoBehaviour
 
     public void set2022()
     {
-        tree1.color = new Color(0.364f, 0.925f, 0.160f, 1f);
-        tree2.color = new Color(0.231f, 0.639f, 0.082f, 1f);
-        tree3.color = new Color(0.027f, 0.380f, 0.015f, 1f);
+        tree1.color = new Color(0.46666667f, 0.72549020f, 0.23921569f, 1f);
+        tree2.color = new Color(0.45490196f, 0.85098039f, 0.20784314f, 1f);
+        tree3.color = new Color(0.23137255f, 0.68235294f, 0.48627451f, 1f);
+        tree4.color = new Color(0.36862745f, 0.56862745f, 0.42352941f, 1f);
+        tree5.color = new Color(0.24705882f, 0.67058824f, 0.40392157f, 1f);
+        tree6.color = new Color(0.10980392f, 0.70588235f, 0.10980392f, 1f);
+        tree7.color = new Color(0.41176471f, 0.76470588f, 0.28627451f, 1f);
+        tree0.color = new Color(0.21568627f, 0.55686275f, 0.21568627f, 1f);
 
         ground.color = new Color(0.2f, 0.603f, 0f, 1f);
         mountain.color = new Color(0.294f, 0.188f, 0f, 1f);
