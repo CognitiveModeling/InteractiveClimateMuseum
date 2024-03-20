@@ -27,15 +27,15 @@ There are two desktop versions available for Windows (unfortunately not for MacO
 The following installation steps are the same for both versions:
 
 1. Just download and extract the zip archive.
+   
+   You can download the *ClimateEnvironment* binaries [here](https://1drv.ms/u/s!AhjwJMj1dopwi4RiOv4gSsyJdq1dgw?e=9iUVrp).
 
    You can download the *ClimateMuseum* binaries [here](https://drive.google.com/file/d/1d94BlhGrHG5kU86XQZ5U6M-5r9-A_FTJ/view?usp=drive_link).
-   
-   You can download the *ClimateEnvironment* binaries [here](https://drive.google.com/file/d/1KC_3jGAOSvUJ29uXdMq5y878eNfi8BW6/view?usp=drive_link).
    
 3. Run the *ClimateMuseum.exe* in the extracted zip archive to start the project.
 4. At the first start one or two windows will pop up: Please allow the execution of the program and the access for the *electron-app.exe*.
    We need it to communicate with the REST-API of the En-ROADS Simulator so that the environment can adapt properly.
-5. Sometimes you have to start the museum for a second time before these settings are adopted and you can experience the Simulator's changes in the virtual environment.
+5. You have to start the museum for a second time before these settings are adopted and you can experience the Simulator's changes in the virtual environment.
 
 **Enjoy the museum and the environment!**
 
